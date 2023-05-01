@@ -1,0 +1,48 @@
+/* 폰트 */
+@font-face {
+  font-family: 'KIMM_Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KIMM_Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@900&family=Noto+Sans+KR:wght@100;900&family=Noto+Serif+KR:wght@200;900&display=swap');
+
+@font-face {
+  font-family: 'EF_watermelonSalad';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_watermelonSalad.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+};
+@font-face {
+  font-family: 'neurimboGothicRegular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/neurimboGothicRegular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  letter-spacing: -0.5px;
+  word-break: keep-all;
+  outline: none;
+}
+
+/* 스크롤바 없애기 */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  margin-top: 200px;
+  font-family: 'EF_watermelonSalad';
+  font-size: 1.1rem;
+}
+
+.all-page {
+  margin: auto;
+}
+ul {
+  padding: 0;
+}
+li {
+  list-style: none;
+}

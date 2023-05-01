@@ -1,0 +1,245 @@
+/* 폰트 */
+@font-face {
+    font-family: 'Cafe24ClassicType-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Cafe24ClassicType-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'LOTTERIADDAG';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/LOTTERIADDAG.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'KIMM_Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KIMM_Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'neurimboGothicRegular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/neurimboGothicRegular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h4 {padding: 0; margin: 0;}
+/* scroll class off */
+.off {
+    display: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* header-link */
+a {
+    font-family: 'KIMM_Bold';
+    text-decoration: none;
+    color: black;
+}
+.header-link {
+    width: 100%;
+    margin: auto;
+    height: 140px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 500;
+}
+
+/* home-site css */
+.home-site {
+    width: 100%;
+    height: 22px;
+    background-color: rgb(255, 204, 193);
+    padding-top: 12px;
+    border-bottom: 1px solid black;
+}
+.nav-logo {
+    width: 300px;
+    margin: 20px auto 0 auto;
+}
+
+.nav-logo a img {
+    padding: 10px 0px 0px 20px;
+}
+.nav-top-site {
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.6rem;
+    position: fixed;
+    right: 10%;
+}
+
+
+.nav-menu, .nav-menu_s {
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+/* nav-bar css */
+.nav-wrap {
+    width: 100%;
+    height: 900px;
+}
+.header-link .nav-bar {
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(6,1fr);
+    padding: 0;
+    transition: all 0.3s ease-in-out;
+    height: 70px;
+}
+
+.header-link .nav-bar a {
+    color: rgb(24, 168, 181);
+    font-size: 1rem;
+}
+.header-link .nav-bar a:hover {
+    color: rgb(194, 238, 233);
+    background-color: rgb(240, 113, 102, 0.7);
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 15px 25px;
+    transition: all 0.1s;
+}
+.header-link .nav-bar .dropDownList a {
+    color:  rgb(240, 113, 102);
+}
+.header-link .nav-bar-scroll .dropDownList_s a {
+    color: rgb(255, 245, 198);
+}
+
+/* nav-bar mouseover css*/
+.header-link .nav-bar .dropDownList a:hover {
+    color: rgb(24, 168, 181);
+    background-color:rgba(255, 245, 198, 0.8);
+    border: 1px solid black;
+    border-radius: 100%;
+    padding: 10px 20px;
+    transition: all 0.1s;
+}
+.dropDownList, .dropDownList_s {
+    visibility: hidden;
+    opacity: 0;
+    width: 250px;
+    position: absolute;
+    top: 60px;
+    left: 0%;
+    text-align: left;
+    padding: 30px 0;
+    transform: translateY(-2em);
+    transition: all 0.4s ease-in-out;
+    border: 1px solid black;
+    text-align: center;
+    margin-top: 0px;
+    background-color: rgb(188, 226, 221);
+}
+.dropDownList li,
+.dropDownList_s li {
+    margin-bottom: 20px;
+}
+.dropDownList li:last-child,
+.dropDownList_s li:last-child {
+    margin-bottom: 0;
+}
+.nav-menu:hover .dropDownList,
+.nav-menu_s:hover .dropDownList_s {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+    transform: translateY(0);
+    transition-delay: 0s, 0s, 0.3s;
+}
+
+/* scroll 시 디자인 */
+.header-link .nav-bar-scroll {
+    width: 100%;
+    background-color:  rgb(188, 226, 221);
+    border-bottom: 1px solid black;
+}
+.header-link .nav-bar2 {
+    width: 1200px;
+    display: flex;
+    justify-content: space-evenly;
+    height: 100px;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}
+.header-link .nav-bar-scroll a {
+    color: white;
+    font-size: 1.2rem;
+}
+/* mouseover css */
+.dropDownList_s  {
+    border: 1px solid black;
+    background-color:rgb(240, 113, 102);
+    position: absolute;
+    top: 70px;
+}
+.header-link .nav-bar-scroll a:hover {
+    color: rgb(24, 168, 181);
+    transition: all 0.1s;
+}
+.header-link .nav-bar-scroll .dropDownList_s a:hover {
+    color: rgb(240, 113, 102);
+    background-color:rgba(255, 245, 198, 0.8);
+    border: 1px solid black;
+    border-radius: 100%;
+    padding: 10px 20px;
+    transition: all 0.1s;
+}
+
+/* rigt scroll menu css*/
+.right-scroll-menu {
+    position: fixed;
+    right: 5%;
+    top: 75vh;
+}
+.right-scroll-menu>div {
+    margin-bottom: 10px;
+    width: 52px; height: 52px;
+    border: 1px solid black;
+    border-radius: 100%;
+    background-color: rgb(24, 168, 181);
+    overflow: hidden;
+    box-shadow: 2px 2px 5px rgba(240, 113, 102,0.6);
+}
+.right-scroll-menu>div img {
+    padding: 10px;
+}
+.right-scroll-menu>div:nth-child(2) img {
+    padding: 12px;
+}
+.right-scroll-menu .rsm-info {
+    position: relative;
+    color: white;
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: 100;
+    width: 70px;
+    height: 70px;
+    background-color: rgb(240, 113, 102);
+    transform: translateY(0%);
+    font-size: 0.9rem;
+}
+.rsm-info h4 {
+    width: 100%; height: 100%;
+    margin: auto;
+    position: absolute;
+    top: 33px; left: 10px;
+}
+.right-scroll-menu>div:nth-child(1) a .rsm-info h4 {left: 7px;}
+.right-scroll-menu>div:nth-child(2) a .rsm-info h4 {left: 3px;}
+.right-scroll-menu>div:hover .rsm-info {
+    opacity: 1;
+    transform: translateY(-100%);
+}

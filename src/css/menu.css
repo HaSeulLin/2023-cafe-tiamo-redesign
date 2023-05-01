@@ -1,0 +1,113 @@
+/* Menu css */
+.menu-page {
+    width: 100%;
+    margin: 0; margin: auto;
+}
+.menu-page-top {
+    width: 100%;
+    margin: 0 auto; margin-top: 200px;
+    border-top: 1px solid black;
+    text-align: center;
+    position: relative;
+}
+.menu-page-top div:nth-child(2) {
+    position: absolute;
+    left: 34%;
+    top: 170px;
+}
+
+.menu-list-top { margin-top: 50px; padding: 0;}
+.menu-list-top li {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 30px 13px 30px;
+    background-color: rgb(188, 226, 221);
+    border-radius: 50px;
+    border: 1px solid black;
+}
+.menu-backimg {
+    width: 100%; height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+.menu-backimg>img {
+    width: 100%;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -100;
+}  
+
+/* MenuContent css */
+.menu-content {
+    width: 1200px;
+    margin: 50px auto 100px auto;
+    text-align: center;
+}
+.sub-menus {
+    width: 100%; margin: 0; padding: 0;
+}
+.sub-menus li {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 30px 13px 30px;
+    background-color: rgb(188, 226, 221);
+    border-radius: 20px 20px;
+    border: 1px solid black;
+}
+
+/* MenuDetailPage css */
+.menu-detail {
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 40px;
+    padding: 20px;
+    width: 1200px;
+    border: 1px solid black;
+}
+.menulist-ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 70px;
+
+}
+.menulist-li {
+    margin: auto;  margin-bottom: 80px;
+    width: 300px; height: 350px;
+}
+.menulist-li .menu-li-img {
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.menu-explain {
+    margin: auto;
+    width: 200px;
+}
+.menu-explain h4 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    background-color: rgb(255, 245, 198, 0.8);
+    border: 2px solid salmon;
+    padding: 10px;
+}
+.menu-explain p {
+    font-size: 0.9rem;
+}
+
+/* modal link (li) css */
+.list-content {
+    position: relative;
+}
+
+/* best & new css*/
+.list-content div:first-child, .list-content div:nth-child(2){
+    display: block;
+    position: absolute;
+    left: 30px;
+    top: 0;
+}
+.new-off, .best-off {
+    display: none;
+}
+

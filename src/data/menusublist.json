@@ -1,0 +1,240 @@
+[
+    {
+        "_comment" : "//////// 젤라또 id 1~30 /////////",
+        "id" : 1,
+        "name" : "꿀자몽",
+        "content" : "상큼한 자몽베이스에 달콤한 자몽청을 더한 청량함 가득한 젤라또",
+        "price" : "3,900원",
+        "image" : "/img/gelato/꿀자몽.jpg",
+        "menus" : "GELATO",
+        "category" : "과일",
+        "itemState" : "new"
+    },
+    {
+        "id" : 2,
+        "name" : "허니레몬",
+        "content" : "상큼한 레몬셔벗에 레몬청을 넣어 상큼함과 달콤함을 동시에 느낄 수 있는 젤라또",
+        "price" : "3,800원",
+        "image" : "/img/gelato/레몬.jpg",
+        "menus" : "GELATO",
+        "category" : "과일",
+        "itemState" : "new"
+    },
+    {
+        "id" : 3,
+        "name" : "레드포레스트",
+        "content" : "상큼한 딸기, 부드러운 우유 그리고 바삭한 초코칩을 동시에 즐길 수 있는 젤라또",
+        "price" : "3,800원",
+        "image" : "/img/gelato/레드포레스트.jpg",
+        "menus" : "GELATO",
+        "category" : "과일",
+        "itemState" : ""
+    },
+    {
+        "id" : 4,
+        "name" : "망고",
+        "content" : "새콤달콤레몬허니",
+        "price" : "3,800원",
+        "image" : "/img/gelato/망고.jpg",
+        "menus" : "GELATO",
+        "category" : "과일",
+        "itemState" : "new"
+    },
+    {
+        "id" : 5,
+        "name" : "블루베리",
+        "content" : "새콤달콤레몬허니",
+        "price" : "3,800원",
+        "image" : "/img/gelato/블루베리.jpg",
+        "menus" : "GELATO",
+        "category" : "과일",
+        "itemState" : ""
+    },
+    {
+        "id" : 6,
+        "name" : "망고라떼",
+        "content" : "새콤달콤레몬허니",
+        "price" : "3,800원",
+        "image" : "/img/gelato/블루베리.jpg",
+        "menus" : "GELATO",
+        "category" : "우유",
+        "itemState" : "new"
+    },
+    {
+        "id" : 7,
+        "name" : "딸기",
+        "content" : "새콤달콤레몬허니",
+        "price" : "3,800원",
+        "image" : "/img/gelato/딸기.jpg",
+        "menus" : "GELATO",
+        "category" : "과일",
+        "itemState" : ""
+    },
+    {
+        "id" : 8,
+        "name" : "블루베리라떼",
+        "content" : "새콤달콤레몬허니",
+        "price" : "3,800원",
+        "image" : "/img/gelato/블루베리라떼.jpg",
+        "menus" : "GELATO",
+        "category" : "우유",
+        "itemState" : ""
+    },
+    {
+        "id" : 9,
+        "name" : "복숭아",
+        "content" : "dd",
+        "price" : "3,800원",
+        "image" : "/img/gelato/블루베리.jpg",
+        "menus" : "GELATO",
+        "category" : "과일",
+        "itemState" : "best"
+    },
+    {
+        "id" : 10,
+        "name" : "다크초코렛",
+        "content" : "새콤달콤레몬허니",
+        "price" : "3,800원",
+        "image" : "/img/gelato/다크초코렛.jpg",
+        "menus" : "GELATO",
+        "category" : "우유",
+        "itemState" : ""
+    },
+    {
+        "id" : 11,
+        "name" : "녹차",
+        "content" : "새콤달콤레몬허니",
+        "price" : "3,800원",
+        "image" : "/img/gelato/녹차.jpg",
+        "menus" : "GELATO",
+        "category" : "우유",
+        "itemState" : ""
+    },
+    {
+        "id" : 12,
+        "name" : "리코타",
+        "content" : "새콤달콤레몬허니",
+        "price" : "3,800원",
+        "image" : "/img/gelato/리코타.jpg",
+        "menus" : "GELATO",
+        "category" : "우유",
+        "itemState" : ""
+    },
+    {
+        "id" : 13,
+        "name" : "마스카포네치즈",
+        "content" : "새콤달콤레몬허니",
+        "price" : "3,800원",
+        "image" : "/img/gelato/마스카포네치즈.jpg",
+        "menus" : "GELATO",
+        "category" : "우유",
+        "itemState" : ""
+    },
+    {
+        "id" : 14,
+        "name" : "솜사탕",
+        "content" : "새콤달콤레몬허니",
+        "price" : "3,800원",
+        "image" : "/img/gelato/솜사탕.jpg",
+        "menus" : "GELATO",
+        "category" : "우유",
+        "itemState" : ""
+    },
+    {
+        "id" : 15,
+        "name" : "요거트",
+        "content" : "새콤달콤레몬허니",
+        "price" : "3,800원",
+        "image" : "/img/gelato/요거트.jpg",
+        "menus" : "GELATO",
+        "category" : "요거트",
+        "itemState" : ""
+    },
+    {
+        "id" : 16,
+        "name" : "크리미요거트",
+        "content" : "새콤달콤레몬허니",
+        "price" : "3,800원",
+        "image" : "/img/gelato/크리미요거트.jpg",
+        "menus" : "GELATO",
+        "category" : "요거트",
+        "itemState" : ""
+    },
+    {
+        "id" : 17,
+        "name" : "딸기요거트",
+        "content" : "새콤달콤레몬허니",
+        "price" : "3,800원",
+        "image" : "/img/gelato/딸기요거트.jpg",
+        "menus" : "GELATO",
+        "category" : "요거트",
+        "itemState" : ""
+    },
+
+    {
+        "_comment" : "////////커피 id 31~50 /////////",
+        "id" : 31,
+        "name" : "커피",
+        "content" : "새콤달콤레몬허니",
+        "price" : "3,900원",
+        "image" : "/img/gelato/꿀자몽.jpg",
+        "menus" : "COFFEE",
+        "category" : "오리진",
+        "itemState" : "best"
+    },
+    {
+        "id" : 32,
+        "name" : "에스프레소",
+        "content" : "새콤달콤레몬허니",
+        "price" : "3,800원",
+        "image" : "/img/gelato/레몬.jpg",
+        "menus" : "COFFEE",
+        "category" : "콜드브루",
+        "itemState" : "best"
+    },
+    {
+        "id" : 33,
+        "name" : "라떼",
+        "content" : "새콤달콤레몬허니",
+        "price" : "3,800원",
+        "image" : "/img/gelato/레드포레스트.jpg",
+        "menus" : "COFFEE",
+        "category" : "오리진",
+        "itemState" : "best"
+    },
+    {
+        "id" : 34,
+        "name" : "초2떼",
+        "content" : "새콤달콤레몬허니",
+        "price" : "3,800원",
+        "image" : "/img/gelato/망고.jpg",
+        "menus" : "COFFEE",
+        "category" : "에스프레소",
+        "itemState" : ""
+    },
+    {
+        "id" : 35,
+        "name" : "블루3베리",
+        "content" : "새콤달콤레몬허니",
+        "price" : "3,800원",
+        "image" : "/img/gelato/블루베리.jpg",
+        "menus" : "COFFEE",
+        "category" : "콜드브루",
+        "itemState" : ""
+    },
+
+
+
+
+
+    {
+        "id" : 1000000,
+        "name" : "dummy data",
+        "content" : "dummy",
+        "price" : "dummy",
+        "image" : "",
+        "menus" : "",
+        "category" : "",
+        "itemState" : ""
+    }
+]

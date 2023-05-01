@@ -1,0 +1,555 @@
+/* 폰트 */
+@font-face {
+    font-family: 'LOTTERIADDAG';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/LOTTERIADDAG.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cafe24ClassicType-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Cafe24ClassicType-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'KIMM_Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KIMM_Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ghanachoco';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ghanachoco.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Cinzel&family=Libre+Barcode+39+Text&family=Londrina+Shadow&display=swap');
+/* main-banner pattern :
+출처 <a href="https://kr.freepik.com/free-vector/flat-argyle-pattern_20912397.htm#query=patterns&position=41&from_view=search&track=sph">Freepik</a>*/
+
+/* 테마 컬러 설정
+    rgb(255, 204, 187)
+*/
+
+
+/* HOME 전체 */
+.home {
+    text-align: center;
+    margin: auto;
+    margin-top: 200px;
+    border-top: 1px solid black;
+}
+h2 {
+    font-family: 'Cafe24ClassicType-Regular';
+    font-size: 4rem;
+    color: rgb(240, 81, 54);
+    margin-bottom: 0;
+}
+h3 {
+    font-size: 1.5rem;
+    color: rgb(240, 113, 102);
+    margin: 10px 0;
+}
+
+/* 메인 배너 main-back */
+/* 메인 배너 background */
+.main-back {
+    position: relative;
+    width: 100%; height: calc(100vh - 200px);
+    background-image: url(../img/back-main.png);
+    background-size: cover;
+    border-bottom: 2px solid black;
+}
+/* 메인 배너 이미지 main-banner-img-wrap, main-banner-text-pop, back-img-wrap-m2 */
+.main-banner-img-wrap {
+    margin: auto;
+    position: absolute;
+    left: 28%; top: -10%;
+}
+.main-banner-img-wrap img {
+	scale: 0.85;
+	animation: topbottom 3s ease-in-out infinite;
+    height: 950px;
+}
+@keyframes topbottom {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(30px);
+}
+	100% {
+		transform: translateY(0);
+	}
+}
+.back-img-wrap-m2 {
+    position: absolute;
+    top: 0; left: 6%;
+}
+.main-banner-text-pop {
+    position: absolute;
+    top: 5%; right: 22%;
+}
+.main-banner-text-pop p {
+    position: absolute;
+    top: 35%; right: 27%;
+}
+
+/* 메인 배너 텍스트 main-banner-text */
+.main-banner {
+    position: relative;
+    width: 100%; height: 100%;
+    margin: auto;
+    background-color: rgba(255,255,255,0.3);
+}
+.main-banner h2, .main-banner h3 {
+    font-family: 'ghanachoco';
+    margin-top: 0;
+}
+.main-banner-text {
+    width: 100%; height: 100%;
+}
+.text-bookmark-wrap-l,
+.text-bookmark-wrap-m,
+.text-bookmark-wrap-r {
+    position: absolute;
+}
+.text-bookmark-wrap-l {
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+}
+.text-bookmark-wrap-l .text-title-l {
+    width: 100%; height: 100%;
+    position: relative;
+}
+.text-bookmark-wrap-l .text-title-l h2 {
+    text-align: left;
+    position: absolute;
+    left: 17px; top: 32px;
+    color: black;
+    font-size: 10rem;
+    margin-top: 20px;
+}
+.text-bookmark-wrap-l .text-title-l .title-2 {
+    position: absolute;
+    color: rgb(185, 233, 225);
+    left: 15px; top: 30px;
+}
+.text-bookmark-wrap-l .text-title-l .title-3 {
+    position: absolute;
+    color: rgb(240, 81, 54);
+    left: 10px; top:28px;
+}
+.text-bookmark-wrap-m {
+    width: 500px;
+    left: 0px; top: 450px;
+}
+.text-bookmark-wrap-m .text-title-m {
+    position: relative;
+}
+.text-bookmark-wrap-m h3 {
+    color: black;
+    position: absolute;
+    font-size: 3rem;
+}
+.text-bookmark-wrap-m .title-2 {
+    color: rgb(185, 233, 225);
+    position: absolute;
+    left: -2px; top: -2px;
+}
+.text-bookmark-wrap-r {
+    width: 100%; height: 100%;
+    right: -1080px; top: 38vh;
+    text-align: right;
+}
+.text-bookmark-wrap-r .text-title-r {
+    width: 100%; height: 100%;
+    position: relative;
+}
+.text-bookmark-wrap-r .text-title-r h2 {
+    position: absolute;
+    left: 17px; top:32px;
+    color: black;
+    font-size: 6rem;
+}
+.text-bookmark-wrap-r .text-title-r .title-2 {
+    color: rgb(185, 233, 225);
+    left: 15px; top:30px;
+}
+.text-bookmark-wrap-r .text-title-r .title-3 {
+    color: rgb(240, 81, 54);
+    left: 10px; top:28px;
+}
+.text-bookmark-wrap-r h3 {
+    position: absolute;
+    font-size: 4rem;
+    right: -440px; top: 260px;
+    color: black;
+}
+.text-bookmark-wrap-r .title-4 {
+    right: -438px; top: 258px;
+    color: rgb(240, 81, 54);
+}
+
+/* 이벤트/SNS 배너 */
+.event-sns-banner {
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 0;
+    padding: 100px 0;
+    background: linear-gradient(rgba(188, 226, 221, 0.7),rgba(255, 227, 232, 0.7));
+    background-image: url('../img/그라데배경1.png');
+    position: relative;
+}
+.event-sns-banner::before {
+    content: "";
+    width: 100%; height: 100%;
+    position: absolute;
+    left: 0; top: 0;
+    background-color: white;
+    opacity: 0.5;
+}
+.event-sns-banner .event-img-wrap-l {
+    position: absolute;
+    left: 0; bottom: -5px;
+    z-index: -1;
+}
+.event-sns-banner .event-img-wrap-r {
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+    z-index: -1;
+}
+.event-sns-banner-text {
+    position: relative;
+    text-align: left;
+    display: flex;
+    align-items: flex-end;
+}
+.fruits1-deco {
+    position: absolute;
+    left: -150px;
+    top: -430px;
+    z-index: 20;
+}
+.fruits2-deco {
+    position: absolute;
+    left: 300px;
+    top: -80px;
+    z-index: 20;
+}
+.event-sns-banner-text .event-title {
+    position: relative;
+}
+.event-sns-banner-text .event-title h2 {
+    margin: 0 0 0 20px;
+}
+.event-sns-banner-text .event-title div:last-child {
+    position: absolute;
+    left: -4px; top: -4px;
+}
+.event-sns-banner-text .event-title div:first-child h2 {
+    color: rgb(255, 245, 198);
+}
+.event-sns-banner-text .sns-icon{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 15px 10px;
+}
+.event-sns-banner-text .sns-icon div {
+    width: 32px;
+    height: 32px;
+    background-size: cover;
+    margin: 0 4px;
+    border-radius: 100%;
+    padding: 7px;
+    border: 1px solid black;
+    transition: all 0.5s ;
+}
+.event-sns-banner-text .sns-icon div:hover {
+    background-color: rgb(255, 245, 198);
+    transition: all 0.5s ;
+    transform: rotate(180deg);
+}
+.sns-img {
+    display: flex;
+}
+.sns-img .insta-img1,
+.sns-img .insta-img2,
+.event-slide-wrap {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 20px;
+}
+.event-slide-wrap {
+    width: 480px;
+    height: 680px;
+}
+.sns-img .insta-img1 img,
+.sns-img .insta-img2 img,
+.event-slide-wrap .event-slide {
+    width: 100%; height: 100%; position: inherit; z-index: 10;
+    border: 1px solid  white;
+}
+.sns-img .insta-img1 img:nth-child(2),
+.sns-img .insta-img2 img:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.5s;
+}
+.sns-img .insta-img1:hover img:nth-child(2),
+.sns-img .insta-img2:hover img:nth-child(2) {
+    opacity: 1;
+    transition: all 0.5s;
+}
+.sns-img .insta-img1::before,
+.sns-img .insta-img2::before,
+.event-slide-wrap::before {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    content:'';
+    top:-10px;
+    left:-10px;
+    border: 2px solid black;
+    transition: all 0.2s;
+}
+.sns-img .insta-img1:hover::before,
+.sns-img .insta-img2:hover::before {
+    top: 10px;
+    left: 10px
+}
+.sns-img .insta-img1::after,
+.sns-img .insta-img2::after,
+.event-slide-wrap::after {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    content:'';
+    top:10px;
+    left:10px;
+    background:black;
+    transition: all 0.2s;
+    z-index: 0;
+}
+.sns-img .insta-img1:hover:after,
+.sns-img .insta-img2:hover:after {
+    top: -10px;
+    left:-10px;
+}
+
+/* 가로 애니메이션 텍스트 */
+.text-animated {
+    width: 100%; max-width: 100%;
+    background-color: rgb(255, 245, 198);
+    color: rgb(24, 168, 181);
+    border: 2px solid black;
+    font-family: 'Cafe24ClassicType-Regular';
+}
+.text-animated .track {
+    display: flex;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: 1s;
+    font-size: 4.5rem;
+    font-weight:bold;
+    color: rgb(24, 168, 181);
+}
+.text-animated .track p {
+    animation: flow 20s linear infinite;
+    padding-right: 1.4881vw;
+    margin: 50px 0 40px 0;
+}
+@keyframes flow {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+/* 메뉴 리스트 */
+.menu {
+    width: 100%; height: 100%;
+    padding: 80px 0;
+    background-image: url('../img/그라데배경2.png');
+    background-size: cover;
+    position: relative;
+}
+.menu::before {
+    content: "";
+    width: 100%; height: 100%;
+    background-color: white;
+    opacity: 0.4;
+    position: absolute;
+    z-index: 0;
+    left: 0; top: 0;
+}
+.menu h2 {
+    position: relative;
+    width: 300px; margin: auto;
+    padding: 15px 10px 10px 10px;
+    background-color: rgb(89, 219, 213);
+    border: 1px solid black;
+    border-radius: 100%;
+}
+.menu p {
+    position: relative;
+}
+.menu-img-boxs {
+    width: 100%;
+    margin: auto; margin-top: 50px;
+}
+
+/* 가맹 정보 더보기 */
+.franchise-contact {
+    width: 100%;
+    background-color: rgba(182, 238, 234, 0.9);
+    margin: auto;  padding: 30px;
+    height: 300px;
+    border: 2px solid black;
+    position: relative;
+}
+.franchise-contact .franchise-img-wrap-l,
+.franchise-contact .franchise-img-wrap-r {
+    position: absolute;
+}
+.franchise-contact .franchise-img-wrap-l {
+    left: 0; top: 5px; z-index: -1;
+}
+.franchise-contact .franchise-img-wrap-r {
+    right: 0; top: -7px; z-index: -1;
+}
+.back-img-wrap-m {
+    position: absolute;
+    top: -120px; left: 17%; z-index: -1;
+}
+.franchise-contact .franchise-text h2 {
+    width: 450px;
+    margin: auto;
+    padding: 15px 10px 10px 10px;
+    background-color: rgb(240, 113, 102);
+    color:  rgb(255, 245, 198);
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-bottom: 20px; margin-top: 30px;
+}
+.franchise-contact .franchise-text p {
+    margin: 10px 0 50px 0;
+}
+.franchise-contact .franchise-text a {
+    box-sizing: border-box;
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius:100px;
+    transition: all 0.25s;
+    padding: 15px 30px;
+}
+.franchise-contact .franchise-text a:hover {
+    color:rgb(238, 99, 86);
+    background-color: rgb(255, 245, 198);
+    transition: all 0.25s;
+}
+
+/* 공지사항, 뉴스 */
+.nn-section {
+    width: 100%;
+    background-color: rgb(255, 245, 198);
+}
+.notice-news {
+    width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    border-left: 1px solid black; border-right: 1px solid black;
+    background-color: rgb(255, 249, 222);
+}
+.notice {
+    border-right: 1px solid black;
+}
+.notice>div{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid black;
+    height: 110px;
+}
+.notice>div>div:first-child {
+    width: 280px;
+    padding: 40px 20px;
+}
+.notice>div>div:last-child>a {
+    height: 110px;
+    box-sizing: border-box;
+    border-left: 1px solid black;
+    font-size: 0.8rem;
+    padding: 50px 10px 47px 10px;
+    transition: all 0.25s;
+}
+.notice>div>div:last-child>a:hover {
+    background:  rgba(37, 196, 211, 0.5);
+    font-weight: bold;
+    transition: all 0.25s;
+}
+.notice h2, .news h2 {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 40px 0 30px 0;
+    border-bottom: 1px solid black;
+}
+.notice a, .news p {
+    font-family: 'EF_watermelonSalad';
+    font-size: 1rem;
+}
+.notice div span,
+.news .news-list div span {
+    font-size: 0.8rem;
+    color:  rgb(240, 113, 102);
+}
+.news .news-list {
+    display: flex;
+    justify-content: space-evenly;
+}
+.news .news-list div {
+    display: flex;
+    flex-direction: column;
+    width: 250px; height: 350px;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.news .news-list div img {
+    border-bottom: 1px solid black;
+}
+.news .news-list div p {
+    width: 75%; height: 38px; margin: auto;
+    text-align: left;
+}
+.news .news-list div span {text-align: left; width: 75%; margin: 0 auto;}
+.news-more {
+    width: 100px;
+    margin: auto;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: all 0.25s;
+}
+.news-more a {
+    font-size: 0.8rem;
+}
+.news-more:hover {
+    background:  rgba(37, 196, 211, 0.5);
+    transition: all 0.25s;
+}
