@@ -43,7 +43,7 @@ export default function MenuContent() {
                                 style={
                                             menu.itemState==="new" ?
                                                 {backgroundImage:`url("${process.env.PUBLIC_URL}/img/newLabel.png")`,
-                                                    width:"62px", height:"62px"
+                                                    width:"65px", height:"65px", backgroundRepeat:"no-repeat", backgroundPosition:"center"
                                                 }
                                                 : {display:"none"}
                                 }
@@ -54,7 +54,7 @@ export default function MenuContent() {
                                 style={
                                             menu.itemState==="best" ?
                                                 {backgroundImage:`url("${process.env.PUBLIC_URL}/img/bestLabel.png")`,
-                                                width:"62px", height:"62px"
+                                                width:"65px", height:"65px", backgroundRepeat:"no-repeat", backgroundPosition:"center"
                                                 }
                                                 : {display:"none"}
                                 }
@@ -63,7 +63,8 @@ export default function MenuContent() {
                             <div className='modal-open-img'
                                 onClick={()=>{openModal(menu.name)}}
                             >
-                                <img src={menu.image} alt="" width={220}                                    className='menu-li-img'
+                                <img src={menu.image} alt="" width={220}
+                                    className='menu-li-img'
                                 />
                             </div>
                         </div>

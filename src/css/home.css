@@ -23,17 +23,20 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=Cinzel&family=Libre+Barcode+39+Text&family=Londrina+Shadow&display=swap');
 /* main-banner pattern :
 출처 <a href="https://kr.freepik.com/free-vector/flat-argyle-pattern_20912397.htm#query=patterns&position=41&from_view=search&track=sph">Freepik</a>*/
 
-/* 테마 컬러 설정
-    rgb(255, 204, 187)
-*/
-
 
 /* HOME 전체 */
 .home {
+    width: 100%;
     text-align: center;
     margin: auto;
     margin-top: 200px;
@@ -52,24 +55,31 @@ h3 {
 }
 
 /* 메인 배너 main-back */
-/* 메인 배너 background */
+/* 메인 배너 background : relative */
 .main-back {
     position: relative;
     width: 100%; height: calc(100vh - 200px);
-    background-image: url(../img/back-main.png);
-    background-size: cover;
-    border-bottom: 2px solid black;
 }
-/* 메인 배너 이미지 main-banner-img-wrap, main-banner-text-pop, back-img-wrap-m2 */
+.back-img-wrap {
+    width: 100%; height: 100%;
+    margin: auto;
+}
+.back-img-wrap img {
+    width: 100%; min-width: 800px;
+    height: 100%; min-height: 400px;
+
+}
+/* 메인 배너 이미지 main-banner-img-wrap, main-banner-text-pop */
 .main-banner-img-wrap {
+    width: 100%; height: 80vh;
     margin: auto;
     position: absolute;
-    left: 28%; top: -10%;
+    left: 0; top: -10vh; z-index: 0;
 }
-.main-banner-img-wrap img {
+.main-banner-img-wrap>img {
 	scale: 0.85;
 	animation: topbottom 3s ease-in-out infinite;
-    height: 950px;
+    height: 1100px;
 }
 @keyframes topbottom {
 	0% {
@@ -82,124 +92,158 @@ h3 {
 		transform: translateY(0);
 	}
 }
-.back-img-wrap-m2 {
-    position: absolute;
-    top: 0; left: 6%;
-}
 .main-banner-text-pop {
+    width: 210px;
+    height: 210px;
+    margin: auto;
+    z-index: 10;
     position: absolute;
-    top: 5%; right: 22%;
+    right: 18vw;
+    bottom: 27vh;
+    animation: rotatepop 5s ease-in-out infinite;
+    transition: all 0.25s;
+    -webkit-animation: rotatepop 5s ease-in-out infinite;
+}
+.main-banner-text-pop:hover {
+    scale: 1.1;
+    transition: all 0.25s;
 }
 .main-banner-text-pop p {
+    opacity: 0;
+    cursor: pointer;
+    color: white;
+    text-shadow: 2px 2px 1px black;
     position: absolute;
-    top: 35%; right: 27%;
+    width: 200px;
+    top: 15%; right: 2%;
+    font-family: 'Cafe24ClassicType-Regular';
+    font-size: 2rem;
+    font-weight: bold;
+    transition: all 0.25s;
+}
+.main-banner-text-pop:hover p {
+    opacity: 1;
+    transition: all 0.25s;
+}
+@keyframes rotatepop {
+	0% {
+		transform: rotate(0);
+	}
+    50% {
+		transform: rotate(360deg);
+    }
+	100% {
+		transform: rotate(360deg);
+    }
 }
 
 /* 메인 배너 텍스트 main-banner-text */
+.scroll-banner-text {
+    width: 100%; height: 100%;
+    max-width: 1000px;
+}
 .main-banner {
-    position: relative;
     width: 100%; height: 100%;
     margin: auto;
-    background-color: rgba(255,255,255,0.3);
+    position: absolute;
+    left: 100px; top: 20px;
 }
-.main-banner h2, .main-banner h3 {
+.main-banner h2,
+.main-banner h3 {
     font-family: 'ghanachoco';
     margin-top: 0;
 }
 .main-banner-text {
-    width: 100%; height: 100%;
-}
-.text-bookmark-wrap-l,
-.text-bookmark-wrap-m,
-.text-bookmark-wrap-r {
-    position: absolute;
+    margin: 0 10%;
 }
 .text-bookmark-wrap-l {
-    left: 0; top: 0;
     width: 100%; height: 100%;
+    text-align: left;
+    position: absolute;
+    left: 8vw; top: 5vh;
 }
 .text-bookmark-wrap-l .text-title-l {
-    width: 100%; height: 100%;
+    width: 1200px; min-height: 500px;
     position: relative;
 }
 .text-bookmark-wrap-l .text-title-l h2 {
     text-align: left;
+    color: transparent;
+    font-size: 11rem;
+    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color: #fff; 
+}
+.text-title-l img {
     position: absolute;
-    left: 17px; top: 32px;
-    color: black;
-    font-size: 10rem;
-    margin-top: 20px;
+    right: 10vw; top: -2vh;   
 }
-.text-bookmark-wrap-l .text-title-l .title-2 {
-    position: absolute;
-    color: rgb(185, 233, 225);
-    left: 15px; top: 30px;
-}
-.text-bookmark-wrap-l .text-title-l .title-3 {
-    position: absolute;
-    color: rgb(240, 81, 54);
-    left: 10px; top:28px;
-}
-.text-bookmark-wrap-m {
-    width: 500px;
-    left: 0px; top: 450px;
-}
-.text-bookmark-wrap-m .text-title-m {
-    position: relative;
-}
-.text-bookmark-wrap-m h3 {
+.text-bookmark-wrap-l .text-title-m h3 {
     color: black;
     position: absolute;
+    left: 1vw; top: 180px;
     font-size: 3rem;
 }
-.text-bookmark-wrap-m .title-2 {
+.text-bookmark-wrap-l .text-title-m .title-2 {
     color: rgb(185, 233, 225);
     position: absolute;
-    left: -2px; top: -2px;
+    left: calc(1vw - 2px); top: 183px;
 }
+.star-deco img:first-child {
+    position: absolute;
+    left: 10vw; top: 23vh; 
+}
+.star-deco img:nth-child(2) {
+    position: absolute;
+    left: 8vw; top: 30vh;   
+}
+
 .text-bookmark-wrap-r {
     width: 100%; height: 100%;
-    right: -1080px; top: 38vh;
     text-align: right;
+    position: absolute;
+    left: 50vw; top: 40vh;
 }
 .text-bookmark-wrap-r .text-title-r {
-    width: 100%; height: 100%;
+    width: 500px; height: 800px;
     position: relative;
 }
 .text-bookmark-wrap-r .text-title-r h2 {
     position: absolute;
-    left: 17px; top:32px;
+    left: 6px; top: 6px;
     color: black;
     font-size: 6rem;
 }
 .text-bookmark-wrap-r .text-title-r .title-2 {
     color: rgb(185, 233, 225);
-    left: 15px; top:30px;
+    left: 3px; top: 3px;
 }
 .text-bookmark-wrap-r .text-title-r .title-3 {
-    color: rgb(240, 81, 54);
-    left: 10px; top:28px;
+    color: rgb(255, 22, 0);
+    left: 0px; top:0px;
 }
-.text-bookmark-wrap-r h3 {
+.text-bookmark-wrap-r .text-title-r h3 {
     position: absolute;
     font-size: 4rem;
-    right: -440px; top: 260px;
+    right: 0; top: 21vh;
     color: black;
 }
-.text-bookmark-wrap-r .title-4 {
-    right: -438px; top: 258px;
-    color: rgb(240, 81, 54);
+.text-bookmark-wrap-r .text-title-r .title-4 {
+    right: 3px; top: calc(21vh - 3px);
+    color: rgb(185, 233, 225);
+
 }
 
 /* 이벤트/SNS 배너 */
 .event-sns-banner {
+    border-top: 1px solid black;
     width: 100%; height: 100%;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     margin: 0;
     padding: 100px 0;
-    background: linear-gradient(rgba(188, 226, 221, 0.7),rgba(255, 227, 232, 0.7));
+    background: linear-gradient(rgba(188, 226, 221, 0.7),rgba(255, 227, 232, 0.7)) cover;
+    background-attachment: fixed;
     background-image: url('../img/그라데배경1.png');
     position: relative;
 }
@@ -245,6 +289,9 @@ h3 {
 }
 .event-sns-banner-text .event-title h2 {
     margin: 0 0 0 20px;
+}
+.event-sns-banner-text .event-title div:first-child {
+    text-shadow: 1px 1px 1px black;
 }
 .event-sns-banner-text .event-title div:last-child {
     position: absolute;
@@ -316,7 +363,7 @@ h3 {
     content:'';
     top:-10px;
     left:-10px;
-    border: 2px solid black;
+    border: 1px solid black;
     transition: all 0.2s;
 }
 .sns-img .insta-img1:hover::before,
@@ -348,8 +395,9 @@ h3 {
     width: 100%; max-width: 100%;
     background-color: rgb(255, 245, 198);
     color: rgb(24, 168, 181);
-    border: 2px solid black;
-    font-family: 'Cafe24ClassicType-Regular';
+    border: 1px solid black;
+    font-family: 'TheJamsil5Bold';
+
 }
 .text-animated .track {
     display: flex;
@@ -364,7 +412,10 @@ h3 {
 .text-animated .track p {
     animation: flow 20s linear infinite;
     padding-right: 1.4881vw;
-    margin: 50px 0 40px 0;
+    margin: 20px 0;
+}
+.text-animated .track p img {
+    margin: auto; padding: 15px 0 0 15px;
 }
 @keyframes flow {
     0% {
@@ -377,37 +428,8 @@ h3 {
 }
 
 /* 메뉴 리스트 */
-.menu {
-    width: 100%; height: 100%;
-    padding: 80px 0;
-    background-image: url('../img/그라데배경2.png');
-    background-size: cover;
-    position: relative;
-}
-.menu::before {
-    content: "";
-    width: 100%; height: 100%;
-    background-color: white;
-    opacity: 0.4;
-    position: absolute;
-    z-index: 0;
-    left: 0; top: 0;
-}
-.menu h2 {
-    position: relative;
-    width: 300px; margin: auto;
-    padding: 15px 10px 10px 10px;
-    background-color: rgb(89, 219, 213);
-    border: 1px solid black;
-    border-radius: 100%;
-}
-.menu p {
-    position: relative;
-}
-.menu-img-boxs {
-    width: 100%;
-    margin: auto; margin-top: 50px;
-}
+/* menuslick.css */
+
 
 /* 가맹 정보 더보기 */
 .franchise-contact {
@@ -415,7 +437,7 @@ h3 {
     background-color: rgba(182, 238, 234, 0.9);
     margin: auto;  padding: 30px;
     height: 300px;
-    border: 2px solid black;
+    border: 1px solid black;
     position: relative;
 }
 .franchise-contact .franchise-img-wrap-l,
@@ -534,7 +556,7 @@ h3 {
 }
 .news .news-list div p {
     width: 75%; height: 38px; margin: auto;
-    text-align: left;
+    text-align: justify;
 }
 .news .news-list div span {text-align: left; width: 75%; margin: 0 auto;}
 .news-more {

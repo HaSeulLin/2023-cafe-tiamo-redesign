@@ -19,7 +19,12 @@
   font-weight: normal;
   font-style: normal;
 }
-
+@font-face {
+  font-family: 'S-CoreDream-3Light';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   letter-spacing: -0.5px;
   word-break: keep-all;
@@ -33,7 +38,7 @@
 
 body {
   margin-top: 200px;
-  font-family: 'EF_watermelonSalad';
+  font-family: 'S-CoreDream-3Light';
   font-size: 1.1rem;
 }
 

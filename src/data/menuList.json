@@ -10,21 +10,21 @@
         "id" : 2,
         "name": "COFFEE",
         "image" : "/img/playEsopresso.png",
-        "explain": "100% 아라비카원두로 깊고 진한 향을 느낄 수 있는 커피",
+        "explain": "100% 아라비카원두로 깊고 진한 향의 커피",
         "submenu" : ["오리진", "콜드브루", "에스프레소", "니트로"]
     },
     {
         "id" : 3,
         "name": "LATTE|TEA",
         "image" : "/img/playTea.png",
-        "explain": "달달한 향과 부드러운으로 우유로 마음이 먼저 마시는 음료",
+        "explain": "부드러움과 달달한 향으로 마음이 먼저 마시는 음료",
         "submenu" : ["스페셜 라떼", "허브|과일티"]
     },
     {
         "id" : 4,
         "name": "BEVERAGE",
         "image" : "/img/playSweet.png",
-        "explain": "상큼하고 달콤한 맛으로 다양한 연령대에게 사랑받는 음료",
+        "explain": "상큼하고 달콤한 맛으로 모두에게 사랑받는 음료",
         "submenu" : ["과일주스", "에이드", "스무디", "블렌디모"]
     },
     {

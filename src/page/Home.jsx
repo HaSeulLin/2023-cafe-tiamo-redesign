@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import '../css/home.css'
+import '../css/homebrand.css'
 import EventSlider from '../components/EventSlider';
 import MenuSlider from '../components/MenuSlider';
 
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Move, MoveIn, MoveOut, Sticky, StickyIn, StickyOut, Zoom, ZoomIn, ZoomOut } from "react-scroll-motion";
+import BrandScroll from '../components/BrandScroll';
 
 export default function Home() {
 
@@ -20,53 +22,82 @@ useEffect(()=>{
 const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
 const FadeUp = batch(Fade(), Move(), Sticky());
 
+const [ bannerImg, setBannerImg ] = useState('berry-gelato-main.png');
+const [ bannerPop, setBannerPop ] = useState('bomb-choco.png');
+const [ backColor, setBackColor ] = useState('rgb(255, 192, 188)');
+const [ gelatoFlavor, setGelatoFlavor ] = useState('Strawberry');
+
+const bannerToggle = () => {
+    if (bannerImg=='berry-gelato-main.png') {
+        setBannerImg('choco-gelato-main.png')
+        setBannerPop('bomb-berry.png');
+        setBackColor('rgb(255, 228, 181)');
+        setGelatoFlavor('Chocolate');
+    }
+    else if (bannerImg=='choco-gelato-main.png') {
+        setBannerImg('berry-gelato-main.png')
+        setBannerPop('bomb-choco.png');
+        setBackColor('rgb(255, 192, 188)');
+        setGelatoFlavor('Strawberry');
+    }
+};
+
 return (
     <div className='home'>
-        <ScrollContainer>
         {/**    메인 배너 (1 scroll)     */}
-        <div className='main-back'>
-            <ScrollPage>
-                <Animator animation={batch(Fade(), Sticky(10,20), MoveOut(0, -100))}>
-                    <div className='back-img-wrap-m2'>
-                        <img src={`${process.env.PUBLIC_URL}/img/back-gelato-inverse.png`} width={1600} alt="" />
-                    </div>
-                    <div className='main-banner'>
-                        <div className='main-banner-text'>
-                            <div className='text-bookmark-wrap-l'>
-                                <div className='text-title-l'>
-                                    <h2>CAFE TIAMO</h2>
-                                    <h2 className='title-2'>CAFE TIAMO</h2>
-                                    <h2 className='title-3'>CAFE TIAMO</h2>
-                                </div>
-                            </div>
-                            <div className='text-bookmark-wrap-m'>
-                                <div className='text-title-m'>
-                                    <h3>Coffee & Gelato</h3>
-                                    <h3 className='title-2'>Coffee & Gelato</h3>
-                                </div>
-                            </div>
-                            <div className='text-bookmark-wrap-r'>
-                                <div className='text-title-r'>
-                                    <h2>Today's Gelato</h2>
-                                    <h2 className='title-2'>Today's Gelato</h2>
-                                    <h2 className='title-3'>Today's Gelato</h2>
-                                    <h3>Strawberry</h3>
-                                    <h3 className='title-4'>Strawberry</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </Animator>
-            </ScrollPage>
-            <div className='main-banner-img-wrap'>
-                <img src={`${process.env.PUBLIC_URL}/img/toDayJelato2.png`} alt="오늘의 젤라또 딸기" />
+        <div className='main-back' style={{backgroundColor:`${backColor}`, transition:"all 0.3s"}}>
+            <div className='back-img-wrap'>
+                <img src={`${process.env.PUBLIC_URL}/img/back-gelato-inverse.png`} alt="" />
             </div>
-            <div className='main-banner-text-pop'>
-                <img src={`${process.env.PUBLIC_URL}/img/smooth-bomb1.png`} alt="카페 띠아모" width={200} height={200}/>
-                <p>More Flavor</p>
+            <div className='main-banner-img-wrap'>
+                <img src={`${process.env.PUBLIC_URL}/img/${bannerImg}`} alt="오늘의 젤라또 딸기" />
+                <div className='main-banner-text-pop'
+                    onClick={()=>{bannerToggle()}}
+                >
+                    <img src={`${process.env.PUBLIC_URL}/img/${bannerPop}`} alt="카페 띠아모" width={200} height={200}/>
+                    <p>More Flavor</p>
+                </div>
+                <ScrollContainer>
+                    <ScrollPage className='scroll-banner-text'>
+                        <Animator animation={batch(Fade(), Sticky(5, 20), MoveOut(0, -200))}>
+                            <div className='main-banner'>
+                                <div className='main-banner-text'>
+                                    <div className='text-bookmark-wrap-l'>
+                                        <div className='text-title-l'>
+                                            <h2>CAFETIAMO</h2>
+                                            <img src={`${process.env.PUBLIC_URL}/img/star_deco4.png`} 
+                                            width={50} height={50}
+                                            alt="" />
+                                            <div className='text-title-m'>
+                                                <h3>Coffee&Gelato</h3>
+                                                <h3 className='title-2'>Coffee&Gelato</h3>
+                                            </div>
+                                        </div>
+                                        <div className='star-deco'>
+                                            <img src={`${process.env.PUBLIC_URL}/img/star_deco2.png`} 
+                                            width={100} height={100}
+                                            alt="" />
+                                            <img src={`${process.env.PUBLIC_URL}/img/star_deco2.png`} 
+                                            width={80} height={80}
+                                            alt="" />                                                                                    
+                                        </div>
+                                    </div>
+                                    <div className='text-bookmark-wrap-r'>
+                                        <div className='text-title-r'>
+                                            <h2>Today's Gelato</h2>
+                                            <h2 className='title-2'>Today's Gelato</h2>
+                                            <h2 className='title-3'>Today's Gelato</h2>
+                                            <h3>{gelatoFlavor}</h3>
+                                            <h3 className='title-4'>{gelatoFlavor}</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </Animator>
+                    </ScrollPage>
+                </ScrollContainer>
             </div>
         </div>
-
 
         {/**    이벤트/SNS 배너 (2 scroll)     */}
         <div className='event-sns-banner'>
@@ -126,18 +157,18 @@ return (
                 </div>
             </div>
         </div>
-        
+
         {/**    텍스트 애니메이션     */}
         <div className='text-animated'>
             <div className='track'>
                 <p>GELATO. COFFEE. LATTE. TEA. BEVERAGE. DESSERT 
-                    <img src={`${process.env.PUBLIC_URL}/img/star_deco1.png`} width={50} height={50} alt="" />
+                    <img src={`${process.env.PUBLIC_URL}/img/star_deco3.png`} width={50} height={50} alt="" />
                 </p>
                 <p>GELATO. COFFEE. LATTE. TEA. BEVERAGE. DESSERT
-                    <img src={`${process.env.PUBLIC_URL}/img/star_deco1.png`} width={50} height={50} alt="" />
+                    <img src={`${process.env.PUBLIC_URL}/img/star_deco3.png`} width={50} height={50} alt="" />
                 </p>
                 <p>GELATO. COFFEE. LATTE. TEA. BEVERAGE. DESSERT
-                    <img src={`${process.env.PUBLIC_URL}/img/star_deco1.png`} width={50} height={50} alt="" />
+                    <img src={`${process.env.PUBLIC_URL}/img/star_deco3.png`} width={50} height={50} alt="" />
                 </p>
             </div>
         </div>
@@ -153,9 +184,7 @@ return (
         </div>
 
         {/**    띠아모 브랜드 소개     */}
-        <div>
-
-        </div>
+        <BrandScroll />
 
         {/**    가맹점 안내 더보기     */}
         <div className='franchise-contact'>
@@ -164,9 +193,6 @@ return (
             </div>
             <div className='franchise-img-wrap-r'>
                 <img src={`${process.env.PUBLIC_URL}/img/franchiseForte_right.png`} width={400} alt="" />
-            </div>
-            <div className='back-img-wrap-m'>
-                <img src={`${process.env.PUBLIC_URL}/img/back-gelato.png`} width={1200} alt="" />
             </div>
             <div className='franchise-text'>
                 <h2>CONTACT</h2>
@@ -234,6 +260,5 @@ return (
             </div>
         </div>
         
-    </ScrollContainer>
     </div>
 );}

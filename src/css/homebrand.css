@@ -1,0 +1,209 @@
+/* scroll css */
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper .swiper-pagination-bullet {
+    display: none;
+}
+
+/* 내용 css */
+.brand-scroll {
+    border-top: 1px solid black;
+    width: 100%; height: 56vh;
+    background-color: white;
+    display: block;
+}
+/* section 1 */
+.section-one {
+    max-width: 1200px; height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+.section-one .brand-img1 {
+    width: 400px; height: 400px;
+    background-image: url("D:\리엑트_하슬린\프로젝트 웹페이지 리디자인\tiamo\public\img\brand\whyTiamoImg04.jpg");
+    background-position: center;
+    background-size: cover;
+    border-radius: 50% 0 0 0;
+    border: 1px solid black;
+}
+.section-one .brand-img2 {
+    width: 300px; height: 300px;
+    position: absolute;
+    left: 350px; bottom: 80px;
+    background-image: url("D:\리엑트_하슬린\프로젝트 웹페이지 리디자인\tiamo\public\img\brand\whyTiamoImg03.jpg");
+    background-position: center;
+    background-size: cover;
+    border: 1px solid black;
+    border-radius: 0 0 50% 0;
+}
+.section-one .brand-text {
+    max-width: 350px;
+    text-align: justify;
+}
+.section-one .brand-text h2 {
+    margin: -20px 0;
+}
+.section-one .brand-text h2:nth-child(2) {
+    padding-left: 130px;
+    margin-bottom: 20px;
+}
+
+/* section 2 */
+.section-two {
+    max-width: 1200px; height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+.section-two .brand-img1 {
+    width: 500px; height: 300px;
+    background-image: url("D:\리엑트_하슬린\프로젝트 웹페이지 리디자인\tiamo\public\img\brand\whyTiamoImg01.jpg");
+    border: 1px solid black;
+    background-position: center;
+    background-size: cover;
+}
+.section-two .brand-img2 {
+    width: 300px; height: 300px;
+    background-image: url("D:\리엑트_하슬린\프로젝트 웹페이지 리디자인\tiamo\public\img\brand\whyTiamoImg02.jpg");
+    background-position: center;
+    background-size: cover;
+    border-radius: 100%;
+    border: 1px solid black;
+}
+.section-two .brand-text {
+    width: 400px; height: 400px;
+    margin: auto; padding: 0 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    text-align: justify;
+}
+.section-two .brand-text h2 {
+    padding-top: 40px;
+}
+.section-two .brand-text h2,
+.section-two .brand-text p {
+    margin: auto;
+    width: 350px;
+}
+
+/* section 3 */
+.section-three {
+    max-width: 1200px; height: 100%;
+    margin: auto;
+}
+.section-three .brand-text {
+    padding: 10px;
+    margin: auto;
+}
+.section-three>div:nth-child(2) {
+    max-width: 1000px; margin: 20px auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.section-three .brand-imgs {
+    width: 100%;
+}
+.section-three .brand-imgs p {
+    margin: 20px auto;
+}
+.section-three .brand-imgs>div {
+    border: 1px solid black; border-right: none;
+}
+.section-three .brand-imgs>div:last-child {
+    border-right: 1px solid black;
+}
+.section-three .brand-img1 {
+    width: 100%; min-width: 250px;
+    height: 300px;
+    background-image: url("D:\리엑트_하슬린\프로젝트 웹페이지 리디자인\tiamo\public\img\brand\specialImg01.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.section-three .brand-img2 {
+    width: 100%; min-width: 250px;
+    height: 300px;
+    background-image: url("D:\리엑트_하슬린\프로젝트 웹페이지 리디자인\tiamo\public\img\brand\specialImg02.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.section-three .brand-img3 {
+    width: 100%; min-width: 250px;
+    height: 300px;
+    background-image: url("D:\리엑트_하슬린\프로젝트 웹페이지 리디자인\tiamo\public\img\brand\specialImg03.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.section-three .brand-img4 {
+    width: 100%; min-width: 250px;
+    height: 300px;
+    background-image: url("D:\리엑트_하슬린\프로젝트 웹페이지 리디자인\tiamo\public\img\brand\specialImg04.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+/* section 4 */
+.section-four {
+    max-width: 1200px; height: 100%;
+    margin: auto;
+}
+.section-four .brand-text {
+    width: 500px;
+    padding: 10px;
+    margin: auto;
+}
+.section-four>div:nth-child(2) {
+    max-width: 1000px; margin: 20px auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.section-four .brand-imgs {
+    width: 215px; height: 300px;
+}
+.section-four .brand-imgs p {
+    width: 150px;
+    margin: 20px auto;
+}
+.section-four .brand-img1 {
+    width: 212px;
+    height: 212px;
+    background-image: url("D:\리엑트_하슬린\프로젝트 웹페이지 리디자인\tiamo\public\img\brand\introBeginImg01.png");
+    background-size: cover;
+    border: 1px solid black;
+    border-radius: 100%;
+    display: flex;
+}
+.section-four .brand-img2 {
+    width: 212px; height: 212px;
+
+    background-image: url("D:\리엑트_하슬린\프로젝트 웹페이지 리디자인\tiamo\public\img\brand\introBeginImg02.png");
+    background-position: center;
+    background-size: cover;
+    border: 1px solid black;
+    border-radius: 100%;
+}
+.section-four .brand-img3 {
+    width: 212px; height: 212px;
+    background-image: url("D:\리엑트_하슬린\프로젝트 웹페이지 리디자인\tiamo\public\img\brand\introBeginImg03.png");
+    background-position: center;
+    background-size: cover;
+    border: 1px solid black;
+    border-radius: 100%;
+}
