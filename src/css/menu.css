@@ -1,7 +1,7 @@
 /* Menu css */
 .menu-page {
-    width: 100%;
-    margin: 0; margin: auto;
+    width: 100%; height: 100%;
+    margin-bottom: 10vh;
 }
 .menu-page-top {
     width: 100%;
@@ -11,11 +11,14 @@
     position: relative;
 }
 .menu-page-top div:nth-child(2) {
+    width: 100%; height: 30vh;
     position: absolute;
-    left: 34%;
-    top: 170px;
+    left: 0%; right: 0%;
+    top: 0%; bottom: 0%;
 }
-
+.menu-page-top div:nth-child(2) h2 {
+    margin-top: 11vh;
+}
 .menu-list-top { margin-top: 50px; padding: 0;}
 .menu-list-top li {
     display: inline-block;
@@ -26,8 +29,10 @@
     border: 1px solid black;
 }
 .menu-backimg {
-    width: 100%; height: 600px;
+    box-sizing: border-box;
+    width: 100%; height: 30vh;
     position: relative;
+    border-bottom: 1px solid black;
     overflow: hidden;
 }
 .menu-backimg>img {
@@ -36,10 +41,33 @@
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: -100;
+    z-index: -50;
 }  
 
 /* MenuContent css */
+.new-menu h2,
+.best-menu h2 {
+    margin: 2vh auto 4vh auto;
+}
+
+.best-new-menu {
+    width: 100%; height: 100%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+.new-list-content,
+.best-list-content {
+    position: relative;
+}
+.new-list-content div:first-child,
+.best-list-content div:first-child {
+    display: block;
+    position: absolute;
+    left: 30px;
+    top: 0;
+}
+
 .menu-content {
     width: 1200px;
     margin: 50px auto 100px auto;
@@ -60,7 +88,7 @@
 /* MenuDetailPage css */
 .menu-detail {
     margin-top: 30px;
-    background-color: white;
+    background-color: rgb(255, 210, 210);
     border-radius: 40px;
     padding: 20px;
     width: 1200px;
@@ -68,17 +96,18 @@
 }
 .menulist-ul {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 70px;
-
+    grid-template-columns: repeat(4, 1fr);
 }
 .menulist-li {
     margin: auto;  margin-bottom: 80px;
     width: 300px; height: 350px;
+    display: flex;
+    flex-direction: column;
 }
 .menulist-li .menu-li-img {
     border: 1px solid black;
     border-radius: 50%;
+    cursor: pointer;
 }
 .menu-explain {
     margin: auto;
@@ -107,7 +136,10 @@
     left: 30px;
     top: 0;
 }
-.new-off, .best-off {
+.off {
     display: none;
+}
+.on {
+    display: block;
 }
 

@@ -1,21 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import '../css/headerLink.css'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function HeaderLink() {
     
-/** header 스크롤 시 menu바만 보이게 하기 */
-const [scrollPosition, setScrollPosition] = useState(0);
-const updateScroll = () => {
-    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
-}
-useEffect(()=>{
-    window.addEventListener('scroll',updateScroll);
-});
+    /** header 스크롤 시 menu바만 보이게 하기 */
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const updateScroll = () => {
+        setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+    }
+    useEffect(()=>{
+        window.addEventListener('scroll',updateScroll);
+    });
 
 return (
     <div className='header-link'>
@@ -28,12 +25,13 @@ return (
                 <a href="">CUSTORMER SERVICE</a>
             </div>
         </div>
-            <div className={ scrollPosition>100 ? 'off' : 'nav-logo' }>
-                <Link to='/'>
-                    <img src="/img/logo_new.png" alt="logo" />
-                </Link>
-            </div>
-        {/** scroll OFF header */}
+        {/** home logo */}
+        <div className={ scrollPosition>100 ? 'off' : 'nav-logo' }>
+            <Link to='/'>
+                <img src="/img/logo_new.png" alt="logo" />
+            </Link>
+        </div>
+        {/** scroll OFF nav header */}
         <div className={ scrollPosition>100 ? 'off' : 'nav-wrap' }>
             <div className={ scrollPosition>100 ? 'off' : 'nav-bar' }>
                 <div className='nav-menu'>
@@ -45,14 +43,14 @@ return (
                     </ul>
                 </div>
                 <div className='nav-menu'>
-                    <Link to='/menu'> Menu </Link>
+                    <Link to='/menu/bestnew'> Menu </Link>
                     <ul className='dropDownList'>
-                        <li><Link to='/menu/GELATO'>젤라또</Link></li>
-                        <li><Link to='/menu/COFFEE'>커피</Link></li>
-                        <li><Link to='/menu/LATTE|TEA'>라떼/티</Link></li>
-                        <li><Link to='/menu/BEVERAGE'>음료</Link></li>
-                        <li><Link to='/menu/DESSERT'>디저트</Link></li>
-                        <li><Link to='/menu/MD'>MD</Link></li>
+                        <li><Link to='/menu/GELATO/all'>젤라또</Link></li>
+                        <li><Link to='/menu/COFFEE/all'>커피</Link></li>
+                        <li><Link to='/menu/TEA/all'>티</Link></li>
+                        <li><Link to='/menu/BEVERAGE/all'>음료</Link></li>
+                        <li><Link to='/menu/DESSERT/all'>디저트</Link></li>
+                        <li><Link to='/menu/MD/all'>MD</Link></li>
                     </ul>
                 </div>
                 <div className='nav-menu'>
@@ -92,43 +90,43 @@ return (
                     <div className='nav-menu_s'>
                             <Link to='/about'> About </Link>
                             <ul className='dropDownList_s'>
-                                <li><Link to='/'>카페띠아모</Link></li>
-                                <li><Link to='/'>브랜드컨셉</Link></li>
-                                <li><Link to='/'>띠아모 젤라또</Link></li>
+                                <li><Link to='/about'>카페띠아모</Link></li>
+                                <li><Link to='/about'>브랜드컨셉</Link></li>
+                                <li><Link to='/about'>띠아모 젤라또</Link></li>
                             </ul>
                         </div>
                         <div className='nav-menu_s'>
-                            <Link to='/menu'> Menu </Link>
+                            <Link to='/menu/bestnew'> Menu </Link>
                             <ul className='dropDownList_s'>
-                                <li><Link to='/'>젤라또</Link></li>
-                                <li><Link to='/'>커피</Link></li>
-                                <li><Link to='/'>라떼/티</Link></li>
-                                <li><Link to='/'>음료</Link></li>
-                                <li><Link to='/'>디저트</Link></li>
-                                <li><Link to='/'>MD</Link></li>
+                                <li><Link to='/menu/GELATO/all'>젤라또</Link></li>
+                                <li><Link to='/menu/COFFEE/all'>커피</Link></li>
+                                <li><Link to='/menu/TEA/all'>티</Link></li>
+                                <li><Link to='/menu/BEVERAGE/all'>음료</Link></li>
+                                <li><Link to='/menu/DESSERT/all'>디저트</Link></li>
+                                <li><Link to='/menu/MD/all'>MD</Link></li>
                             </ul>
                         </div>
                         <div className='nav-menu_s'>
                             <Link to='/shop'> Shop </Link>
                             <ul className='dropDownList_s'>
-                                <li><Link to='/'>매장 찾기</Link></li>
+                                <li><Link to='/shop'>매장 찾기</Link></li>
                             </ul>
                         </div>
                         <div className='nav-menu_s'>
                             <Link to='/franchise'> Franchise </Link>
                             <ul className='dropDownList_s'>
-                                <li><Link to='/'>띠아모만의 경쟁력</Link></li>
-                                <li><Link to='/'>가맹 절차</Link></li>
-                                <li><Link to='/'>가맹 상담</Link></li>
+                                <li><Link to='/franchise'>띠아모만의 경쟁력</Link></li>
+                                <li><Link to='/franchise'>가맹 절차</Link></li>
+                                <li><Link to='/franchise'>가맹 상담</Link></li>
                             </ul>
                         </div>
                         <div className='nav-menu_s'>  
                             <Link to='/community'> Community </Link>
                             <ul className='dropDownList_s'>
-                                <li><Link to='/'>공지사항</Link></li>
-                                <li><Link to='/'>이벤트</Link></li>
-                                <li><Link to='/'>뉴스</Link></li>
-                                <li><Link to='/'>고객센터</Link></li>
+                                <li><Link to='/community'>공지사항</Link></li>
+                                <li><Link to='/community'>이벤트</Link></li>
+                                <li><Link to='/community'>뉴스</Link></li>
+                                <li><Link to='/community'>고객센터</Link></li>
                             </ul>
                         </div>
 

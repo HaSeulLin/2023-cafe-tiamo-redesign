@@ -100,7 +100,8 @@ a {
     color: rgb(24, 168, 181);
     font-size: 1rem;
 }
-.header-link .nav-bar a:hover {
+.header-link .nav-bar a:hover,
+.header-link .nav-bar a:active {
     color: rgb(194, 238, 233);
     background-color: rgb(240, 113, 102, 0.7);
     border: 1px solid black;

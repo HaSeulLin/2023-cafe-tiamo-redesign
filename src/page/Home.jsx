@@ -45,57 +45,32 @@ const bannerToggle = () => {
 return (
     <div className='home'>
         {/**    메인 배너 (1 scroll)     */}
-        <div className='main-back' style={{backgroundColor:`${backColor}`, transition:"all 0.3s"}}>
-            <div className='back-img-wrap'>
-                <img src={`${process.env.PUBLIC_URL}/img/back-gelato-inverse.png`} alt="" />
-            </div>
-            <div className='main-banner-img-wrap'>
-                <img src={`${process.env.PUBLIC_URL}/img/${bannerImg}`} alt="오늘의 젤라또 딸기" />
+        <div className='main-banner'>
+            <div className='main-back' style={{backgroundColor:`${backColor}`, transition:"all 0.3s"}}>
+                <div className='main-banner-text'>
+                    <div className='text-title-l'>
+                        <h2>CAFE TIAMO</h2>
+                        <img src={`${process.env.PUBLIC_URL}/img/star_deco4.png`} 
+                            width={50} height={50}
+                            alt="" />
+                    </div>
+                    <div className='text-title-r'>
+                        <h2>Today's Gelato</h2>
+                        <h2 className='title-2'>Today's Gelato</h2>
+                        <h2 className='title-3'>Today's Gelato</h2>
+                        <h3>{gelatoFlavor}</h3>
+                        <h3 className='title-4'>{gelatoFlavor}</h3>
+                    </div>
+                </div>
+                <div className='main-banner-img-wrap'>
+                    <img src={`${process.env.PUBLIC_URL}/img/${bannerImg}`} alt="오늘의 젤라또 딸기" />
+                </div>
                 <div className='main-banner-text-pop'
                     onClick={()=>{bannerToggle()}}
                 >
                     <img src={`${process.env.PUBLIC_URL}/img/${bannerPop}`} alt="카페 띠아모" width={200} height={200}/>
                     <p>More Flavor</p>
                 </div>
-                <ScrollContainer>
-                    <ScrollPage className='scroll-banner-text'>
-                        <Animator animation={batch(Fade(), Sticky(5, 20), MoveOut(0, -200))}>
-                            <div className='main-banner'>
-                                <div className='main-banner-text'>
-                                    <div className='text-bookmark-wrap-l'>
-                                        <div className='text-title-l'>
-                                            <h2>CAFETIAMO</h2>
-                                            <img src={`${process.env.PUBLIC_URL}/img/star_deco4.png`} 
-                                            width={50} height={50}
-                                            alt="" />
-                                            <div className='text-title-m'>
-                                                <h3>Coffee&Gelato</h3>
-                                                <h3 className='title-2'>Coffee&Gelato</h3>
-                                            </div>
-                                        </div>
-                                        <div className='star-deco'>
-                                            <img src={`${process.env.PUBLIC_URL}/img/star_deco2.png`} 
-                                            width={100} height={100}
-                                            alt="" />
-                                            <img src={`${process.env.PUBLIC_URL}/img/star_deco2.png`} 
-                                            width={80} height={80}
-                                            alt="" />                                                                                    
-                                        </div>
-                                    </div>
-                                    <div className='text-bookmark-wrap-r'>
-                                        <div className='text-title-r'>
-                                            <h2>Today's Gelato</h2>
-                                            <h2 className='title-2'>Today's Gelato</h2>
-                                            <h2 className='title-3'>Today's Gelato</h2>
-                                            <h3>{gelatoFlavor}</h3>
-                                            <h3 className='title-4'>{gelatoFlavor}</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </Animator>
-                    </ScrollPage>
-                </ScrollContainer>
             </div>
         </div>
 

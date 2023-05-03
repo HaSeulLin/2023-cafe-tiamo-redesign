@@ -17,6 +17,7 @@ export default function MenuContent() {
     const {menuDetaillist} = state;
     // 전체 메뉴 (상위)
     const MenuData = menuDetaillist.filter((d)=>(d.category==sub));
+    const allMenuData = menuDetaillist.filter((d)=>(d.menus==menus));
 
     // 상세 페이지 모달창, 상태
     const [showModal, setShowModal] = useState(false);
@@ -28,60 +29,122 @@ export default function MenuContent() {
     }
     console.log(modalName);
     
-    return (
-    <div className='menu-detail'>
-        {
-            <ul className='menulist-ul'>
+    if (sub=="all") {
+        return (
+            <div className='menu-detail'>
+                {
+                    <ul className='menulist-ul'>
+                    {
+                        allMenuData.map((menu)=>
+                            <li key={menu.id}
+                                className='menulist-li'
+                            >
+                                <div className='list-content'>
+                                    <div
+                                        // NEW label
+                                        style={
+                                                menu.itemState==="new" ?
+                                                    {backgroundImage:`url("${process.env.PUBLIC_URL}/img/newLabel.png")`,
+                                                    width:"65px", height:"65px", backgroundRepeat:"no-repeat", backgroundPosition:"center"
+                                                    }
+                                                    : {display:"none"}
+                                        }
+                                    >
+                                    </div>
+                                    <div
+                                        // BEST label
+                                        style={
+                                                menu.itemState==="best" ?
+                                                    {backgroundImage:`url("${process.env.PUBLIC_URL}/img/bestLabel.png")`,
+                                                    width:"65px", height:"65px", backgroundRepeat:"no-repeat", backgroundPosition:"center"
+                                                    }
+                                                    : {display:"none"}
+                                        }
+                                    >
+                                    </div>
+                                    <div className='modal-open-img'
+                                        onClick={()=>{openModal(menu.name)}}
+                                    >
+                                        <img src={menu.image} alt="" width={220}
+                                            className='menu-li-img'
+                                        />
+                                    </div>
+                                </div>
+                                <div className='menu-explain'>
+                                    <h4>{menu.name}</h4>
+                                    <p>{menu.content}</p>
+                                </div>
+                            </li>
+                        )
+                    }
+                    </ul>
+                }
+                {/** Modal 창 공간 */}
+                <ItemModal
+                    open={showModal}
+                    onClose={()=>{setShowModal(false)}}
+                    name={modalName}
+                />
+            </div>
+            );
+    }
+    else {
+        return (
+        <div className='menu-detail'>
             {
-                MenuData.map((menu)=>
-                    <li key={menu.id}
-                        className='menulist-li'
-                    >
-                        <div className='list-content'>
-                            <div
-                                // NEW label
-                                style={
+                <ul className='menulist-ul'>
+                {
+                    MenuData.map((menu)=>
+                        <li key={menu.id}
+                            className='menulist-li'
+                        >
+                            <div className='list-content'>
+                                <div
+                                    // NEW label
+                                    style={
                                             menu.itemState==="new" ?
                                                 {backgroundImage:`url("${process.env.PUBLIC_URL}/img/newLabel.png")`,
-                                                    width:"65px", height:"65px", backgroundRepeat:"no-repeat", backgroundPosition:"center"
+                                                width:"65px", height:"65px", backgroundRepeat:"no-repeat", backgroundPosition:"center"
                                                 }
                                                 : {display:"none"}
-                                }
-                            >
-                            </div>
-                            <div
-                                // BEST label
-                                style={
+                                    }
+                                >
+                                </div>
+                                <div
+                                    // BEST label
+                                    style={
                                             menu.itemState==="best" ?
                                                 {backgroundImage:`url("${process.env.PUBLIC_URL}/img/bestLabel.png")`,
                                                 width:"65px", height:"65px", backgroundRepeat:"no-repeat", backgroundPosition:"center"
                                                 }
                                                 : {display:"none"}
-                                }
-                            >
+                                    }
+                                >
+                                </div>
+                                <div className='modal-open-img'
+                                    onClick={()=>{openModal(menu.name)}}
+                                >
+                                    <img src={menu.image} alt="" width={220}
+                                        className='menu-li-img'
+                                    />
+                                </div>
                             </div>
-                            <div className='modal-open-img'
-                                onClick={()=>{openModal(menu.name)}}
-                            >
-                                <img src={menu.image} alt="" width={220}
-                                    className='menu-li-img'
-                                />
+                            <div className='menu-explain'>
+                                <h4>{menu.name}</h4>
+                                <p>{menu.content}</p>
                             </div>
-                        </div>
-                        <div className='menu-explain'>
-                            <h4>{menu.name}</h4>
-                            <p>{menu.content}</p>
-                        </div>
-                    </li>
-                )
+                        </li>
+                    )
+                }
+                </ul>
             }
-            </ul>
-        }
-        {/** Modal 창 공간 */}
-        <ItemModal
-            open={showModal}
-            onClose={()=>{setShowModal(false)}}
-            name={modalName}
-        />
-    </div>
-);}
+            {/** Modal 창 공간 */}
+            <ItemModal
+                open={showModal}
+                onClose={()=>{setShowModal(false)}}
+                name={modalName}
+            />
+        </div>
+        );
+    }
+}
