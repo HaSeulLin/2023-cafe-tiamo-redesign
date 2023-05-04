@@ -14,7 +14,7 @@ export default function App() {
         {            
         menuListArray.map((menu)=>(
               <div key={menu.id} className='menu-box'>
-                  <Link to='/menu' >
+                  <Link to={`/menu/${menu.name}/all`} >
                       <div className="menu-image">
                         <img src={menu.image} alt="" />
                         <div className="explain-over">

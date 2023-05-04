@@ -1,7 +1,13 @@
-import React, { useContext, useState } from 'react'
+import React, { useRef, useContext, useState } from 'react'
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from "swiper/react";
 
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 import '../css/menu.css'
+
+import { Pagination, Navigation, Autoplay } from "swiper";
 
 import DataContext from '../context/DataContext';
 import { Outlet, useParams } from 'react-router-dom';
@@ -45,10 +51,23 @@ export default function MenuContent() {
                 <div className='new-menu menu-detail'>
                     <h2>NEW PRODUCT</h2>
                     {
-                        <ul className='menulist-ul'>
+                        <ul className='new-menulist-ul'>
+                            <Swiper
+                                pagination={{
+                                type: "progressbar",
+                                }}
+                                navigation={true}
+                                modules={[Autoplay, Pagination, Navigation]}
+                                slidesPerView={4}
+                                autoplay={{
+                                    delay: 2000,
+                                    disableOnInteraction: false,
+                                }}
+                                className="mySwiper"
+                            >
                         {
                             newMenuData.map((menu)=>
-                                <li key={menu.id}
+                                <SwiperSlide key={menu.id}
                                     className='menulist-li'
                                 >
                                     <div className='new-list-content'>
@@ -74,49 +93,62 @@ export default function MenuContent() {
                                     </div>
                                     <div className='menu-explain'>
                                         <h4>{menu.name}</h4>
-                                        <p>{menu.content}</p>
                                     </div>
-                                </li>
+                                </SwiperSlide>
                             )
                         }
+                            </Swiper>
                         </ul>
                     }
                 </div>
                 <div className='best-menu menu-detail'>
                     <h2>BEST PRODUCT</h2>
                     {
-                        <ul className='menulist-ul'>
-                            {
-                                bestMenuData.map((menu)=>
-                                    <li key={menu.id}
-                                        className='menulist-li'
-                                    >
-                                        <div className='best-list-content'>
-                                            <div
-                                                // BEST label
-                                                style={
-                                                    menu.itemState==="best" ?
-                                                        {backgroundImage:`url("${process.env.PUBLIC_URL}/img/bestLabel.png")`,
-                                                        width:"65px", height:"65px", backgroundRepeat:"no-repeat", backgroundPosition:"center"
-                                                        }
-                                                        : {display:"none"}
-                                                }
-                                            ></div>
-                                            <div className='modal-open-img'
-                                                onClick={()=>{openModal(menu.name)}}
-                                            >
-                                                <img src={menu.image} alt="" width={220}
-                                                    className='menu-li-img'
-                                                />
+                        <ul className='best-menulist-ul'>
+                            <Swiper
+                                pagination={{
+                                type: "progressbar",
+                                }}
+                                navigation={true}
+                                modules={[Autoplay, Pagination, Navigation]}
+                                slidesPerView={4}
+                                autoplay={{
+                                    delay: 2500,
+                                    disableOnInteraction: false,
+                                }}
+                                className="mySwiper"
+                            >
+                                {
+                                    bestMenuData.map((menu)=>
+                                        <SwiperSlide key={menu.id}
+                                            className='menulist-li'
+                                        >
+                                            <div className='best-list-content'>
+                                                <div
+                                                    // BEST label
+                                                    style={
+                                                        menu.itemState==="best" ?
+                                                            {backgroundImage:`url("${process.env.PUBLIC_URL}/img/bestLabel.png")`,
+                                                            width:"65px", height:"65px", backgroundRepeat:"no-repeat", backgroundPosition:"center"
+                                                            }
+                                                            : {display:"none"}
+                                                    }
+                                                ></div>
+                                                <div className='modal-open-img'
+                                                    onClick={()=>{openModal(menu.name)}}
+                                                >
+                                                    <img src={menu.image} alt="" width={220}
+                                                        className='menu-li-img'
+                                                    />
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div className='menu-explain'>
-                                            <h4>{menu.name}</h4>
-                                            <p>{menu.content}</p>
-                                        </div>
-                                    </li>
-                                )
-                            }
+                                            <div className='menu-explain'>
+                                                <h4>{menu.name}</h4>
+                                            </div>
+                                        </SwiperSlide>
+                                    )
+                                }
+                            </Swiper>
                         </ul>
                     }
                 </div>

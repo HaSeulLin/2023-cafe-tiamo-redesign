@@ -32,7 +32,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=Cinzel&family=Libre+Barcode+39+Text&family=Londrina+Shadow&display=swap');
 /* main-banner pattern :
 출처 <a href="https://kr.freepik.com/free-vector/flat-argyle-pattern_20912397.htm#query=patterns&position=41&from_view=search&track=sph">Freepik</a>*/
-
+@font-face {
+    font-family: 'Cafe24Ohsquare';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Cafe24Ohsquare.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* HOME 전체 */
 .home {
@@ -65,7 +70,7 @@ h3 {
     width: 90vw; height: 90vw;
     margin: auto;
     position: absolute;
-    left: -10%; right: 10%; top: -2vh;
+    left: -8%; right: 10%; top: -2vh;
 }
 .main-banner-img-wrap>img {
     width: 100%; height: auto;
@@ -78,7 +83,6 @@ h3 {
     position: absolute;
     right: 24vw;
     bottom: 17vh;
-    animation: rotatepop 5s ease-in-out infinite;
 	animation: topbottom 3s ease-in-out infinite;
     transition: all 0.25s;
 }
@@ -114,17 +118,6 @@ h3 {
     opacity: 1;
     transition: all 0.25s;
 }
-@keyframes rotatepop {
-	0% {
-		transform: rotate(0);
-	}
-    50% {
-		transform: rotate(360deg);
-    }
-	100% {
-		transform: rotate(360deg);
-    }
-}
 
 /* 메인 배너 텍스트 main-banner-text */
 .main-banner-text h2,
@@ -142,14 +135,16 @@ h3 {
     text-align: left;
     width: 1200px; min-height: 500px;
     position: relative;
-    margin: 5vh 0 0 10vw;
+    margin: 8vh 0 0 10vw;
     z-index: 2;
 }
 .main-banner-text .text-title-l h2 {
     color: transparent;
-    font-size: 11vw;
-    -webkit-text-stroke-width: 0.3px;
-    -webkit-text-stroke-color: #fff; 
+    font-family: 'Cafe24Ohsquare';
+    font-size: 13vw;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #fff;
+    line-height: 13vw;
 }
 .main-banner-text .text-title-l img {
     position: absolute;

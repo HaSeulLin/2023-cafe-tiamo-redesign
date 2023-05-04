@@ -3,228 +3,509 @@
         "_comment" : "//////// 젤라또 id 1~30 /////////",
         "id" : 1,
         "name" : "꿀자몽",
+        "ename" : "HONEY GRAPEFRUIT",
         "content" : "상큼한 자몽베이스에 달콤한 자몽청을 더한 청량함 가득한 젤라또",
         "price" : "3,900원",
         "image" : "/img/gelato/꿀자몽.jpg",
         "menus" : "GELATO",
         "category" : "과일",
-        "itemState" : "new"
+        "itemState" : "new",
+        "component" : {
+            "kacl" : "143.3", "suga" : "27.7", "prot" : "1.3", "fat" : "1.8",  "na" : "22.9"
+        },
+        "allergy" : "우유"
     },
     {
         "id" : 2,
         "name" : "허니레몬",
+        "ename" : "HONEY LEMON",
         "content" : "상큼한 레몬셔벗에 레몬청을 넣어 상큼함과 달콤함을 동시에 느낄 수 있는 젤라또",
         "price" : "3,800원",
         "image" : "/img/gelato/레몬.jpg",
         "menus" : "GELATO",
         "category" : "과일",
-        "itemState" : "new"
+        "itemState" : "new",
+        "component" : {
+            "kacl" : "129.3", "suga" : "26.3", "prot" : "1.6", "fat" : "1.0",  "na" : "31.5"
+        },
+        "allergy" : "우유"
     },
     {
         "id" : 3,
-        "name" : "레드포레스트",
-        "content" : "상큼한 딸기, 부드러운 우유 그리고 바삭한 초코칩을 동시에 즐길 수 있는 젤라또",
+        "name" : "복숭아",
+        "ename" : "PEACH",
+        "content" : "달콤한 황도에 우유의 고소함 그리고 시원함까지 있는 젤라또",
         "price" : "3,800원",
-        "image" : "/img/gelato/레드포레스트.jpg",
+        "image" : "/img/gelato/복숭아.jpg",
         "menus" : "GELATO",
         "category" : "과일",
-        "itemState" : ""
+        "itemState" : "",
+        "component" : {
+            "kacl" : "143.3", "suga" : "27.7", "prot" : "1.3", "fat" : "1.8",  "na" : "22.9"
+        },
+        "allergy" : "우유, 복숭아"
     },
     {
         "id" : 4,
-        "name" : "망고",
-        "content" : "새콤달콤레몬허니",
+        "name" : "블루베리 솔베",
+        "ename" : "BLUEBERRY SORBET",
+        "content" : "안토시아닌을 다량 함유하고 있는 세계 10대 건강식품인 블루베리를 그대로 갈아 넣은 젤라또",
+        "price" : "3,800원",
+        "image" : "/img/gelato/블루베리.jpg",
+        "menus" : "GELATO",
+        "category" : "과일",
+        "itemState" : "",
+        "component" : {
+            "kacl" : "117.6", "suga" : "21.8", "prot" : "0.3", "fat" : "0.1",  "na" : "1.1"
+        },
+        "allergy" : ""
+    },
+    {
+        "id" : 5,
+        "name" : "망고 솔베",
+        "ename" : "MANGO SORBET",
+        "content" : "망고 그 느낌 그대로! 망고 러버들의 마음을 사로 잡은 젤라또",
         "price" : "3,800원",
         "image" : "/img/gelato/망고.jpg",
         "menus" : "GELATO",
         "category" : "과일",
-        "itemState" : "new"
-    },
-    {
-        "id" : 5,
-        "name" : "블루베리",
-        "content" : "새콤달콤레몬허니",
-        "price" : "3,800원",
-        "image" : "/img/gelato/블루베리.jpg",
-        "menus" : "GELATO",
-        "category" : "과일",
-        "itemState" : ""
+        "itemState" : "",
+        "component" : {
+            "kacl" : "120.7", "suga" : "27.8", "prot" : "0.4", "fat" : "0.4",  "na" : "1.2"
+        },
+        "allergy" : ""
     },
     {
         "id" : 6,
-        "name" : "망고라떼",
-        "content" : "새콤달콤레몬허니",
-        "price" : "3,800원",
-        "image" : "/img/gelato/블루베리.jpg",
-        "menus" : "GELATO",
-        "category" : "우유",
-        "itemState" : "new"
-    },
-    {
-        "id" : 7,
-        "name" : "딸기",
-        "content" : "새콤달콤레몬허니",
+        "name" : "딸기 솔베",
+        "ename" : "STRAWBERRY SORBET",
+        "content" : "잘익은 딸기의 새콤달콤한 맛을 그대로 느낄 수 있는 젤라또",
         "price" : "3,800원",
         "image" : "/img/gelato/딸기.jpg",
         "menus" : "GELATO",
         "category" : "과일",
-        "itemState" : ""
+        "itemState" : "best",
+        "component" : {
+            "kacl" : "103.0", "suga" : "24.6", "prot" : "0.5", "fat" : "0.1",  "na" : "1.0"
+        },
+        "allergy" : ""
     },
     {
-        "id" : 8,
-        "name" : "블루베리라떼",
-        "content" : "새콤달콤레몬허니",
+        "id" : 7,
+        "name" : "블루베리 라떼",
+        "ename" : "BLUEBERRY LATTE",
+        "content" : "블루베리에 우유의 부드러움을 더한 젤라또",
         "price" : "3,800원",
         "image" : "/img/gelato/블루베리라떼.jpg",
         "menus" : "GELATO",
-        "category" : "우유",
-        "itemState" : ""
+        "category" : "과일",
+        "itemState" : "",
+        "component" : {
+            "kacl" : "123.4", "suga" : "24.8", "prot" : "1.5", "fat" : "0.9",  "na" : "24.7"
+        },
+        "allergy" : "우유"
+    },
+    {
+        "id" : 8,
+        "name" : "딸기 라떼",
+        "ename" : "STRAWBERRY LATTE",
+        "content" : "블루베리에 우유의 부드러움을 더한 젤라또",
+        "price" : "3,800원",
+        "image" : "/img/gelato/딸기라떼.jpg",
+        "menus" : "GELATO",
+        "category" : "과일",
+        "itemState" : "best",
+        "component" : {
+            "kacl" : "120.8", "suga" : "25.2", "prot" : "1.6", "fat" : "0.9",  "na" : "24.4"
+        },
+        "allergy" : "우유"
     },
     {
         "id" : 9,
-        "name" : "복숭아",
-        "content" : "dd",
+        "name" : "바나나 품은 헤이즐넛 초코렛",
+        "ename" : "HAZELNUT CHOCOLATE HOLDING BANANA",
+        "content" : "헤이즐넛 초코렛 젤라또에 달콤한 바나나 리플잼이 더해진 젤라또",
         "price" : "3,800원",
-        "image" : "/img/gelato/블루베리.jpg",
+        "image" : "/img/gelato/바나나헤이즐넛초코.jpg",
         "menus" : "GELATO",
-        "category" : "과일",
-        "itemState" : "best"
+        "category" : "우유",
+        "itemState" : "new",
+        "component" : {
+            "kacl" : "193.3", "suga" : "24.7", "prot" : "4.0", "fat" : "3.9",  "na" : "78.8"
+        },
+        "allergy" : "우유, 대두"
     },
     {
         "id" : 10,
-        "name" : "다크초코렛",
-        "content" : "새콤달콤레몬허니",
+        "name" : "바나나 속 초코칩",
+        "ename" : "CHOCOCHIPS IN BANANA",
+        "content" : "향긋한 바나나 젤라또에 달콤바삭한 초코칩을 넣어 만든 젤라또",
         "price" : "3,800원",
-        "image" : "/img/gelato/다크초코렛.jpg",
+        "image" : "/img/gelato/바나나속초코칩.jpg",
         "menus" : "GELATO",
         "category" : "우유",
-        "itemState" : ""
+        "itemState" : "new",
+        "component" : {
+            "kacl" : "185.1", "suga" : "27.0", "prot" : "3.7", "fat" : "5.3",  "na" : "85.6"
+        },
+        "allergy" : "우유, 대두"
     },
     {
         "id" : 11,
-        "name" : "녹차",
-        "content" : "새콤달콤레몬허니",
+        "name" : "민트 초코",
+        "ename" : "MINT CHOCO",
+        "content" : "상큼한 민트 사이로 바삭한 이태리식 초코칩이 들어 있는 젤라또",
         "price" : "3,800원",
-        "image" : "/img/gelato/녹차.jpg",
+        "image" : "/img/gelato/민트초코.jpg",
         "menus" : "GELATO",
         "category" : "우유",
-        "itemState" : ""
+        "itemState" : "",
+        "component" : {
+            "kacl" : "181.2", "suga" : "26.1", "prot" : "3.3", "fat" : "5.1",  "na" : "78.6"
+        },
+        "allergy" : "우유, 대두"
     },
     {
         "id" : 12,
-        "name" : "리코타",
-        "content" : "새콤달콤레몬허니",
+        "name" : "바닐라 빈",
+        "ename" : "VANILLA BEAN",
+        "content" : "진짜 바닐라빈을 넣어 바닐라의 깊은 맛을 느낄 수 있는 젤라또",
         "price" : "3,800원",
-        "image" : "/img/gelato/리코타.jpg",
+        "image" : "/img/gelato/바닐라빈.jpg",
         "menus" : "GELATO",
         "category" : "우유",
-        "itemState" : ""
+        "itemState" : "",
+        "component" : {
+            "kacl" : "164.6", "suga" : "26.6", "prot" : "3.6", "fat" : "3.7",  "na" : "93.0"
+        },
+        "allergy" : "우유, 대두"
     },
     {
         "id" : 13,
         "name" : "마스카포네치즈",
-        "content" : "새콤달콤레몬허니",
+        "ename" : "MASCARPONE CHEESE",
+        "content" : "고소하면서도 부드러운 질감이 일품인 이태리 치즈 마스카포네를 느낄 수 있는 젤라또",
         "price" : "3,800원",
         "image" : "/img/gelato/마스카포네치즈.jpg",
         "menus" : "GELATO",
         "category" : "우유",
-        "itemState" : ""
+        "itemState" : "",
+        "component" : {
+            "kacl" : "178.9", "suga" : "23.7", "prot" : "4.4", "fat" : "5.7",  "na" : "100.7"
+        },
+        "allergy" : "우유, 계란, 대두"
     },
     {
         "id" : 14,
         "name" : "솜사탕",
-        "content" : "새콤달콤레몬허니",
+        "ename" : "COTTON CANDY",
+        "content" : "어릴적 향수를 불러일으키는 솜사탕에 민트의 상큼함이 뒷맛에 감도는 젤라또",
         "price" : "3,800원",
         "image" : "/img/gelato/솜사탕.jpg",
         "menus" : "GELATO",
         "category" : "우유",
-        "itemState" : ""
+        "itemState" : "",
+        "component" : {
+            "kacl" : "119.1", "suga" : "23.2", "prot" : "1.3", "fat" : "1.1",  "na" : "50.5"
+        },
+        "allergy" : "우유"
     },
     {
         "id" : 15,
+        "name" : "그린티",
+        "ename" : "GREEN TEA",
+        "content" : "이른봄 차광막을 씌워 녹색이 짙고 아미노산 함량이 높아 감칠맛이 뛰어난 국산 차광재배녹차가루로 만든 젤라또",
+        "price" : "3,800원",
+        "image" : "/img/gelato/녹차.jpg",
+        "menus" : "GELATO",
+        "category" : "우유",
+        "itemState" : "",
+        "component" : {
+            "kacl" : "160.6", "suga" : "23.7", "prot" : "4.0", "fat" : "3.9",  "na" : "85.2"
+        },
+        "allergy" : "우유, 대두"
+    },
+    {
+        "id" : 16,
         "name" : "요거트",
-        "content" : "새콤달콤레몬허니",
+        "ename" : "YOGURT",
+        "content" : "상큼한 요거트의 맛을 표현한 젤라또",
         "price" : "3,800원",
         "image" : "/img/gelato/요거트.jpg",
         "menus" : "GELATO",
         "category" : "요거트",
-        "itemState" : ""
+        "itemState" : "",
+        "component" : {
+            "kacl" : "150.1", "suga" : "5.0", "prot" : "2.6", "fat" : "1.4",  "na" : "43.5"
+        },
+        "allergy" : "우유"
     },
     {
-        "id" : 16,
-        "name" : "크리미요거트",
-        "content" : "새콤달콤레몬허니",
+        "id" : 17,
+        "name" : "크리미 요거트",
+        "ename" : "CREAMY YOGURT",
+        "content" : "기존의 상큼한 요거트보다 부드러우면서도 크리미한 맛이 강한 요거트 젤라또",
         "price" : "3,800원",
         "image" : "/img/gelato/크리미요거트.jpg",
         "menus" : "GELATO",
         "category" : "요거트",
-        "itemState" : ""
+        "itemState" : "",
+        "component" : {
+            "kacl" : "171.9", "suga" : "24.5", "prot" : "3.2", "fat" : "5.1",  "na" : "71.9"
+        },
+        "allergy" : "우유, 대두"
     },
     {
-        "id" : 17,
-        "name" : "딸기요거트",
+        "id" : 18,
+        "name" : "딸기 요거트",
         "content" : "새콤달콤레몬허니",
         "price" : "3,800원",
         "image" : "/img/gelato/딸기요거트.jpg",
         "menus" : "GELATO",
         "category" : "요거트",
-        "itemState" : ""
+        "itemState" : "best"
     },
-
+    {
+        "id" : 19,
+        "name" : "쿠키 앤 크림",
+        "ename" : "COOKIE & CREAM",
+        "content" : "진한 리얼 밀크 젤라또에 오레오 쿠기가 듬뿍 들어간 젤라또",
+        "price" : "3,800원",
+        "image" : "/img/gelato/쿠키앤크림.jpg",
+        "menus" : "GELATO",
+        "category" : "우유",
+        "itemState" : "best",
+        "component" : {
+            "kacl" : "167.6", "suga" : "23.9", "prot" : "3.6", "fat" : "4.2",  "na" : "109.1"
+        },
+        "allergy" : "우유, 밀, 대두"
+    },
+    {
+        "id" : 20,
+        "name" : "초코렛",
+        "ename" : "CHOCOLATE",
+        "content" : "진한 초코렛을 그대로 느낄 수 있는 젤라또",
+        "price" : "3,800원",
+        "image" : "/img/gelato/초코렛.jpg",
+        "menus" : "GELATO",
+        "category" : "요거트",
+        "itemState" : "best",
+        "component" : {
+            "kacl" : "193.3", "suga" : "22.6", "prot" : "4.3", "fat" : "5.2",  "na" : "79.1"
+        },
+        "allergy" : "우유, 대두"
+    },
+    {
+        "id" : 21,
+        "name" : "다크 초코렛",
+        "ename" : "DARK CHOCOLATE",
+        "content" : "약간 씁쓸하면서도 진한 카카오를 그대로 즐길 수 있는 다크 초코렛 젤라또",
+        "price" : "3,800원",
+        "image" : "/img/gelato/다크초코렛.jpg",
+        "menus" : "GELATO",
+        "category" : "우유",
+        "itemState" : "",
+        "component" : {
+            "kacl" : "168.1", "suga" : "25.7", "prot" : "3.7", "fat" : "2.9",  "na" : "185.2"
+        },
+        "allergy" : "우유"
+    },
+    {
+        "id" : 22,
+        "name" : "레드 포레스트",
+        "ename" : "RED FOREST",
+        "content" : "상큼한 딸기, 부드러운 우유 그리고 바삭한 초코칩을 동시에 즐길 수 있는 젤라또",
+        "price" : "3,800원",
+        "image" : "/img/gelato/레드포레스트.jpg",
+        "menus" : "GELATO",
+        "category" : "과일",
+        "itemState" : "",
+        "component" : {
+            "kacl" : "154.8", "suga" : "23.6", "prot" : "2.8", "fat" : "4.2",  "na" : "60.8"
+        },
+        "allergy" : "우유, 대두"
+    },
+    {
+        "id" : 23,
+        "name" : "솔티드 카초멜리아",
+        "ename" : "SALTED CACHOMELIA",
+        "content" : "짭쪼름한 카라멜과 달콤한 초코렛이 만나 단짠단짠의 궁합을 이루는 젤라또",
+        "price" : "3,800원",
+        "image" : "/img/gelato/솔티드카초.jpg",
+        "menus" : "GELATO",
+        "category" : "우유",
+        "itemState" : "",
+        "component" : {
+            "kacl" : "180.0", "suga" : "23.1", "prot" : "3.8", "fat" : "4.9",  "na" : "138.9"
+        },
+        "allergy" : "우유, 대두"
+    },
     {
         "_comment" : "////////커피 id 31~50 /////////",
         "id" : 31,
-        "name" : "커피",
-        "content" : "새콤달콤레몬허니",
+        "name" : "케냐 니에리",
+        "ename" : "KENYA NYERI",
+        "content" : "잘익은 열대과일의 풍미와 블루베리의 은은한 산미가 매력적인 커피입니다. 또한 꿀을 먹는 듯 한 농후한 단맛과 힘있는 바디 또한 느낄 수 있습니다.",
         "price" : "3,900원",
-        "image" : "/img/gelato/꿀자몽.jpg",
+        "image" : "/img/coffee/케냐니에리.jpg",
         "menus" : "COFFEE",
         "category" : "오리진",
-        "itemState" : "best"
+        "itemState" : "new",
+        "component" : {
+            "kacl" : "4", "suga" : "0", "prot" : "0.2", "fat" : "0",  "na" : "0", "cf" : "204"
+        },
+        "allergy" : ""
     },
     {
         "id" : 32,
-        "name" : "에스프레소",
-        "content" : "새콤달콤레몬허니",
-        "price" : "3,800원",
-        "image" : "/img/gelato/레몬.jpg",
+        "name" : "에티오피아 게라",
+        "ename" : "ETHOPIA GERA",
+        "content" : "은은하게 코끝을 맴도는 장미향과 잘익은 라임의 과즙을 먹는 듯 한 산뜻한 산미가 가득한 커피입니다. 후미에는 다크초콜릿의 깊고 풍부한 풍미가 느껴집니다.",
+        "price" : "3,900원",
+        "image" : "/img/coffee/에티오피아게라.jpg",
         "menus" : "COFFEE",
-        "category" : "콜드브루",
-        "itemState" : "best"
+        "category" : "오리진",
+        "itemState" : "best",
+        "component" : {
+            "kacl" : "4", "suga" : "0", "prot" : "0.2", "fat" : "0",  "na" : "0", "cf" : "204"
+        },
+        "allergy" : ""
     },
     {
         "id" : 33,
-        "name" : "라떼",
-        "content" : "새콤달콤레몬허니",
-        "price" : "3,800원",
-        "image" : "/img/gelato/레드포레스트.jpg",
+        "name" : "브라질 만티게이라 BSCA",
+        "ename" : "BRAZIL MANTIQUEIRA BSCA",
+        "content" : "볶은 아몬드와 헤이즐넛의 고소한 향미가 돋보이는 커피입니다. 중간 정도의 바디감과 부드러운 촉감이 입 안을감싸며, 솜사탕을 먹는 듯 한 진한 단맛이 함께 어우러져 조화롭게 느껴집니다.",
+        "price" : "3,900원",
+        "image" : "/img/coffee/브라질만티게이라.jpg",
         "menus" : "COFFEE",
         "category" : "오리진",
-        "itemState" : "best"
+        "itemState" : "",
+        "component" : {
+            "kacl" : "4", "suga" : "0", "prot" : "0.2", "fat" : "0",  "na" : "0", "cf" : "204"
+        },
+        "allergy" : ""
     },
     {
         "id" : 34,
-        "name" : "초2떼",
-        "content" : "새콤달콤레몬허니",
-        "price" : "3,800원",
-        "image" : "/img/gelato/망고.jpg",
+        "name" : "과테말라 누에보 오리엔테",
+        "ename" : "GUATEMALA NUEVO ORIENTE",
+        "content" : "호두, 피칸등의 고소한 향미와 더불어 청사과를 먹는 듯 한 산미가 은은하게 느껴집니다. 후미에는 농후한 캐러멜의 단맛이 길게 지속되며 기분좋은 여운을 남깁니다.",
+        "price" : "3,900원",
+        "image" : "/img/coffee/과테말라누에보.jpg",
         "menus" : "COFFEE",
-        "category" : "에스프레소",
-        "itemState" : ""
+        "category" : "오리진",
+        "itemState" : "",
+        "component" : {
+            "kacl" : "4", "suga" : "0", "prot" : "0.2", "fat" : "0",  "na" : "0", "cf" : "204"
+        },
+        "allergy" : ""
     },
     {
         "id" : 35,
-        "name" : "블루3베리",
-        "content" : "새콤달콤레몬허니",
-        "price" : "3,800원",
-        "image" : "/img/gelato/블루베리.jpg",
+        "name" : "더치 블랙 - 에티오피아 예가체프",
+        "ename" : "DUTCH BLACK - ETHIOPIA YIRGACHEFFE",
+        "content" : "향긋한 꽃내음과 부드러운 산미가 특징인 예가체프 원두를 더치방식으로 추출한 콜드브루 커피.",
+        "price" : "3,900원",
+        "image" : "/img/coffee/더치블랙.jpg",
         "menus" : "COFFEE",
         "category" : "콜드브루",
-        "itemState" : ""
+        "itemState" : "best",
+        "component" : {
+            "kacl" : "10.9", "suga" : "0.1", "prot" : "0.6", "fat" : "0.3",  "na" : "0.7", "cf" : "101.5"
+        },
+        "allergy" : ""
     },
-
-
-
+    {
+        "id" : 36,
+        "name" : "더치 오션",
+        "ename" : "DUTCH OCEAN",
+        "content" : "더치원액과 차가운 우유에 푸른바다의 이미지를 담은 파스텔톤 푸른빛의 달콤한 더치라떼 커피.",
+        "price" : "3,900원",
+        "image" : "/img/coffee/더치오션.jpg",
+        "menus" : "COFFEE",
+        "category" : "콜드브루",
+        "itemState" : "new",
+        "component" : {
+            "kacl" : "226.9", "suga" : "22.5", "prot" : "6.6", "fat" : "5.2",  "na" : "100.6", "cf" : "87"
+        },
+        "allergy" : "우유"
+    },
+    {
+        "id" : 37,
+        "name" : "더치 썬셋",
+        "ename" : "DUTCH SUNSET",
+        "content" : "더치원액과 차가운 우유에 일몰의 이미지를 담은 파스텔톤 붉은 빛의 더치라떼 커피.",
+        "price" : "3,900원",
+        "image" : "/img/coffee/더치썬셋.jpg",
+        "menus" : "COFFEE",
+        "category" : "콜드브루",
+        "itemState" : "best",
+        "component" : {
+            "kacl" : "224.5", "suga" : "22.5", "prot" : "6.6", "fat" : "5.2",  "na" : "100.6", "cf" : "87"
+        },
+        "allergy" : "우유"
+    },
+    {
+        "id" : 38,
+        "name" : "에스프레소 블랙 N2",
+        "ename" : "ESPRESSO BLACK N2",
+        "content" : "스폐셜티 원두가 블랜딩 된 TIAMO 에스프레소에 질소(N2)를 주입하여 맥주처럼 크리미한 텍스처와 풍미를 느낄 수 있는 에스프레소 질소커피.",
+        "price" : "3,900원",
+        "image" : "/img/coffee/에스프레소블랙.jpg",
+        "menus" : "COFFEE",
+        "category" : "에스프레소",
+        "itemState" : "best",
+        "component" : {
+            "kacl" : "10", "suga" : "0", "prot" : "0.6", "fat" : "0.2",  "na" : "3.3", "cf" : "204"
+        },
+        "allergy" : ""
+    },
+    {
+        "id" : 39,
+        "name" : "돌체 카푸치노",
+        "ename" : "DOLCE CAPPUCINO",
+        "content" : "스폐셜티 원두가 블랜딩 된 TIAMO 에스프레소에 달콤함과 고소함, 묵직한 바디까지 느낄 수 있는 카푸치노 질소커피.",
+        "price" : "3,900원",
+        "image" : "/img/coffee/돌체카푸치노.jpg",
+        "menus" : "COFFEE",
+        "category" : "콜드브루",
+        "itemState" : "",
+        "component" : {
+            "kacl" : "401", "suga" : "22", "prot" : "6", "fat" : "21",  "na" : "173", "cf" : "204"
+        },
+        "allergy" : "우유"
+    },
+    {
+        "id" : 40,
+        "name" : "에스프레소 콘파냐",
+        "ename" : "ESPRESSO CON PANNA",
+        "content" : "진한 에스프레소에 달콤한 휘핑크림을 함께 즐기는 커피",
+        "price" : "3,900원",
+        "image" : "/img/coffee/에스프레소콘파냐.jpg",
+        "menus" : "COFFEE",
+        "category" : "에스프레소",
+        "itemState" : "new",
+        "component" : {
+            "kacl" : "19.7", "suga" : "1.4", "prot" : "0.6", "fat" : "3.3",  "na" : "10.4", "cf" : "102"
+        },
+        "allergy" : "우유"
+    },
+    {
+        "id" : 41,
+        "name" : "카페 라떼",
+        "ename" : "CAFE LATTE",
+        "content" : "진한 에스프레소와 따뜻한 스팀밀크가 만나 부드러워진 커피",
+        "price" : "3,900원",
+        "image" : "/img/coffee/카페라떼.jpg",
+        "menus" : "COFFEE",
+        "category" : "라떼",
+        "itemState" : "best",
+        "component" : {
+            "kacl" : "150", "suga" : "10", "prot" : "6.6", "fat" : "5.2",  "na" : "103.3", "cf" : "204"
+        },
+        "allergy" : "우유"
+    },
 
 
     {

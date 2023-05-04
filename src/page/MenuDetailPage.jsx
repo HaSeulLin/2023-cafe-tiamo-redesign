@@ -1,5 +1,8 @@
 import React, { useContext, useState } from 'react'
+
 import '../css/menu.css'
+import "swiper/css";
+import "swiper/css/pagination";
 
 import DataContext from '../context/DataContext';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -71,8 +74,7 @@ export default function MenuContent() {
                                     </div>
                                 </div>
                                 <div className='menu-explain'>
-                                    <h4>{menu.name}</h4>
-                                    <p>{menu.content}</p>
+                                <h4>{menu.name}</h4>
                                 </div>
                             </li>
                         )
@@ -129,9 +131,8 @@ export default function MenuContent() {
                                     />
                                 </div>
                             </div>
-                            <div className='menu-explain'>
+                            <div className='menu-explain menu-name'>
                                 <h4>{menu.name}</h4>
-                                <p>{menu.content}</p>
                             </div>
                         </li>
                     )

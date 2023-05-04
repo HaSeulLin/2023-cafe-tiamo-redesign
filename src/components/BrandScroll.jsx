@@ -25,8 +25,8 @@ export default function BrandScroll() {
             >
                 <SwiperSlide>
                     <div className='section-one'>
-                        <div className='brand-img1'></div>
-                        <div className='brand-img2'></div>
+                        <div className='brand-img1 slide-img'></div>
+                        <div className='brand-img2 slide-img'></div>
                         <div className='brand-text'>
                             <h2>당신의</h2>
                             <h2>사랑방</h2>
@@ -43,14 +43,14 @@ export default function BrandScroll() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='section-two'>
-                        <div className='brand-img1'></div>
+                        <div className='brand-img1 slide-img'></div>
                         <div className='brand-text'>
                             <h2>젤라또라는 특별함</h2>
                             <p>
                                 카페 띠아모는 이탈리아에서 유래된 100년 전통의 아이스크림 ‘젤라또’를 카페에 접목해 특별함을 더합니다.
                             </p>
                         </div>
-                        <div className='brand-img2'></div>
+                        <div className='brand-img2 slide-img'></div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
@@ -60,19 +60,19 @@ export default function BrandScroll() {
                         </div>
                         <div className='brand-imgs'>
                             <div>
-                                <div className='brand-img1' />
+                                <div className='brand-img1 slide-img' />
                                 <p>Homemade</p>
                             </div>
                             <div>
-                                <div className='brand-img2' />
+                                <div className='brand-img2 slide-img' />
                                 <p>Health</p>
                             </div>
                             <div>
-                                <div className='brand-img3' />
+                                <div className='brand-img3 slide-img' />
                                 <p>Delicious</p>
                             </div>
                             <div>
-                                <div className='brand-img4' />
+                                <div className='brand-img4 slide-img' />
                                 <p>Fresh</p>
                             </div>
                         </div>
@@ -85,17 +85,17 @@ export default function BrandScroll() {
                         </div>
                         <div>
                             <div className='brand-imgs'>
-                                <div className='brand-img1'>
+                                <div className='brand-img1 slide-img'>
                                 </div>
                                 <p>최고의 품질을 추구하는 기업</p>
                             </div>
                             <div className='brand-imgs'>
-                                <div className='brand-img2'>
+                                <div className='brand-img2 slide-img'>
                                 </div>
                                 <p>최상의 서비스를 제공하려는 기업</p>
                             </div>
                             <div className='brand-imgs'>
-                                <div className='brand-img3'>
+                                <div className='brand-img3 slide-img'>
                                 </div>
                                 <p>고객만족을 우선으로 하는 기업</p>
                             </div>

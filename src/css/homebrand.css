@@ -23,17 +23,22 @@
     background-color: white;
     display: block;
 }
+.slide-img {
+}
 /* section 1 */
 .section-one {
-    max-width: 1200px; height: 100%;
+    max-width: 1200px;
+    height: 100%;
     margin: auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
     position: relative;
+    transform: skew(1px, 1px, 1px);
 }
 .section-one .brand-img1 {
-    width: 400px; height: 400px;
+    width: 400px;
+    height: 400px;
     background-image: url("D:\리엑트_하슬린\프로젝트 웹페이지 리디자인\tiamo\public\img\brand\whyTiamoImg04.jpg");
     background-position: center;
     background-size: cover;
@@ -118,6 +123,9 @@
     align-items: center;
 }
 .section-three .brand-imgs {
+    width: 100%;
+}
+.section-three .brand-imgs div {
     width: 100%;
 }
 .section-three .brand-imgs p {

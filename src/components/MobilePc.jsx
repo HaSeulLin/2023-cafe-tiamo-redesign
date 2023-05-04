@@ -8,6 +8,13 @@ export const Mobile = ({ children }) => {
   return <>{isMobile && children}</>
 }
 
+export const Tablet = ({ children }) => {
+  const isTablet = useMediaQuery({
+    query: "(min-width:768px) and (max-width:1023px)"
+  });
+  return <>{isTablet && children}</>
+}
+
 export const Pc = ({ children }) => {
   const isPc = useMediaQuery({
     query: "(min-width:769px)"
