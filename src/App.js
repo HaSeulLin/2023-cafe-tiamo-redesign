@@ -18,14 +18,12 @@ import { DataProvider } from './context/DataContext';
 import MenuContent from './page/MenuContent';
 import MenuDetailPage from './page/MenuDetailPage';
 
-import './css/mobile.css'
-
 function App() {
   return (
     <>
       <div className='all-page'>
         <DataProvider>
-            <HeaderLink />
+          <HeaderLink />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />

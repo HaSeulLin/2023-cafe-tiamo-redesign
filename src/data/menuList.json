@@ -25,20 +25,20 @@
         "name": "BEVERAGE",
         "image" : "/img/playSweet.png",
         "explain": "달콤한 맛으로 모두에게 사랑받는 음료",
-        "submenu" : ["스페셜 라떼", "에이드", "스무디", "블렌디모"]
+        "submenu" : ["스페셜 라떼", "에이드", "스무디"]
     },
     {
         "id" : 5,
         "name": "DESSERT",
         "image" : "/img/playDessert.png",
         "explain": "한 잔의 여유와 한 입의 행복. 당신만의 달콤한 카페",
-        "submenu" : ["빵", "젤라또 번버거", "케이크", "와플", "빙수"]
+        "submenu" : ["브레드", "와플"]
     },
     {
         "id" : 6,
         "name": "MD",
         "image" : "/img/playMD.png",
         "explain": "함께 즐기는 집으로 찾아가는 맛. MD가 추천하는 여유입니다.",
-        "submenu" : ["커피", "선물세트", "커피 용품", "컵|텀블러", "기타"]
+        "submenu" : ["커피", "선물세트", "컵|텀블러"]
     }
 ]

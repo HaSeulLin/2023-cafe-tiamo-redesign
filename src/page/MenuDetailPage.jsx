@@ -32,6 +32,8 @@ export default function MenuContent() {
     }
     console.log(modalName);
     
+
+    
     if (sub=="all") {
         return (
             <div className='menu-detail'>
@@ -65,16 +67,14 @@ export default function MenuContent() {
                                         }
                                     >
                                     </div>
-                                    <div className='modal-open-img'
+                                    <div className='modal-open'
                                         onClick={()=>{openModal(menu.name)}}
                                     >
-                                        <img src={menu.image} alt="" width={220}
+                                        <img src={menu.image} alt="" width={220} height={220}
                                             className='menu-li-img'
                                         />
+                                        <h4>{menu.name}</h4>
                                     </div>
-                                </div>
-                                <div className='menu-explain'>
-                                <h4>{menu.name}</h4>
                                 </div>
                             </li>
                         )
@@ -123,16 +123,14 @@ export default function MenuContent() {
                                     }
                                 >
                                 </div>
-                                <div className='modal-open-img'
+                                <div className='modal-open'
                                     onClick={()=>{openModal(menu.name)}}
                                 >
-                                    <img src={menu.image} alt="" width={220}
+                                    <img src={menu.image} alt="" width={220} height={220}
                                         className='menu-li-img'
                                     />
+                                    <h4>{menu.name}</h4>
                                 </div>
-                            </div>
-                            <div className='menu-explain menu-name'>
-                                <h4>{menu.name}</h4>
                             </div>
                         </li>
                     )

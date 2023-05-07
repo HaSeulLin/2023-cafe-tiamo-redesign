@@ -5,6 +5,8 @@ import '../css/homebrand.css'
 import EventSlider from '../components/EventSlider';
 import MenuSlider from '../components/MenuSlider';
 
+import { Pc, Mobile } from '../components/MobilePc'
+
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Move, MoveIn, MoveOut, Sticky, StickyIn, StickyOut, Zoom, ZoomIn, ZoomOut } from "react-scroll-motion";
 import BrandScroll from '../components/BrandScroll';
 
@@ -23,19 +25,22 @@ const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
 const FadeUp = batch(Fade(), Move(), Sticky());
 
 const [ bannerImg, setBannerImg ] = useState('berry-gelato-main.png');
+const [ bannerImgM, setBannerImgM ] = useState('berry-gelato-main-m.png');
 const [ bannerPop, setBannerPop ] = useState('bomb-choco.png');
 const [ backColor, setBackColor ] = useState('rgb(255, 192, 188)');
 const [ gelatoFlavor, setGelatoFlavor ] = useState('Strawberry');
 
 const bannerToggle = () => {
     if (bannerImg=='berry-gelato-main.png') {
-        setBannerImg('choco-gelato-main.png')
+        setBannerImg('choco-gelato-main.png');
+        setBannerImgM('choco-gelato-main-m.png');
         setBannerPop('bomb-berry.png');
         setBackColor('rgb(255, 228, 181)');
         setGelatoFlavor('Chocolate');
     }
     else if (bannerImg=='choco-gelato-main.png') {
-        setBannerImg('berry-gelato-main.png')
+        setBannerImg('berry-gelato-main.png');
+        setBannerImgM('berry-gelato-main-m.png');
         setBannerPop('bomb-choco.png');
         setBackColor('rgb(255, 192, 188)');
         setGelatoFlavor('Strawberry');
@@ -45,93 +50,149 @@ const bannerToggle = () => {
 return (
     <div className='home'>
         {/**    메인 배너 (1 scroll)     */}
-        <div className='main-banner'>
-            <div className='main-back' style={{backgroundColor:`${backColor}`, transition:"all 0.3s"}}>
-                <div className='main-banner-text'>
-                    <div className='text-title-l'>
-                        <h2>CAFE TIAMO</h2>
-                        <img src={`${process.env.PUBLIC_URL}/img/star_deco4.png`} 
-                            width={50} height={50}
-                            alt="" />
+        <Pc>
+            <div className='main-banner' style={{marginTop:"200px"}}>
+                <div className='main-back' style={{backgroundColor:`${backColor}`, transition:"all 0.3s"}}>
+                    <div className='main-banner-text'>
+                        <div className='text-title'>
+                            <h2>Today's Gelato?</h2>
+                            <h2 className='title-2'>Today's Gelato?</h2>
+                        </div>
+                        <div className='text-exp'>
+                            <h3>{gelatoFlavor}</h3>
+                        </div>
                     </div>
-                    <div className='text-title-r'>
-                        <h2>Today's Gelato</h2>
-                        <h2 className='title-2'>Today's Gelato</h2>
-                        <h2 className='title-3'>Today's Gelato</h2>
-                        <h3>{gelatoFlavor}</h3>
-                        <h3 className='title-4'>{gelatoFlavor}</h3>
+                    <div className='main-banner-img-wrap'>
+                        <img src={`${process.env.PUBLIC_URL}/img/${bannerImg}`} alt="오늘의 젤라또 딸기" />
                     </div>
-                </div>
-                <div className='main-banner-img-wrap'>
-                    <img src={`${process.env.PUBLIC_URL}/img/${bannerImg}`} alt="오늘의 젤라또 딸기" />
-                </div>
-                <div className='main-banner-text-pop'
-                    onClick={()=>{bannerToggle()}}
-                >
-                    <img src={`${process.env.PUBLIC_URL}/img/${bannerPop}`} alt="카페 띠아모" width={200} height={200}/>
-                    <p>More Flavor</p>
+                    <div className='main-banner-text-pop'
+                        onClick={()=>{bannerToggle()}}
+                    >
+                        <img src={`${process.env.PUBLIC_URL}/img/${bannerPop}`} alt="카페 띠아모" width={200} height={200}/>
+                        <p>More Flavor</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </Pc>
+        <Mobile>
+            <div className='main-banner' style={{marginTop:"80px"}}>
+                    <div className='main-back-m' style={{backgroundColor:`${backColor}`, transition:"all 0.3s"}}>
+                        <div className='text-title'>
+                            <h2>Today's Gelato</h2>
+                            <h3>{gelatoFlavor}</h3>
+                        </div>
+                        <div className='main-banner-img-wrap-m' style={{transition:"all 0.3s"}}>
+                            <img src={`${process.env.PUBLIC_URL}/img/${bannerImgM}`} alt="오늘의 젤라또 딸기" />
+                        </div>
+                        <div className='main-banner-text-pop-m'
+                            onClick={()=>{bannerToggle()}}
+                        >
+                            <img src={`${process.env.PUBLIC_URL}/img/${bannerPop}`} alt="카페 띠아모" width={200} height={200}/>
+                            <p>More Flavor</p>
+                        </div>
+                    </div>
+                </div>            
+        </Mobile>
 
         {/**    이벤트/SNS 배너 (2 scroll)     */}
-        <div className='event-sns-banner'>
-            <div className='event-slide-wrap'>
-                <div className='event-slide'>
-                    <EventSlider />
+        <Pc>
+            <div className='event-sns-banner'>
+                <div className='event-slide-wrap'>
+                    <div className='event-slide'>
+                        <EventSlider />
+                    </div>
+                </div>
+                <div>
+                    <div className='event-sns-banner-text'>
+                        <div className='fruits1-deco'>
+                            <img src={`${process.env.PUBLIC_URL}/img/strawberry1.png`} alt=""/>
+                            <img src={`${process.env.PUBLIC_URL}/img/strawberry2.png`} alt=""/>
+                        </div>
+                        <div className='fruits2-deco'>
+                            <img src={`${process.env.PUBLIC_URL}/img/strawberry_cul.png`} alt="" width={300}/>
+                        </div>
+                        <div className='event-title'>
+                            <div>
+                                <h2>SO</h2>
+                                <h2>SWEET</h2>
+                                <h2>DELICIOUS</h2>
+                            </div>
+                            <div>
+                                <h2>SO</h2>
+                                <h2>SWEET</h2>
+                                <h2>DELICIOUS</h2>
+                            </div>
+                        </div>
+                        
+                        <div className='sns-icon'>
+                            <div>
+                                <a href="">
+                                    <img src={`${process.env.PUBLIC_URL}/img/instagram.png`} alt="insta" />
+                                </a>
+                            </div>
+                            <div>
+                                <a href="">
+                                    <img src="/img/blog.png" alt="blog" />
+                                </a>
+                            </div>
+                            <div>
+                                <a href="">
+                                    <img src="/img/youtube.png" alt="youtube" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='sns-img'>
+                        <div className='insta-img1'>
+                            <img src="/img/jelatosns1.jpg" alt="instagram-img" />
+                            <img src="/img/jelatosns2.jpg" alt="instagram-img" />
+                        </div>
+                        <div className='insta-img2'>
+                            <img src="/img/jelatosns3.jpg" alt="instagram-img" />
+                            <img src="/img/jelatosns4.jpg" alt="instagram-img" />
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </Pc>
+        <Mobile>
+            <div className='event-sns-banner-m'>
+                <div>
+                    <div className='event-sns-banner-text-m'>
+                        <div className='event-title'>
+                            <div>
+                                <h2>SO</h2>
+                                <h2>SWEET</h2>
+                                <h2>DELICIOUS</h2>
+                            </div>
+                            <div>
+                                <h2>SO</h2>
+                                <h2>SWEET</h2>
+                                <h2>DELICIOUS</h2>
+                            </div>
+                        </div>
+                        <div className='fruits2-deco'>
+                            <img src={`${process.env.PUBLIC_URL}/img/strawberry_cul.png`} alt="" width={300}/>
+                        </div>
+                    </div>
+                    <div className='event-slide-wrap-m'>
+                        <div className='event-slide'>
+                            <EventSlider />
+                        </div>
+                    </div>
+                    <div className='sns-img'>
+                        <div className='insta-img1'>
+                            <img src="/img/jelatosns1.jpg" alt="instagram-img" />
+                            <img src="/img/jelatosns2.jpg" alt="instagram-img" />
+                        </div>
+                        <div className='insta-img2'>
+                            <img src="/img/jelatosns3.jpg" alt="instagram-img" />
+                            <img src="/img/jelatosns4.jpg" alt="instagram-img" />
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div>
-                <div className='event-sns-banner-text'>
-                    <div className='fruits1-deco'>
-                        <img src={`${process.env.PUBLIC_URL}/img/strawberry.png`} alt=""/>
-                    </div>
-                    <div className='fruits2-deco'>
-                        <img src={`${process.env.PUBLIC_URL}/img/strawberry_cul.png`} alt="" width={300}/>
-                    </div>
-                    <div className='event-title'>
-                        <div>
-                            <h2>SO</h2>
-                            <h2>SWEET</h2>
-                            <h2>DELICIOUS</h2>
-                        </div>
-                        <div>
-                            <h2>SO</h2>
-                            <h2>SWEET</h2>
-                            <h2>DELICIOUS</h2>
-                        </div>
-                    </div>
-                    
-                    <div className='sns-icon'>
-                        <div>
-                            <a href="">
-                                <img src={`${process.env.PUBLIC_URL}/img/instagram.png`} alt="insta" />
-                            </a>
-                        </div>
-                        <div>
-                            <a href="">
-                                <img src="/img/blog.png" alt="blog" />
-                            </a>
-                        </div>
-                        <div>
-                            <a href="">
-                                <img src="/img/youtube.png" alt="youtube" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div className='sns-img'>
-                    <div className='insta-img1'>
-                        <img src="/img/jelatosns1.jpg" alt="instagram-img" />
-                        <img src="/img/jelatosns2.jpg" alt="instagram-img" />
-                    </div>
-                    <div className='insta-img2'>
-                        <img src="/img/jelatosns3.jpg" alt="instagram-img" />
-                        <img src="/img/jelatosns4.jpg" alt="instagram-img" />
-                    </div>
-                </div>
-            </div>
-        </div>
+        </Mobile>
 
         {/**    텍스트 애니메이션     */}
         <div className='text-animated'>
@@ -215,7 +276,7 @@ return (
                             </button>
                         </div>
                         <div>
-                            <img src={`${process.env.PUBLIC_URL}/img/gelato-news1.jpg`} width="250px" height="180px" alt="" />
+                            <img src={`${process.env.PUBLIC_URL}/img/gelato-news2.jpg`} width="250px" height="180px" alt="" />
                             <p style={{fontWeight:'bold'}}>'편리성+프리미엄' 2020년 외식시장 키워드 부상</p>
                             <span>2020.01.23</span>
                             <button className='news-more'>
@@ -223,7 +284,7 @@ return (
                             </button>
                         </div>
                         <div>
-                            <img src={`${process.env.PUBLIC_URL}/img/gelato-news1.jpg`} width="250px" height="180px" alt="" />
+                            <img src={`${process.env.PUBLIC_URL}/img/gelato-news3.jpg`} width="250px" height="180px" alt="" />
                             <p style={{fontWeight:'bold'}}>[대박창업] 불황창업 ‘창업자 선택·의지가 성공 열쇠’</p>
                             <span>2020.10.26</span>
                             <button className='news-more'>

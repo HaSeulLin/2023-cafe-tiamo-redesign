@@ -177,15 +177,15 @@ return (
                     <img src={`${process.env.PUBLIC_URL}/img/logo_new.png`} alt="logo" />
                 </Link>
                 <div
-                    onClick={()=>{setOpenM(true)}}
+                    className='header-toggle'
+                    onClick={()=>{setOpenM(!openM)}}
+                    style={openM?{flexDirection:'row'}:{}}
                 >
-                    <img src={`${process.env.PUBLIC_URL}/img/menu-burger.png`} alt="" width={62} height={52} />
+                    <span className='header-dots'></span>
+                    <span className='header-dots'></span>
                 </div>
             </div>
-            <div className='mobile-menu-modal' style={openM?{display:'block'}:{display:'none'}}>
-                <div onClick={()=>{setOpenM(false)}}>
-                    <img src={`${process.env.PUBLIC_URL}/img/cross-black.png`} width={52} height={52} alt="" />
-                </div>
+            <div className='mobile-menu-modal' style={openM?{visibility: 'visible'}:{visibility: 'hidden'}}>
                 <div>
                     <h3>로그인하신 후 더 많은 카페띠아모를 만나보세요!</h3>
                     <div>

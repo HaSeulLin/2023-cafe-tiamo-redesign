@@ -1,10 +1,12 @@
-import React, { useRef, useContext, useState } from 'react'
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react'
+import { NavLink } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/effect-coverflow";
+
 import '../css/menu.css'
 
 import { Pagination, Navigation, Autoplay } from "swiper";
@@ -24,14 +26,14 @@ export default function MenuContent() {
     const {state, action} = useContext(DataContext);
     // 전체 메뉴 (상위-전체 메뉴 리스트 데이터)
     const {allMenulist} = state;
-    const MenuData = allMenulist.find((d)=>(d.name==menus));
+    const MenuData = allMenulist.find((d)=>(d.name===menus));
 
     
     // 각 하위 메뉴 (각 메뉴 아이템 리스트 데이터)
     const {menuDetaillist} = state;
 
-    const newMenuData = menuDetaillist.filter((d)=>(d.itemState=='new'));
-    const bestMenuData = menuDetaillist.filter((d)=>(d.itemState=='best'));
+    const newMenuData = menuDetaillist.filter((d)=>(d.itemState==='new'));
+    const bestMenuData = menuDetaillist.filter((d)=>(d.itemState==='best'));
 
     const [showMenus, setShowMenus] = useState(true);
 
@@ -44,7 +46,7 @@ export default function MenuContent() {
         setModalName(name);
     }
 
-    if (menus == "bestnew") {
+    if (menus === "bestnew") {
         return (
             // menu or new&best 클릭 시 보여줄 메인 카테고리
             <div className='best-new-menu' style={{margin:'auto', maxWidth:'1200px'}}>
@@ -53,14 +55,11 @@ export default function MenuContent() {
                     {
                         <ul className='new-menulist-ul'>
                             <Swiper
-                                pagination={{
-                                type: "progressbar",
-                                }}
+                                slidesPerView={'auto'}
                                 navigation={true}
-                                modules={[Autoplay, Pagination, Navigation]}
-                                slidesPerView={4}
+                                modules={[Autoplay, Navigation]}
                                 autoplay={{
-                                    delay: 2000,
+                                    delay: 5000,
                                     disableOnInteraction: false,
                                 }}
                                 className="mySwiper"
@@ -77,22 +76,23 @@ export default function MenuContent() {
                                                 menu.itemState==="new" ?
                                                     {
                                                         backgroundImage:`url("${process.env.PUBLIC_URL}/img/newLabel.png")`,
-                                                        width:"65px", height:"65px", backgroundRepeat:"no-repeat", backgroundPosition:"center"
+                                                        width:"65px", height:"65px", backgroundRepeat:"no-repeat", backgroundPosition:"center",
+                                                        top:"30px", left:"20px"
                                                     }
                                                     : {display:"none"}
                                             }
                                         >
                                         </div>
-                                        <div className='modal-open-img'
+                                        <div className='modal-open'
                                             onClick={()=>{openModal(menu.name)}}
                                         >
-                                            <img src={menu.image} alt="" width={220}
+                                            <img src={menu.image} alt="" width={220} height={220}
                                                 className='menu-li-img'
                                             />
+                                        <div className='menu-explain'>
+                                            <h4>{menu.name}</h4>
                                         </div>
-                                    </div>
-                                    <div className='menu-explain'>
-                                        <h4>{menu.name}</h4>
+                                        </div>
                                     </div>
                                 </SwiperSlide>
                             )
@@ -106,14 +106,11 @@ export default function MenuContent() {
                     {
                         <ul className='best-menulist-ul'>
                             <Swiper
-                                pagination={{
-                                type: "progressbar",
-                                }}
                                 navigation={true}
                                 modules={[Autoplay, Pagination, Navigation]}
-                                slidesPerView={4}
+                                slidesPerView={'auto'}
                                 autoplay={{
-                                    delay: 2500,
+                                    delay: 5000,
                                     disableOnInteraction: false,
                                 }}
                                 className="mySwiper"
@@ -129,21 +126,22 @@ export default function MenuContent() {
                                                     style={
                                                         menu.itemState==="best" ?
                                                             {backgroundImage:`url("${process.env.PUBLIC_URL}/img/bestLabel.png")`,
-                                                            width:"65px", height:"65px", backgroundRepeat:"no-repeat", backgroundPosition:"center"
+                                                            width:"65px", height:"65px", backgroundRepeat:"no-repeat", backgroundPosition:"center",
+                                                            top:"30px", left:"20px"
                                                             }
                                                             : {display:"none"}
                                                     }
                                                 ></div>
-                                                <div className='modal-open-img'
+                                                <div className='modal-open'
                                                     onClick={()=>{openModal(menu.name)}}
                                                 >
-                                                    <img src={menu.image} alt="" width={220}
+                                                    <img src={menu.image} alt="" width={220} height={220}
                                                         className='menu-li-img'
                                                     />
                                                 </div>
-                                            </div>
-                                            <div className='menu-explain'>
-                                                <h4>{menu.name}</h4>
+                                                <div className='menu-explain'>
+                                                    <h4>{menu.name}</h4>
+                                                </div>
                                             </div>
                                         </SwiperSlide>
                                     )
@@ -165,33 +163,37 @@ export default function MenuContent() {
         return (
             // menu/:menus 클릭 시 보여줄 각 카테고리
             <div className='menu-content'>
-                <div>
-                    <div className='menu-content-title'>
-                        <h3>{MenuData.name}</h3>
-                        <p>{MenuData.explain}</p>
-                    </div>
-                    <div>
-                        {
-                            <ul className='sub-menus'>
-                                <li>
-                                    <Link to={`/menu/${menus}/all`}
-                                        onClick={()=>{setShowMenus(true)}}
-                                    >all</Link>
+                <div className='sub-menus'>
+                    {
+                        <ul>
+                            <li>
+                                <NavLink to={`/menu/${menus}/all`}
+                                    onClick={()=>{setShowMenus(true)}}
+                                    style={({ isActive }) => isActive ? 
+                                    {backgroundColor:" rgb(240, 81, 54)", color:"white"}
+                                    : {}}
+                                    >all</NavLink>
+                            </li>
+                            {
+                            MenuData.submenu.map((m, index)=>(
+                                <li key={index}>
+                                    <NavLink to={`/menu/${menus}/${m}`}
+                                        onClick={()=>{setShowMenus(false)}}
+                                        style={({ isActive }) => isActive ? 
+                                        {backgroundColor:" rgb(240, 81, 54)", color:"white"}
+                                        : {}}
+                                    >
+                                    {m}
+                                    </NavLink>
                                 </li>
-                                {
-                                MenuData.submenu.map((m, index)=>(
-                                    <li key={index}>
-                                        <Link to={`/menu/${menus}/${m}`}
-                                            onClick={()=>{setShowMenus(false)}}
-                                        >
-                                        {m}
-                                        </Link>
-                                    </li>
-                                ))
-                                }
-                            </ul>
-                        }
-                    </div>
+                            ))
+                            }
+                        </ul>
+                    }
+                        <div className='menu-content-title'>
+                            <h3>{MenuData.name}</h3>
+                            <p>{MenuData.explain}</p>
+                        </div>
                 </div>
                 <Outlet />
             </div>

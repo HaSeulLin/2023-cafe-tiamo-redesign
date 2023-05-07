@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react'
-import { Link, Outlet } from 'react-router-dom';
+import React, { useState } from 'react'
+import { NavLink, Outlet, useParams } from 'react-router-dom';
 import '../css/menu.css'
 
 export default function Menu() {
@@ -34,6 +34,7 @@ export default function Menu() {
             }
         }
 
+
     return (
         <div>
             <div className='menu-page'>
@@ -47,16 +48,23 @@ export default function Menu() {
                     </div>
                     <ul className='menu-list-top'>
                         <li>
-                            <Link to={`/menu/bestnew`}>NEW & BEST</Link>
+                            <NavLink to={`/menu/bestnew`}
+                                style={({ isActive }) => isActive ? 
+                                    {backgroundColor:" rgb(240, 81, 54)", color:"white"}
+                                    : {}}
+                            >NEW & BEST</NavLink>
                         </li>
                         {
                         menus.map((m, index)=>(
                             <li key={index}>
-                                <Link to={`/menu/${m}/all`}
-                                    onClick={()=>{ClickBackImg(m);}}
+                                <NavLink to={`/menu/${m}/all`}
+                                style={({ isActive }) => isActive ? 
+                                {backgroundColor:" rgb(240, 81, 54)", color:"white"}
+                                : {}}
+                                onClick={()=>{ClickBackImg(m);}}
                                 >
                                     {m}
-                                </Link>
+                                </NavLink>
                             </li>
                         ))
                         }

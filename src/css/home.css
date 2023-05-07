@@ -1,25 +1,13 @@
 /* 폰트 */
 @font-face {
-    font-family: 'LOTTERIADDAG';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/LOTTERIADDAG.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
     font-family: 'Cafe24ClassicType-Regular';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Cafe24ClassicType-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
-    font-family: 'KIMM_Bold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KIMM_Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'ghanachoco';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ghanachoco.woff') format('woff');
+    font-family: 'Cafe24Ohsquare';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Cafe24Ohsquare.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -43,9 +31,6 @@
 .home {
     width: 100%;
     text-align: center;
-    margin: auto;
-    margin-top: 200px;
-    border-top: 1px solid black;
 }
 h2 {
     font-family: 'Cafe24ClassicType-Regular';
@@ -61,30 +46,40 @@ h3 {
 
 /* 메인 배너 main-back */
 /* 메인 배너 background : relative */
+.main-banner {
+    border-top: 1px solid black;
+    overflow: hidden;
+}
 .main-back {
     position: relative;
     width: 100%; height: calc(100vh - 200px);
 }
+
 /* 메인 배너 이미지 main-banner-img-wrap, main-banner-text-pop */
 .main-banner-img-wrap {
-    width: 90vw; height: 90vw;
+    width: 100vw;
     margin: auto;
     position: absolute;
-    left: -8%; right: 10%; top: -2vh;
+    left: 7%; right: 0%;
+    bottom: calc(-10vh - 10px);
 }
 .main-banner-img-wrap>img {
     width: 100%; height: auto;
-    max-width: 1700px;
+    max-width: 1500px; min-width: 1300px;
 }
 .main-banner-text-pop {
-    max-width: 230px; max-height: 230px;
+    max-width: 200px; max-height: 200px;
+    width: 100%; height: 100%;
     margin: auto;
     z-index: 10;
     position: absolute;
-    right: 24vw;
-    bottom: 17vh;
+    right: 18vw;
+    bottom: 8vh;
 	animation: topbottom 3s ease-in-out infinite;
     transition: all 0.25s;
+}
+.main-banner-text-pop img {
+    width: 100%; height: 100%;
 }
 @keyframes topbottom {
 	0% {
@@ -108,7 +103,7 @@ h3 {
     text-shadow: 2px 2px 1px black;
     position: absolute;
     width: 200px;
-    top: 15%; right: 1%;
+    top: 15%; left: 0%; right: 0%;
     font-family: 'Cafe24ClassicType-Regular';
     font-size: 2rem;
     font-weight: bold;
@@ -122,66 +117,98 @@ h3 {
 /* 메인 배너 텍스트 main-banner-text */
 .main-banner-text h2,
 .main-banner-text h3 {
-    font-family: 'ghanachoco';
     margin-top: 0;
 }
 .main-banner-text {
-    min-width: 1000px;
     width: 100%; height: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
-.main-banner-text .text-title-l {
+.main-banner-text .text-title {
     text-align: left;
-    width: 1200px; min-height: 500px;
+    max-width: 50vw; height: auto;
     position: relative;
-    margin: 8vh 0 0 10vw;
     z-index: 2;
 }
-.main-banner-text .text-title-l h2 {
-    color: transparent;
-    font-family: 'Cafe24Ohsquare';
-    font-size: 13vw;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #fff;
-    line-height: 13vw;
-}
-.main-banner-text .text-title-l img {
+.main-banner-text .text-title h2 {
     position: absolute;
-    right: 0vw; top: 0vh;   
-}
-
-.main-banner-text .text-title-r {
-    text-align: right;
-    width: 500px; height: 800px;
-    position: relative;
-    margin: 7vh 10vw 0 0 ;
-    z-index: 2;
-}
-.main-banner-text .text-title-r h2 {
-    position: absolute;
-    right: 6px; top: 6px;
-    color: black;
-    font-size: 7vw;
-}
-.main-banner-text .text-title-r .title-2 {
+    left: calc(6vw + 70px); top: 60px;
     color: rgb(185, 233, 225);
-    right: 3px; top: 3px;
+    font-size: calc(70px + 4vw);
+    line-height: calc(70px + 4vw);
 }
-.main-banner-text .text-title-r .title-3 {
+.main-banner-text .text-title h2:first-child {
+    text-shadow: 3px 3px 1px black;
+}
+.main-banner-text .text-title .title-2 {
     color: rgb(255, 22, 0);
-    right: 0px; top:0px;
+    left: calc(6vw + 66px); top: 56px;
 }
-.main-banner-text .text-title-r h3 {
+.main-banner-text .text-exp {
+    position: relative;
+}
+.main-banner-text .text-exp h3 {
     margin: 0;
     position: absolute;
-    font-size: 4vw;
-    right: 0; top: 17vw;
-    color: black;
-}
-.main-banner-text .text-title-r .title-4 {
-    right: 3px; top: calc(17vw - 3px);
+    font-size: calc(10px + 5vw);
+    left: calc(6vw + 70px); top: calc(10vw + 150px);
     color: rgb(185, 233, 225);
+    text-shadow: 3px 3px 1px black;
+    font-family: 'Cafe24ClassicType-Regular';
+}
+
+/* 모바일 css */
+.main-back-m {
+    position: relative;
+    width: 100%; height: calc(100vh - 80px);
+}
+.main-back-m .text-title {
+    padding-top: 10vh;
+}
+.main-back-m .text-title h2,
+.main-back-m .text-title h3{
+    margin: 0;
+    text-align: center;
+    z-index: 10;
+    position: relative;
+}
+.main-back-m .text-title h2 {
+    font-size: 20vw;
+    color: transparent;
+    font-family: 'Cafe24Ohsquare';
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #fff;
+}
+.main-back-m .text-title h3 {
+    color: rgb(255, 22, 0);
+    font-size: 15vw;
+    font-family: 'Cafe24ClassicType-Regular';
+    text-shadow: 3px 3px 1px black;
+}
+.main-banner-img-wrap-m {
+    position: absolute;
+    width: 100vw; height: auto;
+    left: 0%; right: 0%; top: 5vh;
+
+}
+.main-banner-img-wrap-m img {
+    width: 100%; height: auto;
+    min-height: 725px; min-width: 411px;
+}
+.main-banner-text-pop-m {
+	animation: topbottom 3s ease-in-out infinite;
+    position: absolute;
+    right: 10vw;
+    bottom: 17vh;
+}
+.main-banner-text-pop-m img {
+    width: 150px; height: 150px;
+}
+.main-banner-text-pop-m p {
+    position: absolute;
+    color: #fff; text-shadow: 2px 2px 2px black;
+    font-weight: bold;
+    left: 0%; right: 0%; top: 45px;
 }
 
 /* 이벤트/SNS 배너 */
@@ -193,7 +220,6 @@ h3 {
     justify-content: center;
     margin: 0;
     padding: 100px 0;
-    background: linear-gradient(rgba(188, 226, 221, 0.7),rgba(255, 227, 232, 0.7)) cover;
     background-attachment: fixed;
     background-image: url('../img/그라데배경1.png');
     position: relative;
@@ -223,10 +249,16 @@ h3 {
     display: flex;
     align-items: flex-end;
 }
-.fruits1-deco {
+.fruits1-deco>img:first-child {
     position: absolute;
-    left: -150px;
-    top: -430px;
+    left: -250px;
+    top: -300px;
+    z-index: 20;
+}
+.fruits1-deco>img:last-child {
+    position: absolute;
+    left: -700px;
+    bottom: -300px;
     z-index: 20;
 }
 .fruits2-deco {
@@ -235,28 +267,32 @@ h3 {
     top: -80px;
     z-index: 20;
 }
-.event-sns-banner-text .event-title {
+.event-sns-banner-text .event-title,
+.event-sns-banner-text-m .event-title  {
     position: relative;
 }
-.event-sns-banner-text .event-title h2 {
+.event-sns-banner-text .event-title h2,
+.event-sns-banner-text-m .event-title h2 {
     margin: 0 0 0 20px;
 }
-.event-sns-banner-text .event-title div:first-child {
-    text-shadow: 1px 1px 1px black;
-}
-.event-sns-banner-text .event-title div:last-child {
+.event-sns-banner-text .event-title div:last-child,
+.event-sns-banner-text-m .event-title div:last-child {
     position: absolute;
     left: -4px; top: -4px;
 }
-.event-sns-banner-text .event-title div:first-child h2 {
+.event-sns-banner-text .event-title div:first-child h2,
+.event-sns-banner-text-m .event-title div:first-child h2 {
+    text-shadow: 1px 1px 1px black;
     color: rgb(255, 245, 198);
 }
-.event-sns-banner-text .sns-icon{
+.event-sns-banner-text .sns-icon,
+.event-sns-banner-text-m .sns-icon {
     display: flex;
     justify-content: space-between;
     margin: 0 0 15px 10px;
 }
-.event-sns-banner-text .sns-icon div {
+.event-sns-banner-text .sns-icon div,
+.event-sns-banner-text-m .sns-icon div {
     width: 32px;
     height: 32px;
     background-size: cover;
@@ -271,11 +307,11 @@ h3 {
     transition: all 0.5s ;
     transform: rotate(180deg);
 }
-.sns-img {
+.event-sns-banner div .sns-img {
     display: flex;
 }
-.sns-img .insta-img1,
-.sns-img .insta-img2,
+.event-sns-banner div .sns-img .insta-img1,
+.event-sns-banner div .sns-img .insta-img2,
 .event-slide-wrap {
     position: relative;
     width: 250px;
@@ -292,21 +328,21 @@ h3 {
     width: 100%; height: 100%; position: inherit; z-index: 10;
     border: 1px solid  white;
 }
-.sns-img .insta-img1 img:nth-child(2),
-.sns-img .insta-img2 img:nth-child(2) {
+.event-sns-banner div .sns-img .insta-img1 img:nth-child(2),
+.event-sns-banner div .sns-img .insta-img2 img:nth-child(2) {
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0;
     transition: all 0.5s;
 }
-.sns-img .insta-img1:hover img:nth-child(2),
-.sns-img .insta-img2:hover img:nth-child(2) {
+.event-sns-banner div .sns-img .insta-img1:hover img:nth-child(2),
+.event-sns-banner div .sns-img .insta-img2:hover img:nth-child(2) {
     opacity: 1;
     transition: all 0.5s;
 }
-.sns-img .insta-img1::before,
-.sns-img .insta-img2::before,
+.event-sns-banner div .sns-img .insta-img1::before,
+.event-sns-banner div .sns-img .insta-img2::before,
 .event-slide-wrap::before {
     position:absolute;
     width: 100%;
@@ -317,13 +353,13 @@ h3 {
     border: 1px solid black;
     transition: all 0.2s;
 }
-.sns-img .insta-img1:hover::before,
-.sns-img .insta-img2:hover::before {
+.event-sns-banner div .sns-img .insta-img1:hover::before,
+.event-sns-banner div .sns-img .insta-img2:hover::before {
     top: 10px;
     left: 10px
 }
-.sns-img .insta-img1::after,
-.sns-img .insta-img2::after,
+.event-sns-banner div .sns-img .insta-img1::after,
+.event-sns-banner div .sns-img .insta-img2::after,
 .event-slide-wrap::after {
     position:absolute;
     width: 100%;
@@ -335,10 +371,68 @@ h3 {
     transition: all 0.2s;
     z-index: 0;
 }
-.sns-img .insta-img1:hover:after,
-.sns-img .insta-img2:hover:after {
+.event-sns-banner div .sns-img .insta-img1:hover:after,
+.event-sns-banner div .sns-img .insta-img2:hover:after {
     top: -10px;
     left:-10px;
+}
+/* event mobile */
+.event-sns-banner-m {
+    border-top: 1px solid black;
+    width: 100%; height: 100%;
+    background-image: url('../img/그라데배경1.png');
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5vh 0;
+}
+.event-sns-banner-m>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+
+}
+.event-sns-banner-text-m,
+.event-sns-banner-text-m .event-title {
+    position: relative;
+    margin: auto;
+}
+.event-sns-banner-text-m .fruits2-deco {
+    position: absolute;
+    left: 60vw;
+    top: 50px;
+    z-index: 20;
+}
+.event-sns-banner-text-m .fruits2-deco img {
+    width: 30vw; height: auto;
+    max-width: 150px;
+}
+.event-sns-banner-text-m .event-title {
+    margin-bottom: 3vh;
+}
+.event-sns-banner-text-m .event-title h2 {
+    font-size: calc(12vw + 10px);
+    text-align: left;
+}
+.event-slide-wrap-m {
+    display: flex;
+    justify-content: center;
+}
+.event-sns-banner-m .sns-img {
+    width: 100vw; height: 100vw;
+    display: flex;
+    flex-direction: column;
+    border : 1px solid black;
+    box-sizing: border-box;
+}
+.event-sns-banner-m .sns-img .insta-img1,
+.event-sns-banner-m .sns-img .insta-img2 {
+    display: flex;
+    overflow: hidden;
+}
+.event-sns-banner-m .sns-img img {
+    width: 50%; height: auto;
 }
 
 /* 가로 애니메이션 텍스트 */
@@ -460,18 +554,22 @@ h3 {
 }
 .notice>div>div:first-child {
     width: 280px;
-    padding: 40px 20px;
+    padding: 20px; margin: auto;
+}
+.notice>div>div:last-child {
+    margin: 0;
 }
 .notice>div>div:last-child>a {
     height: 110px;
     box-sizing: border-box;
     border-left: 1px solid black;
     font-size: 0.8rem;
-    padding: 50px 10px 47px 10px;
+    margin: 0;
+    padding: 52px 10px 44px 10px;
     transition: all 0.25s;
 }
 .notice>div>div:last-child>a:hover {
-    background:  rgba(37, 196, 211, 0.5);
+    background:  rgba(37, 196, 211, 0.6);
     font-weight: bold;
     transition: all 0.25s;
 }
@@ -523,6 +621,6 @@ h3 {
     font-size: 0.8rem;
 }
 .news-more:hover {
-    background:  rgba(37, 196, 211, 0.5);
+    background:  rgba(37, 196, 211, 0.6);
     transition: all 0.25s;
 }
