@@ -25,70 +25,78 @@ export default function ItemModal({open, onClose, name}) {
             itemNum : itemN
         };
         const newItemlist = state.itemList.concat(newItem);
-        action.setItemList(newItemlist);
-        action.idCount();
-        console.log(newItem.id)
-        setItemN(1);
+        if (itemN<1) {
+            alert("수량은 1개 이상이어야 합니다.")
+        }
+        else {
+            action.setItemList(newItemlist);
+            action.idCount();
+            console.log(newItem.id)
+            setItemN(1);
+        }
     }
 
     if (ModalData[0].menus === "MD") {
         return (
             <div className='modal'
-                style={{
-                    width:"80vw", height:"80vh",
-                    backgroundColor:"rgb(255,255,255)",
-                    margin:"auto", marginTop:"300px",
-                    position:"fixed", top:"-20vh",
-                    left:"0%", right:"0%",
-                    padding:"auto",
-                    borderRadius:"30px", border:"1px solid black",
-                    overflow:"hidden",
-                    display:"flex", flexDirection:"column", justifyContent:"flex-start",
-                    zIndex:"100"
-                }}
-            >   
+            style={{
+                width:"80vw", height:"auto",
+                backgroundColor:"rgb(255,255,255)",
+                margin:"auto", marginTop:"300px",
+                position:"fixed", top:"-20vh",
+                left:"0%", right:"0%",
+                padding:"auto",
+                borderRadius:"30px", border:"1px solid black",
+                overflow:"hidden",
+                display:"flex", flexDirection:"column", justifyContent:"flex-start",
+                zIndex:"1000"
+            }}
+        >
+            <div className='modal-btn'>
+                <button
+                    onClick={onClose}
+                >x</button>
+            </div>
+            <div className='modal-explain'>
                 <div>
-                    <button className='modal-btn'
-                        onClick={onClose}
-                    >X</button>
+                    <img src={`${process.env.PUBLIC_URL}/${ModalData[0].image}`} alt="" width={200}/>
                 </div>
-                <div className='modal-explain'>
-                    <div>
-                        <img src={`${process.env.PUBLIC_URL}/${ModalData[0].image}`} alt="" width={200}/>
-                    </div>
-                    <div className='menu-explain modal-m-e'>
-                        <h4>{ModalData[0].name}</h4>
-                        <p style={{textAlign:"left"}}>{ModalData[0].content}</p>
-                        <h5 style={{textAlign:"left", margin:"10px 0"}}>{ModalData[0].price}원</h5>
-                    </div>
-                </div>
-                <div className='cart-add-btn'>
-                    <div>
-                        <button
-                            onClick={()=>{setItemN(itemN-1)}}
-                        >-</button>
-                        <input type="text" value={itemN}
-                            onChange={(e)=>(e.target.value)}
-                        />
-                        <button
-                            onClick={()=>{setItemN(itemN+1)}}
-                        >+</button>
-                    </div>
-                    <button
-                        onClick={addItemList}
-                    >장바구니 추가</button>
-                </div>
-                <div>
-                    <MyCart itemList={state.itemList} setItemList={action.setItemList}/>
+                <div className='menu-explain modal-m-e'>
+                    <h4>{ModalData[0].name}</h4>
+                    <p style={{textAlign:"left"}}>{ModalData[0].content}</p>
+                    <h5 style={{textAlign:"left", margin:"10px 0"}}>{ModalData[0].price}원</h5>
                 </div>
             </div>
+            <div className='cart-add-btn'>
+                <div>
+                    <button
+                        onClick={()=>{setItemN(itemN-1)}}
+                        disabled={itemN<2 ? true : false}
+                    >-</button>
+                    <input type="text" value={itemN}
+                        onChange={(e)=>(e.target.value)}
+                    />
+                    <button
+                        onClick={()=>{setItemN(itemN+1)}}
+                    >+</button>
+                </div>
+                <button
+                    onClick={addItemList}
+                >장바구니 추가</button>
+            </div>
+            <div>
+                <MyCart
+                    itemList={state.itemList} setItemList={action.setItemList}
+                />
+            </div>
+        </div>
         )
     }
     else {
             return (
                 <div className='modal'
                     style={{
-                        width:"80vw", height:"80vh",
+                        width:"80vw", height:"auto",
                         backgroundColor:"rgb(255,255,255)",
                         margin:"auto", marginTop:"300px",
                         position:"fixed", top:"-20vh",
@@ -103,7 +111,7 @@ export default function ItemModal({open, onClose, name}) {
                     <div className='modal-btn'>
                         <button
                             onClick={onClose}
-                        >X</button>
+                        >x</button>
                     </div>
                     <div className='modal-explain'>
                         <div>
@@ -141,6 +149,7 @@ export default function ItemModal({open, onClose, name}) {
                         <div>
                             <button
                                 onClick={()=>{setItemN(itemN-1)}}
+                                disabled={itemN<2 ? true : false}
                             >-</button>
                             <input type="text" value={itemN}
                                 onChange={(e)=>(e.target.value)}
@@ -154,7 +163,9 @@ export default function ItemModal({open, onClose, name}) {
                         >장바구니 추가</button>
                     </div>
                     <div>
-                        <MyCart itemList={state.itemList} setItemList={action.setItemList}/>
+                        <MyCart
+                            itemList={state.itemList} setItemList={action.setItemList}
+                        />
                     </div>
                 </div>
 )

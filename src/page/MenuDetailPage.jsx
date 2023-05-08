@@ -12,15 +12,15 @@ import ItemModal from '../components/ItemModal';
 export default function MenuContent() {
     // 세부페이지 /menu/:id
     const {menus, sub} = useParams();
-    console.log(sub);
+//    console.log(sub);
 
     // 후에 메뉴 수정 가능
     const {state, action} = useContext(DataContext);
     // 각 하위 메뉴
     const {menuDetaillist} = state;
     // 전체 메뉴 (상위)
-    const MenuData = menuDetaillist.filter((d)=>(d.category==sub));
-    const allMenuData = menuDetaillist.filter((d)=>(d.menus==menus));
+    const MenuData = menuDetaillist.filter((d)=>(d.category===sub));
+    const allMenuData = menuDetaillist.filter((d)=>(d.menus===menus));
 
     // 상세 페이지 모달창, 상태
     const [showModal, setShowModal] = useState(false);
@@ -30,11 +30,11 @@ export default function MenuContent() {
         setShowModal(true);
         setModalName(name);
     }
-    console.log(modalName);
+//    console.log(modalName);
     
 
     
-    if (sub=="all") {
+    if (sub==="all") {
         return (
             <div className='menu-detail'>
                 {

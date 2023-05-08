@@ -10,6 +10,7 @@
     text-align: center;
     font-size: 18px;
     background: #fff;
+
     /* Center slide text vertically */
     display: flex;
     justify-content: center;
@@ -134,6 +135,7 @@
 }
 .section-three .brand-imgs {
     width: 100%;
+    background-color: rgb(235, 255, 252);
 }
 .section-three .brand-imgs div {
     width: 100%;

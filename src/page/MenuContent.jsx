@@ -20,7 +20,7 @@ import ItemModal from '../components/ItemModal';
 export default function MenuContent() {
     // 세부페이지 /menu/:id
     const {menus} = useParams();
-    console.log(menus);
+//    console.log(menus);
 
     // 후에 메뉴 수정 가능
     const {state, action} = useContext(DataContext);

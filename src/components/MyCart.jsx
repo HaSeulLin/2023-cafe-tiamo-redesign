@@ -2,8 +2,9 @@ import React, { useContext, useState } from 'react'
 import DataContext from '../context/DataContext';
 
 export default function MyCart({itemList, setItemList}) {
-    const [sum, setSum] = useState('');
-    const [allPrice, setAllPrice] = useState('0');
+    const [sum, setSum] = useState('0');
+    const [allPrice, setAllPrice] = useState([]);
+    const [finNum, setFinNum] = useState([itemList.itemNum]);
 
     const {state, action} = useContext(DataContext);
 
@@ -12,43 +13,34 @@ export default function MyCart({itemList, setItemList}) {
         setItemList(newItemList);
     }
     const upNum = (list) => {
-        // 1 수정된 객체 생성
+        // 수정 객체 생성
         const newItem = {
-            ...list,
+            ...itemList,
             itemNum : list.itemNum++
         }
-        console.log(newItem)
+        console.log(list.itemNum) // O
 
-        // 2 동일한 배열 들고 와서 집어넣기
-        const newItemlist = itemList.map(
-            (i)=>(i.id === list.id ? newItem : i))
-        setItemList(newItemlist);
+        // const newAddList = state.itemList.map(
+        //     (i)=>(i.id === list.id ? newItem : i));
         
+        // setItemList(newAddList);
         
-        console.log(newItemlist) // 반영안되었음!
-        console.log(list.itemNum) // +1
-        console.log(itemList) // +1 반영됨
         
     }
     const downNum = (list) => {
-        // 1 수정된 객체 생성
         const newItem = {
             ...itemList,
             itemNum : list.itemNum--
         }
-        // 2 동일한 배열 들고 와서 집어넣기
-        const newItemlist = itemList.map(
-            (i)=>(i.id === list.id ? newItem : i))
-        setItemList(newItemlist);
+        console.log(itemList[list.id-1].itemNum) // O
 
-        console.log(itemList.itemNum)
-        console.log(itemList)
     }
+
     if (itemList.length < 1) {
         return (
-            <div>
-                <h3>
-                    장바구니가 비어있습니다.
+            <div style={{width:"100%", height:"100px", backgroundColor:"rgb(255, 245, 198)", borderTop:"1px solid black", margin:"auto", display:"flex", justifyContent:"center", alignItems:"center"}}>
+                <h3 style={{margin:"0"}}>
+                    장바구니에 담긴 상품이 없습니다.
                 </h3>
             </div>
         )
@@ -56,30 +48,35 @@ export default function MyCart({itemList, setItemList}) {
     else {
         return (
             <div className='mycart'>
-                <h3>YOUR CART</h3>
+                <div>
+                    <h3>YOUR CART</h3>
+                    <p>총 금액 : {sum}</p>
+                    <button>구매하기</button>
+                </div>
                 <ul className='cart-list'>
                     {
-                        itemList.map((list, index)=>
+                        state.itemList.map((list, index)=>
                             <li style={{display:"flex"}}
                                 key={index}
                             >   
-                                <div>
+                                <div className='cart-img'>
                                     <img src={`${process.env.PUBLIC_URL}/${list.image}`} alt="" width={80} height={80}/>
+                                    <button
+                                        onClick={()=>{deleteItem(list.id)}}
+                                    >x</button>
                                 </div>
                                 <div className='cart-item'>
-                                    <div style={{display:'flex', alignItems:'center', justifyContent:'space-between'}}>
+                                    <div style={{display:'flex', alignItems:'center'}}>
                                         <p>{list.name}</p>
-                                        <button
-                                            onClick={()=>{deleteItem(list.id)}}
-                                        >삭제</button>
                                     </div>
                                     <p>{list.itemNum*list.price.replaceAll(/[^0-9]/g, "")}원</p>
                                     <div className='cart-btn'>
                                         <button
                                             onClick={()=>{downNum(list)}}
+                                            disabled={list.itemNum<2 ? true : false}
                                         >-</button>
-                                        <input type="text" value={itemList[index].itemNum}
-                                            onChange={(e)=>(e.target.value)}
+                                        <input type="text" value={list.itemNum}
+                                            onChange={(e)=>setItemList(e.target.value)}
                                         />
                                         <button
                                             onClick={()=>{upNum(list)}}
@@ -89,7 +86,6 @@ export default function MyCart({itemList, setItemList}) {
                             </li>
                         )
                     }
-                    
                 </ul>
             </div>
         )  
