@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/2023-cafe-tiamo-redesign/static/css/main.64d549fa.css",
-    "main.js": "/2023-cafe-tiamo-redesign/static/js/main.a0c8035e.js",
+    "main.css": "/2023-cafe-tiamo-redesign/static/css/main.f3e7ccea.css",
+    "main.js": "/2023-cafe-tiamo-redesign/static/js/main.97b58d72.js",
     "static/js/787.e808e207.chunk.js": "/2023-cafe-tiamo-redesign/static/js/787.e808e207.chunk.js",
     "static/media/그라데배경1.png": "/2023-cafe-tiamo-redesign/static/media/그라데배경1.8dcfc38361e99f05b7f5.png",
     "static/media/그라데배경2.png": "/2023-cafe-tiamo-redesign/static/media/그라데배경2.118233626f42617d9bf3.png",
@@ -17,12 +17,12 @@
     "static/media/introBeginImg03.png": "/2023-cafe-tiamo-redesign/static/media/introBeginImg03.6fcdce855582cc64307c.png",
     "static/media/introBeginImg02.png": "/2023-cafe-tiamo-redesign/static/media/introBeginImg02.6ecb24fb4d4c06e11ef0.png",
     "index.html": "/2023-cafe-tiamo-redesign/index.html",
-    "main.64d549fa.css.map": "/2023-cafe-tiamo-redesign/static/css/main.64d549fa.css.map",
-    "main.a0c8035e.js.map": "/2023-cafe-tiamo-redesign/static/js/main.a0c8035e.js.map",
+    "main.f3e7ccea.css.map": "/2023-cafe-tiamo-redesign/static/css/main.f3e7ccea.css.map",
+    "main.97b58d72.js.map": "/2023-cafe-tiamo-redesign/static/js/main.97b58d72.js.map",
     "787.e808e207.chunk.js.map": "/2023-cafe-tiamo-redesign/static/js/787.e808e207.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.64d549fa.css",
-    "static/js/main.a0c8035e.js"
+    "static/css/main.f3e7ccea.css",
+    "static/js/main.97b58d72.js"
   ]
 }
