@@ -1,39 +1,24 @@
 import React, { useContext, useState } from 'react'
-import DataContext from '../context/DataContext';
 
 export default function MyCart({itemList, setItemList}) {
     const [sum, setSum] = useState('0');
-    const [allPrice, setAllPrice] = useState([]);
-    const [finNum, setFinNum] = useState([itemList.itemNum]);
-
-    const {state, action} = useContext(DataContext);
 
     const deleteItem = (id) => {
         const newItemList = itemList.filter((i)=>(i.id !== Number(id)));
         setItemList(newItemList);
     }
-    const upNum = (list) => {
-        // 수정 객체 생성
-        const newItem = {
-            ...itemList,
-            itemNum : list.itemNum++
-        }
-        console.log(list.itemNum) // O
-
-        // const newAddList = state.itemList.map(
-        //     (i)=>(i.id === list.id ? newItem : i));
-        
-        // setItemList(newAddList);
-        
-        
+    // quantity up down
+    const downNum = (id) => {
+        setItemList(cart =>
+            cart.map((item)=>
+                id === item.id ? {...item, itemNum: item.itemNum - 1} : item
+        ));
     }
-    const downNum = (list) => {
-        const newItem = {
-            ...itemList,
-            itemNum : list.itemNum--
-        }
-        console.log(itemList[list.id-1].itemNum) // O
-
+    const upNum = (id) => {
+        setItemList(cart =>
+            cart.map((item)=>
+                id === item.id ? {...item, itemNum: item.itemNum + 1} : item
+        ));
     }
 
     if (itemList.length < 1) {
@@ -55,7 +40,7 @@ export default function MyCart({itemList, setItemList}) {
                 </div>
                 <ul className='cart-list'>
                     {
-                        state.itemList.map((list, index)=>
+                        itemList.map((list, index)=>
                             <li style={{display:"flex"}}
                                 key={index}
                             >   
@@ -69,17 +54,21 @@ export default function MyCart({itemList, setItemList}) {
                                     <div style={{display:'flex', alignItems:'center'}}>
                                         <p>{list.name}</p>
                                     </div>
-                                    <p>{list.itemNum*list.price.replaceAll(/[^0-9]/g, "")}원</p>
+                                    <p
+                                        onChange={(e)=>setSum(sum+e.target.value)}
+                                    >{list.itemNum*list.price.replaceAll(/[^0-9]/g, "")}원</p>
                                     <div className='cart-btn'>
                                         <button
-                                            onClick={()=>{downNum(list)}}
+                                            onClick={()=>{downNum(list.id)}}
                                             disabled={list.itemNum<2 ? true : false}
                                         >-</button>
                                         <input type="text" value={list.itemNum}
-                                            onChange={(e)=>setItemList(e.target.value)}
+                                            onChange={(e)=>(e.target.value)
+                                            // 워닝 방지용. 추후에 text로도 값 입력 받기 구현
+                                            }
                                         />
                                         <button
-                                            onClick={()=>{upNum(list)}}
+                                            onClick={()=>{upNum(list.id)}}
                                         >+</button>
                                     </div>
                                 </div>
