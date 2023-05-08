@@ -5,14 +5,14 @@ import MyCart from '../components/MyCart'
 
 
 export default function ItemModal({open, onClose, name}) {
-    // 장바구니 담을 아이템 개수, 담은 아이템 아이디
+    // 장바구니 담을 아이템 개수
     const [itemId, setItemId] = useState(''); 
-    let id = 2;
     // 장바구니 담을 아이템 개수
     const [itemN, setItemN] = useState(1);
 
     const {state, action} = useContext(DataContext);
     if(!open) {return null};
+
 
     const {menuDetaillist} = state;
     const ModalData = menuDetaillist.filter((menu)=>menu.name==name);
@@ -20,7 +20,7 @@ export default function ItemModal({open, onClose, name}) {
     
     const addItemList = () => {
         const newItem = {
-            id : id++,
+            id : state.id,
             image : ModalData[0].image,
             name : ModalData[0].name,
             price : ModalData[0].price,
@@ -28,6 +28,8 @@ export default function ItemModal({open, onClose, name}) {
         };
         const newItemlist = state.itemList.concat(newItem);
         action.setItemList(newItemlist);
+        action.idCount();
+        console.log(newItem.id)
     }
 
     if (ModalData[0].menus === "MD") {
@@ -42,7 +44,7 @@ export default function ItemModal({open, onClose, name}) {
                     padding:"auto",
                     borderRadius:"30px", border:"1px solid black",
                     overflow:"hidden",
-                    display:"flex", flexDirection:"column", justifyContent:"center",
+                    display:"flex", flexDirection:"column", justifyContent:"flex-start",
                     zIndex:"100"
                 }}
             >
@@ -59,26 +61,24 @@ export default function ItemModal({open, onClose, name}) {
                         <h5 style={{textAlign:"left", margin:"10px 0"}}>{ModalData[0].price}원</h5>
                     </div>
                 </div>
-                <div className='mycart'>
-                    <div className='mycart-btn'>
-                        <div>
-                            <button
-                                onClick={()=>{setItemN(itemN-1)}}
-                            >-</button>
-                            <input type="text" value={itemN}
-                                onChange={(e)=>(e.target.value)}
-                            />
-                            <button
-                                onClick={()=>{setItemN(itemN+1)}}
-                            >+</button>
-                        </div>
-                        <button
-                            onClick={addItemList}
-                        >장바구니 추가</button>
-                    </div>
+                <div className='cart-add-btn'>
                     <div>
-                        <MyCart modal={itemId} itemNum={itemN} itemList={state.itemList}/>
+                        <button
+                            onClick={()=>{setItemN(itemN-1)}}
+                        >-</button>
+                        <input type="text" value={itemN}
+                            onChange={(e)=>(e.target.value)}
+                        />
+                        <button
+                            onClick={()=>{setItemN(itemN+1)}}
+                        >+</button>
                     </div>
+                    <button
+                        onClick={addItemList}
+                    >장바구니 추가</button>
+                </div>
+                <div>
+                    <MyCart itemList={state.itemList} setItemList={action.setItemList}/>
                 </div>
             </div>
         )
@@ -95,7 +95,7 @@ export default function ItemModal({open, onClose, name}) {
                         padding:"auto",
                         borderRadius:"30px", border:"1px solid black",
                         overflow:"hidden",
-                        display:"flex", flexDirection:"column", justifyContent:"center",
+                        display:"flex", flexDirection:"column", justifyContent:"flex-start",
                         zIndex:"1000"
                     }}
                 >
@@ -150,10 +150,8 @@ export default function ItemModal({open, onClose, name}) {
                             onClick={addItemList}
                         >장바구니 추가</button>
                     </div>
-                    <div className='mycart'>
-                        <div>
-                            <MyCart itemList={state.itemList} setItemList={action.setItemList}/>
-                        </div>
+                    <div>
+                        <MyCart itemList={state.itemList} setItemList={action.setItemList}/>
                     </div>
                 </div>
 )

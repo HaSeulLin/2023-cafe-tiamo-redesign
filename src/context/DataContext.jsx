@@ -5,6 +5,7 @@ import menuSublist from '../data/menusublist.json'
 
 const DataContext = React.createContext('');
 
+let id = 1;
 
 const DataProvider = ({children}) => {
     const [allMenulist, setAllMenulist] = useState(menuList);
@@ -13,11 +14,14 @@ const DataProvider = ({children}) => {
 
     //장바구니 리스트
     const [itemList, setItemList] = useState([]);
+    const idCount = () => {
+        id++;
+    }
 
     // value에 담을 데이터 정리  
     const value = {
-        state : {allMenulist, menuDetaillist, itemList},
-        action : {setAllMenulist, setMenuDetaillist, setItemList}
+        state : {allMenulist, menuDetaillist, itemList, id},
+        action : {setAllMenulist, setMenuDetaillist, setItemList, idCount}
     };
 
     return <DataContext.Provider value={value}>

@@ -301,14 +301,14 @@
     color: white;
     margin: 0; 
     position: absolute;
-    right: 5vw; top: 5vh;
+    right: 50px; top: 50px;
     cursor: pointer;
 }
 .modal-explain {
     display: flex;
     justify-content: space-evenly;
-    margin: 25vh 0 10vh 0;
-    width: 100%; min-width: 730px; height: 40%;
+    margin: 100px 0 50px 0;
+    width: 100%; min-width: 730px; height: 250px; max-height: 50%;
 }
 .modal-explain>div:first-child {
     box-sizing: border-box;
@@ -348,7 +348,6 @@
     border-right: 1px solid black;
     color: black;
 }
-
 .modal-explain .modal-m-e table tbody td {
     width: 350px;
     padding: 10px; margin: auto;
@@ -357,23 +356,104 @@
     background-color: white;
     font-size: 0.8rem;
 }
+.cart-add-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    margin-bottom: 20px;
+}
+.cart-add-btn>div {
+    border: 1px solid black;
+    box-sizing: border-box;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.cart-add-btn button {
+    background-color: rgb(206, 233, 233);
+    height: 50px; width: 50px;
+    border: none;
+    cursor: pointer;
+}
+.cart-add-btn div button:first-child {
+    border-right: 1px solid black;
+}
+.cart-add-btn div button:last-child {
+    border-left: 1px solid black;
+}
+.cart-add-btn>button {
+    width: 150px; margin-left: 20px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 1px 0;
+}
+.cart-add-btn input[type="text"] {
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    border: none;
+    text-align: center;
+}
 
 /* MyCart css */
 .mycart {
     height: auto; max-height: 50%;
+    width: 80vw;
     border-top: 1px black solid;
+    margin: auto;
 }
 .cart-list {
-    width: 80vw; max-height: 30vh;
+    max-height: 30vh;
     overflow: scroll;
     padding: 10px 30px;
     display: flex;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 .cart-list li {
-    width: 33%; min-width: 200px;
-    margin: 20px 0;
+    width: 29%; min-width: 200px;
+    margin: 20px;
+}
+.cart-list li .cart-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 10px;
+    width: 300px; height: 102px;
+}
+.cart-list li .cart-item p {
+    text-align: left;
+    margin: 0;
+}
+.cart-list li .cart-item>div button {
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 50px;
 }
 .cart-list li img {
     border: 1px solid black;
+}
+.cart-list li .cart-item button {
+    background-color: rgb(206, 233, 233);
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}
+.cart-list li .cart-item .cart-btn {
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 90px;
+    overflow: hidden;
+    display: flex;
+}
+.cart-list li .cart-item .cart-btn button {
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    width: 30px;
+}
+.cart-list li .cart-item .cart-btn span {
+    width: 30px; height: 25px;
+    padding-top: 5px;
 }

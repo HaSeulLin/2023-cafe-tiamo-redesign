@@ -26,6 +26,12 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'YUniverse-B';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-B.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* HOME 전체 */
 .home {
@@ -64,8 +70,8 @@ h3 {
     bottom: calc(-10vh - 10px);
 }
 .main-banner-img-wrap>img {
-    width: 100%; height: auto;
-    max-width: 1500px; min-width: 1300px;
+    height: 90vh; width: auto; 
+    min-width: 1300px;
 }
 .main-banner-text-pop {
     max-width: 200px; max-height: 200px;
@@ -74,7 +80,7 @@ h3 {
     z-index: 10;
     position: absolute;
     right: 18vw;
-    bottom: 8vh;
+    bottom: 13vh;
 	animation: topbottom 3s ease-in-out infinite;
     transition: all 0.25s;
 }
@@ -118,6 +124,7 @@ h3 {
 .main-banner-text h2,
 .main-banner-text h3 {
     margin-top: 0;
+    font-family: 'Cafe24ClassicType-Regular';
 }
 .main-banner-text {
     width: 100%; height: 100%;
@@ -133,28 +140,25 @@ h3 {
 .main-banner-text .text-title h2 {
     position: absolute;
     left: calc(6vw + 70px); top: 60px;
-    color: rgb(185, 233, 225);
+    color: rgb(255, 22, 0);
     font-size: calc(70px + 4vw);
     line-height: calc(70px + 4vw);
-}
-.main-banner-text .text-title h2:first-child {
     text-shadow: 3px 3px 1px black;
-}
-.main-banner-text .text-title .title-2 {
-    color: rgb(255, 22, 0);
-    left: calc(6vw + 66px); top: 56px;
 }
 .main-banner-text .text-exp {
     position: relative;
 }
 .main-banner-text .text-exp h3 {
-    margin: 0;
+    margin: 0; margin-top: 3vh;
     position: absolute;
     font-size: calc(10px + 5vw);
-    left: calc(6vw + 70px); top: calc(10vw + 150px);
-    color: rgb(185, 233, 225);
+    left: 0; top: calc(10vw + 150px);
     text-shadow: 3px 3px 1px black;
-    font-family: 'Cafe24ClassicType-Regular';
+    border: 1px solid black;
+    background-color: rgb(255, 247, 212);
+    padding: 10px; padding-left: calc(6vw + 70px);
+    width: 100vw;
+    text-align: left;
 }
 
 /* 모바일 css */

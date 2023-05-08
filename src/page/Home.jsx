@@ -27,7 +27,8 @@ const FadeUp = batch(Fade(), Move(), Sticky());
 const [ bannerImg, setBannerImg ] = useState('berry-gelato-main.png');
 const [ bannerImgM, setBannerImgM ] = useState('berry-gelato-main-m.png');
 const [ bannerPop, setBannerPop ] = useState('bomb-choco.png');
-const [ backColor, setBackColor ] = useState('rgb(255, 192, 188)');
+const [ backColor, setBackColor ] = useState('rgb(255, 190, 190)');
+const [ flavorColor, setFlavorColor ] = useState('rgb(185, 233, 225)');
 const [ gelatoFlavor, setGelatoFlavor ] = useState('Strawberry');
 
 const bannerToggle = () => {
@@ -36,6 +37,7 @@ const bannerToggle = () => {
         setBannerImgM('choco-gelato-main-m.png');
         setBannerPop('bomb-berry.png');
         setBackColor('rgb(255, 228, 181)');
+        setFlavorColor('rgb(255, 190, 190)');
         setGelatoFlavor('Chocolate');
     }
     else if (bannerImg=='choco-gelato-main.png') {
@@ -43,6 +45,7 @@ const bannerToggle = () => {
         setBannerImgM('berry-gelato-main-m.png');
         setBannerPop('bomb-choco.png');
         setBackColor('rgb(255, 192, 188)');
+        setFlavorColor('rgb(185, 233, 225)');
         setGelatoFlavor('Strawberry');
     }
 };
@@ -56,14 +59,13 @@ return (
                     <div className='main-banner-text'>
                         <div className='text-title'>
                             <h2>Today's Gelato?</h2>
-                            <h2 className='title-2'>Today's Gelato?</h2>
                         </div>
                         <div className='text-exp'>
-                            <h3>{gelatoFlavor}</h3>
+                            <h3 style={{color:`${flavorColor}`, transition:"all 0.3s"}}>{gelatoFlavor}</h3>
                         </div>
                     </div>
                     <div className='main-banner-img-wrap'>
-                        <img src={`${process.env.PUBLIC_URL}/img/${bannerImg}`} alt="오늘의 젤라또 딸기" />
+                        <img src={`${process.env.PUBLIC_URL}/img/${bannerImg}`} alt="오늘의 젤라또 딸기"/>
                     </div>
                     <div className='main-banner-text-pop'
                         onClick={()=>{bannerToggle()}}

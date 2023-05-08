@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/** BrowserRouter로 App을 감싸서 app.js에서 라우터 사용 */}
-    <BrowserRouter>
+    <BrowserRouter basename = {process.env.PUBLIC_URL}>
       <App />
     </BrowserRouter>
   </React.StrictMode>

@@ -25,6 +25,14 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'SUITE-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+
 * {
   letter-spacing: -0.5px;
   word-break: keep-all;
@@ -38,6 +46,7 @@
 
 body {
   font-family: 'S-CoreDream-3Light';
+  font-family: 'SUITE-Regular';
   font-size: 1.1rem;
   max-width: 100%;
   overflow-x: hidden;
