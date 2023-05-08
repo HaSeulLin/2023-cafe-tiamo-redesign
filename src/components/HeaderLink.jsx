@@ -155,7 +155,7 @@ return (
                 </div>
                 <div>
                     <Link to={'/menu'}>
-                        <img src="/img/icon-cart.png" width={28} height={28} alt="Cart" />
+                        <img src={`${process.env.PUBLIC_URL}/img/icon-cart.png`} width={28} height={28} alt="Cart" />
                         <div className='rsm-info'>
                             <h4>CART</h4>
                         </div>
@@ -163,7 +163,7 @@ return (
                 </div>
                 <div>
                 <a href="#">
-                    <img src="/img/icon-top.png" alt="Top" />
+                    <img src={`${process.env.PUBLIC_URL}/img/icon-top.png`} alt="Top" />
                     <div className='rsm-info'>
                         <h4>TOP</h4>
                     </div>

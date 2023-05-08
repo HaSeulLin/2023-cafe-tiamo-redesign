@@ -86,7 +86,7 @@ a {
 }
 
 .header-link .nav-bar a {
-    color: rgb(24, 168, 181);
+    color: black;
     font-size: 1rem;
 }
 .header-link .nav-bar a:hover,

@@ -86,7 +86,7 @@ export default function MenuContent() {
                                         <div className='modal-open'
                                             onClick={()=>{openModal(menu.name)}}
                                         >
-                                            <img src={menu.image} alt="" width={220} height={220}
+                                            <img src={`${process.env.PUBLIC_URL}/${menu.image}`} alt="" width={220} height={220}
                                                 className='menu-li-img'
                                             />
                                         <div className='menu-explain'>
@@ -135,7 +135,7 @@ export default function MenuContent() {
                                                 <div className='modal-open'
                                                     onClick={()=>{openModal(menu.name)}}
                                                 >
-                                                    <img src={menu.image} alt="" width={220} height={220}
+                                                    <img src={`${process.env.PUBLIC_URL}/${menu.image}`} alt="" width={220} height={220}
                                                         className='menu-li-img'
                                                     />
                                                 </div>

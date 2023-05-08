@@ -26,12 +26,6 @@
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: 'YUniverse-B';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-B.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
 
 /* HOME 전체 */
 .home {
@@ -569,11 +563,11 @@ h3 {
     border-left: 1px solid black;
     font-size: 0.8rem;
     margin: 0;
-    padding: 52px 10px 44px 10px;
+    padding: 49px 10px 44px 10px;
     transition: all 0.25s;
 }
 .notice>div>div:last-child>a:hover {
-    background:  rgba(37, 196, 211, 0.6);
+    background:  rgba(37, 196, 211, 0.4);
     font-weight: bold;
     transition: all 0.25s;
 }
@@ -584,8 +578,8 @@ h3 {
     border-bottom: 1px solid black;
 }
 .notice a, .news p {
-    font-family: 'EF_watermelonSalad';
     font-size: 1rem;
+    font-family: 'S-CoreDream-3Light';
 }
 .notice div span,
 .news .news-list div span {

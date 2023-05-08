@@ -12,25 +12,25 @@ export default function Menu() {
     const ClickBackImg = (m) => {
         switch (m) {
             case "GELATO" :
-                setBackimg("/img/gelato-backimg.jpg");
+                setBackimg("img/gelato-backimg.jpg");
                 break;
             case "COFFEE" :
-                setBackimg("/img/coffee-backimg.jpg");
+                setBackimg("img/coffee-backimg.jpg");
                 break;
             case "TEA" :
-                setBackimg("/img/tea-backimg.jpg");
+                setBackimg("img/tea-backimg.jpg");
                 break;
             case "BEVERAGE" :
-                setBackimg("/img/beverage-backimg.jpg");
+                setBackimg("img/beverage-backimg.jpg");
                 break;
             case "DESSERT" :
-                setBackimg("/img/dessert-backimg.jpg");
+                setBackimg("img/dessert-backimg.jpg");
                 break;
             case "MD" :
-                setBackimg("/img/md-backimg.jpg");
+                setBackimg("img/md-backimg.jpg");
                 break;
             default : 
-                setBackimg("/img/gelato-backimg.jpg");
+                setBackimg("img/gelato-backimg.jpg");
             }
         }
 
@@ -40,7 +40,7 @@ export default function Menu() {
             <div className='menu-page'>
                 <div className='menu-page-top'>
                     <div className='menu-backimg'>
-                        <img src={backimg} alt="" width="100%" height="auto" />
+                        <img src={`${process.env.PUBLIC_URL}/${backimg}`} alt="" width="100%" height="auto" />
                     </div>
                     <div>
                         <h2>Menu</h2>

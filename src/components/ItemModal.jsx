@@ -6,8 +6,6 @@ import MyCart from '../components/MyCart'
 
 export default function ItemModal({open, onClose, name}) {
     // 장바구니 담을 아이템 개수
-    const [itemId, setItemId] = useState(''); 
-    // 장바구니 담을 아이템 개수
     const [itemN, setItemN] = useState(1);
 
     const {state, action} = useContext(DataContext);
@@ -30,6 +28,7 @@ export default function ItemModal({open, onClose, name}) {
         action.setItemList(newItemlist);
         action.idCount();
         console.log(newItem.id)
+        setItemN(1);
     }
 
     if (ModalData[0].menus === "MD") {
@@ -47,13 +46,15 @@ export default function ItemModal({open, onClose, name}) {
                     display:"flex", flexDirection:"column", justifyContent:"flex-start",
                     zIndex:"100"
                 }}
-            >
-                <button className='modal-btn'
-                    onClick={onClose}
-                >X</button>
+            >   
+                <div>
+                    <button className='modal-btn'
+                        onClick={onClose}
+                    >X</button>
+                </div>
                 <div className='modal-explain'>
                     <div>
-                        <img src={ModalData[0].image} alt="" width={200}/>
+                        <img src={`${process.env.PUBLIC_URL}/${ModalData[0].image}`} alt="" width={200}/>
                     </div>
                     <div className='menu-explain modal-m-e'>
                         <h4>{ModalData[0].name}</h4>
@@ -99,12 +100,14 @@ export default function ItemModal({open, onClose, name}) {
                         zIndex:"1000"
                     }}
                 >
-                    <button className='modal-btn'
-                        onClick={onClose}
-                    >X</button>
+                    <div className='modal-btn'>
+                        <button
+                            onClick={onClose}
+                        >X</button>
+                    </div>
                     <div className='modal-explain'>
                         <div>
-                            <img src={ModalData[0].image} alt="" width={200}/>
+                            <img src={`${process.env.PUBLIC_URL}/${ModalData[0].image}`} alt="" width={200}/>
                         </div>
                         <div className='menu-explain modal-m-e'>
                             <h4>{ModalData[0].name}</h4>

@@ -9,15 +9,15 @@ export default function Footer() {
         <div className='foot-box'>
         <div className='sns-list'>
             <div>
-                <img src="/img/instagram.png" alt="insta" />
+                <img src={`${process.env.PUBLIC_URL}/img/instagram.png`} alt="insta" />
                 <span>INSTAGRAM</span>
             </div>
             <div>
-                <img src="/img/blog.png" alt="blog" />
+                <img src={`${process.env.PUBLIC_URL}/img/blog.png`} alt="blog" />
                 <span>BLOG</span>
             </div>
             <div>
-                <img src="/img/youtube.png" alt="youtube" />
+                <img src={`${process.env.PUBLIC_URL}/img/youtube.png`} alt="youtube" />
                 <span>YOUTUBE</span>
             </div>
         </div>
@@ -25,13 +25,13 @@ export default function Footer() {
             <div>
                 <ul className='footer-contact'>
                     <li>
-                        <img src="http://www.ti-amo.co.kr/images/info_num.png" alt="tel - 02-334-8901" />
+                        <img src={`${process.env.PUBLIC_URL}/img/info_num.png`} alt="tel - 02-334-8901" />
                     </li>
                     <li>
-                        <img src="http://www.ti-amo.co.kr/images/info_fax.png" alt="fax - 02-463-8398" />
+                        <img src={`${process.env.PUBLIC_URL}/img/info_fax.png`} alt="fax - 02-463-8398" />
                     </li>
                     <li>
-                        <img src="http://www.ti-amo.co.kr/images/info_email.png" alt="mail - master@ti-amo.co.kr" />
+                        <img src={`${process.env.PUBLIC_URL}/img/info_email.png`} alt="mail - master@ti-amo.co.kr" />
                     </li>
                 </ul>
                 <ul className='footer-gnb'>
@@ -49,7 +49,7 @@ export default function Footer() {
         </div>
         <div className='footer-logo'>
             <a href="">
-                <img src="/img/logo_new.png" alt="" />
+                <img src={`${process.env.PUBLIC_URL}/img/logo_new.png`} alt="" />
             </a>
         </div>
         </div>

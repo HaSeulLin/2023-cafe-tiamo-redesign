@@ -2,42 +2,42 @@
     {
         "id" : 1,
         "name": "GELATO",
-        "image" : "/img/playGelato.png",
+        "image" : "img/playGelato.png",
         "explain": "세계75개국, 40% 점유. 110년역사 이탈리아 아이스크림",
         "submenu" : ["과일", "우유", "요거트"]
     },
     {
         "id" : 2,
         "name": "COFFEE",
-        "image" : "/img/playEsopresso.png",
+        "image" : "img/playEsopresso.png",
         "explain": "100% 아라비카원두로 깊고 진한 향의 커피",
         "submenu" : ["오리진", "콜드브루", "에스프레소", "라떼"]
     },
     {
         "id" : 3,
         "name": "TEA",
-        "image" : "/img/playTea.png",
+        "image" : "img/playTea.png",
         "explain": "상큼하고 달달한 향으로 마음이 먼저 마시는 차",
         "submenu" : ["허브티", "과일티"]
     },
     {
         "id" : 4,
         "name": "BEVERAGE",
-        "image" : "/img/playSweet.png",
+        "image" : "img/playSweet.png",
         "explain": "달콤한 맛으로 모두에게 사랑받는 음료",
         "submenu" : ["스페셜 라떼", "에이드", "스무디"]
     },
     {
         "id" : 5,
         "name": "DESSERT",
-        "image" : "/img/playDessert.png",
+        "image" : "img/playDessert.png",
         "explain": "한 잔의 여유와 한 입의 행복. 당신만의 달콤한 카페",
         "submenu" : ["브레드", "와플"]
     },
     {
         "id" : 6,
         "name": "MD",
-        "image" : "/img/playMD.png",
+        "image" : "img/playMD.png",
         "explain": "함께 즐기는 집으로 찾아가는 맛. MD가 추천하는 여유입니다.",
         "submenu" : ["커피", "선물세트", "컵|텀블러"]
     }

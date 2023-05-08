@@ -134,24 +134,24 @@ return (
                             </div>
                             <div>
                                 <a href="">
-                                    <img src="/img/blog.png" alt="blog" />
+                                    <img src={`${process.env.PUBLIC_URL}/img/blog.png`} alt="blog" />
                                 </a>
                             </div>
                             <div>
                                 <a href="">
-                                    <img src="/img/youtube.png" alt="youtube" />
+                                    <img src={`${process.env.PUBLIC_URL}/img/youtube.png`} alt="youtube" />
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div className='sns-img'>
                         <div className='insta-img1'>
-                            <img src="/img/jelatosns1.jpg" alt="instagram-img" />
-                            <img src="/img/jelatosns2.jpg" alt="instagram-img" />
+                            <img src={`${process.env.PUBLIC_URL}/img/jelatosns1.jpg`} alt="instagram-img" />
+                            <img src={`${process.env.PUBLIC_URL}/img/jelatosns2.jpg`} alt="instagram-img" />
                         </div>
                         <div className='insta-img2'>
-                            <img src="/img/jelatosns3.jpg" alt="instagram-img" />
-                            <img src="/img/jelatosns4.jpg" alt="instagram-img" />
+                            <img src={`${process.env.PUBLIC_URL}/img/jelatosns3.jpg`} alt="instagram-img" />
+                            <img src={`${process.env.PUBLIC_URL}/img/jelatosns4.jpg`} alt="instagram-img" />
                         </div>
                     </div>
                 </div>
@@ -184,12 +184,12 @@ return (
                     </div>
                     <div className='sns-img'>
                         <div className='insta-img1'>
-                            <img src="/img/jelatosns1.jpg" alt="instagram-img" />
-                            <img src="/img/jelatosns2.jpg" alt="instagram-img" />
+                            <img src={`${process.env.PUBLIC_URL}/img/jelatosns1.jpg`} alt="instagram-img" />
+                            <img src={`${process.env.PUBLIC_URL}/img/jelatosns2.jpg`} alt="instagram-img" />
                         </div>
                         <div className='insta-img2'>
-                            <img src="/img/jelatosns3.jpg" alt="instagram-img" />
-                            <img src="/img/jelatosns4.jpg" alt="instagram-img" />
+                            <img src={`${process.env.PUBLIC_URL}/img/jelatosns3.jpg`} alt="instagram-img" />
+                            <img src={`${process.env.PUBLIC_URL}/img/jelatosns4.jpg`} alt="instagram-img" />
                         </div>
                     </div>
                 </div>
@@ -246,8 +246,8 @@ return (
                     <h2>NOTICE</h2>
                     <div>
                         <div>
-                            <p style={{fontWeight:'bold', margin:"0"}}>띠아모 영양성분 및 알레르기 유발 식품 안내</p>
-                            <span>2023.04.02</span>
+                            <a href="./page/Community" style={{fontWeight:'bold', margin:"0"}}>띠아모 영양성분 및 알레르기 유발 식품 안내</a>
+                            <br /><span>2023.04.02</span>
                         </div>
                         <div><a href="./page/Community"> MORE ➡ </a></div>
                     </div>
@@ -271,7 +271,7 @@ return (
                     <div className='news-list'>
                         <div>
                             <img src={`${process.env.PUBLIC_URL}/img/gelato-news1.jpg`} width="250px" height="180px" alt="" />
-                            <p style={{fontWeight:'bold'}}>'작은매장에 배달 더한다' 바뀌는 소비자 니즈에 외식업계 변화</p>
+                            <p style={{fontWeight:'bold'}}>'작은매장에 배달 더한다' 바뀌는 소비자 니즈</p>
                             <span>2019-03-17</span>
                             <button className='news-more'>
                                 <Link to="/news">MORE ⬇</Link>

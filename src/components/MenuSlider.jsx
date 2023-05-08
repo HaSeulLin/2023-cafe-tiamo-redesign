@@ -16,7 +16,7 @@ export default function App() {
               <div key={menu.id} className='menu-box'>
                   <Link to={`/menu/${menu.name}/all`} >
                       <div className="menu-image">
-                        <img src={menu.image} alt="" />
+                        <img src={`${process.env.PUBLIC_URL}/img/${menu.image}`} alt="" />
                         <div className="explain-over">
                           <p>{menu.explain}</p>
                           <span>자세히 보기</span>

@@ -27,16 +27,16 @@ export default function EventSlider() {
         {/** 위의 객체 내용이 들어옴 */}
         <Slider {...settings}>
           <div className="slide-img">
-            <img src="/img/event1.jpg" alt="" />
+            <img src={`${process.env.PUBLIC_URL}/img/event1.jpg`} alt="" />
           </div>
           <div className="slide-img">
-            <img src="/img/event2.jpg" alt="" />
+            <img src={`${process.env.PUBLIC_URL}/img/event2.jpg`} alt="" />
           </div>
           <div className="slide-img">
-            <img src="/img/event3.jpg" alt="" />
+            <img src={`${process.env.PUBLIC_URL}/img/event3.jpg`} alt="" />
           </div>
           <div className="slide-img">
-            <img src="/img/event4.jpg" alt="" />
+            <img src={`${process.env.PUBLIC_URL}/img/event4.jpg`} alt="" />
           </div>
         </Slider>
       </div>
