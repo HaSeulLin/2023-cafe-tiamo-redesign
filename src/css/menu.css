@@ -370,27 +370,21 @@
 .cart-add-btn {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     height: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 50px; margin-right: 50px;
 }
 .cart-add-btn>div {
     border: 1px solid black;
     box-sizing: border-box;
     border-radius: 20px;
-    overflow: hidden;
+    overflow: hidden; height: 50px;
 }
 .cart-add-btn button {
     background-color: rgb(206, 233, 233);
-    height: 50px; width: 50px;
+    height: 51px; width: 45px;
     border: none;
     cursor: pointer;
-}
-.cart-add-btn div button:first-child {
-    border-right: 1px solid black;
-}
-.cart-add-btn div button:last-child {
-    border-left: 1px solid black;
 }
 .cart-add-btn>button {
     width: 150px; margin-left: 20px;
@@ -420,6 +414,15 @@
 .mycart > div {
     padding-top: 20px;
     border-right: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 200px;
+}
+.mycart > div p {
+    margin-top: 0; margin-bottom: 30px;
+    max-width: 80px;
 }
 .mycart > div button {
     margin-bottom: 50px;
@@ -436,7 +439,7 @@
 }
 .cart-list {
     max-height: 30vh;
-    overflow: auto;
+    overflow: scroll;
     padding: 0px 30px 10px 30px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -452,27 +455,24 @@
     align-items: center;
 }
 .cart-list li .cart-img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     background-color: white;
     border-radius: 20px;
     margin: 0;
     margin-left: 10px;
-    padding: 10px;
     border: 1px solid black;
     overflow: hidden;
     position: relative;
 }
 .cart-list .cart-img button {
     position: absolute;
+    width: 23px; height: 23px;
     left: 5px; top: 5px;
     border: 1px solid black;
     border-radius: 50px 50px;
     background-color: rgb(206, 233, 233);
     cursor: pointer;
-}
-.cart-list li .cart-img img {
-    min-width: 80px; height: 80px;
 }
 .cart-list li .cart-item {
     display: flex;
@@ -485,12 +485,15 @@
 
 .cart-list li .cart-item>div:first-child {
     min-width: 200px;
+    justify-content: space-between;
 }
-
+.cart-list li .cart-item>div:first-child p {
+    max-width: 150px; max-height: 50px;
+    overflow: auto;
+}
 .cart-list li .cart-item p {
     text-align: left;
     margin: 0;
-    min-width: 200px;
     overflow: auto;
 }
 .cart-list li .cart-item>div button {
@@ -524,4 +527,7 @@
     box-sizing: border-box;
     text-align: center;
     margin: auto;
+}
+button {
+    font-family: 'S-CoreDream-3Light';  
 }

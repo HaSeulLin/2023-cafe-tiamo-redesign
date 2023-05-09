@@ -82,7 +82,7 @@ export default function ItemModal({open, onClose, name}) {
                 </div>
                 <button
                     onClick={addItemList}
-                >장바구니 추가</button>
+                >카트에 추가</button>
             </div>
             <div>
                 <MyCart
@@ -160,7 +160,7 @@ export default function ItemModal({open, onClose, name}) {
                         </div>
                         <button
                             onClick={addItemList}
-                        >장바구니 추가</button>
+                        >카트에 추가</button>
                     </div>
                     <div>
                         <MyCart

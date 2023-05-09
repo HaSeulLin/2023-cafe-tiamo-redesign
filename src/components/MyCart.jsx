@@ -20,10 +20,16 @@ export default function MyCart({itemList, setItemList}) {
                 id === item.id ? {...item, itemNum: item.itemNum + 1} : item
         ));
     }
+    // total price
+    const eachPrice = itemList.map((item)=>{
+        return item.itemNum*item.price.replaceAll(/[^0-9]/g, "")
+    });
+    const totalPrice = eachPrice.reduce((a,b)=>a+b,0);
 
     if (itemList.length < 1) {
         return (
-            <div style={{width:"100%", height:"100px", backgroundColor:"rgb(255, 245, 198)", borderTop:"1px solid black", margin:"auto", display:"flex", justifyContent:"center", alignItems:"center"}}>
+            <div style={{width:"100%", height:"100px", backgroundColor:"rgb(255, 245, 198)", borderTop:"1px solid black", margin:"auto",
+                        display:"flex", justifyContent:"center", alignItems:"center"}}>
                 <h3 style={{margin:"0"}}>
                     장바구니에 담긴 상품이 없습니다.
                 </h3>
@@ -35,7 +41,7 @@ export default function MyCart({itemList, setItemList}) {
             <div className='mycart'>
                 <div>
                     <h3>YOUR CART</h3>
-                    <p>총 금액 : {sum}</p>
+                    <p style={{fontSize:"1.3rem", fontWeight:"bold"}}>총 금액: {totalPrice}</p>
                     <button>구매하기</button>
                 </div>
                 <ul className='cart-list'>
@@ -45,18 +51,17 @@ export default function MyCart({itemList, setItemList}) {
                                 key={index}
                             >   
                                 <div className='cart-img'>
-                                    <img src={`${process.env.PUBLIC_URL}/${list.image}`} alt="" width={80} height={80}/>
+                                    <img src={`${process.env.PUBLIC_URL}/${list.image}`} alt="" width={100} height={100}/>
                                     <button
                                         onClick={()=>{deleteItem(list.id)}}
                                     >x</button>
                                 </div>
                                 <div className='cart-item'>
-                                    <div style={{display:'flex', alignItems:'center'}}>
+                                    <div style={{display:'flex', alignItems:'flex-end', borderBottom:'1px solid black'}}>
                                         <p>{list.name}</p>
+                                        <span style={{fontSize:'0.9rem'}}>{list.price}원</span>
                                     </div>
-                                    <p
-                                        onChange={(e)=>setSum(sum+e.target.value)}
-                                    >{list.itemNum*list.price.replaceAll(/[^0-9]/g, "")}원</p>
+                                    <p>{list.itemNum*list.price.replaceAll(/[^0-9]/g, "")}원</p>
                                     <div className='cart-btn'>
                                         <button
                                             onClick={()=>{downNum(list.id)}}
