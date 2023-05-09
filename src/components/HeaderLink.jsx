@@ -2,6 +2,8 @@ import React, { useRef, useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import '../css/headerLink.css'
 
+import ItemModal from '../components/ItemModal';
+
 import {Pc, Mobile} from '../components/MobilePc';
 
 export default function HeaderLink() {
@@ -22,6 +24,9 @@ export default function HeaderLink() {
     const [ shopShow, setShopShow ] = useState(false);
     const [ franchiseShow, setFranchiseShow ] = useState(false);
     const [ commuShow, setCommuShow ] = useState(false);
+
+    /* 모달창 오픈 */
+    
 
 return (
     <div className='header-link'>
