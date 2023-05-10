@@ -56,14 +56,20 @@ return (
         <Pc>
             <div className='main-banner' style={{marginTop:"200px"}}>
                 <div className='main-back' style={{backgroundColor:`${backColor}`, transition:"all 0.3s"}}>
-                    <div className='main-banner-text'>
-                        <div className='text-title'>
-                            <h2>Today's Gelato?</h2>
-                        </div>
-                        <div className='text-exp'>
-                            <h3 style={{color:`${flavorColor}`, transition:"all 0.3s"}}>{gelatoFlavor}</h3>
-                        </div>
-                    </div>
+                    <ScrollContainer>
+                        <ScrollPage>
+                            <Animator animation={batch(Fade(), Sticky(0, 20), MoveOut(0, -200))}>
+                                <div className='main-banner-text'>
+                                    <div className='text-title'>
+                                        <h2>Today's Gelato?</h2>
+                                    </div>
+                                    <div className='text-exp'>
+                                        <h3 style={{color:`${flavorColor}`, transition:"all 0.3s"}}>{gelatoFlavor}</h3>
+                                    </div>
+                                </div>
+                            </Animator>
+                        </ScrollPage>
+            </ScrollContainer>
                     <div className='main-banner-img-wrap'>
                         <img src={`${process.env.PUBLIC_URL}/img/${bannerImg}`} alt="오늘의 젤라또 딸기"/>
                     </div>
