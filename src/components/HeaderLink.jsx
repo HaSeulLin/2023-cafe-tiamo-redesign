@@ -1,10 +1,11 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import '../css/headerLink.css'
 
-import ItemModal from '../components/ItemModal';
 
 import {Pc, Mobile} from '../components/MobilePc';
+import MyCartBtn from './MyCartBtn';
+import DataContext from '../context/DataContext';
 
 export default function HeaderLink() {
     
@@ -25,9 +26,9 @@ export default function HeaderLink() {
     const [ franchiseShow, setFranchiseShow ] = useState(false);
     const [ commuShow, setCommuShow ] = useState(false);
 
-    /* 모달창 오픈 */
-    
-
+    /* 장바구니 모달창 오픈 */
+    const [openCart, setOpenCart] = useState(false);
+    const {state, action} = useContext(DataContext);
 return (
     <div className='header-link'>
         <Pc>
@@ -95,7 +96,9 @@ return (
             </div>
             {/** scroll ON header */}
             <div className='nav-wrap_s'>
-                <div className={ scrollPosition>100 ? 'nav-bar-scroll' : 'off' }>
+                <div className={ scrollPosition>100 ? 'nav-bar-scroll' : 'off' }
+                    style={{borderTop:'1px solid black'}}
+                >
                     <div className='nav-bar2'>
                         <div className='nav-menu_s'>
                             <Link to='/' className='nav-menu_s-logo'>
@@ -159,22 +162,32 @@ return (
                     </Link>
                 </div>
                 <div>
-                    <Link to={'/menu'}>
+                    <div onClick={()=>setOpenCart(true)}>
                         <img src={`${process.env.PUBLIC_URL}/img/icon-cart.png`} width={28} height={28} alt="Cart" />
                         <div className='rsm-info'>
                             <h4>CART</h4>
                         </div>
-                    </Link>
+                    </div>
                 </div>
                 <div>
-                <a href="#">
-                    <img src={`${process.env.PUBLIC_URL}/img/icon-top.png`} alt="Top" />
-                    <div className='rsm-info'>
-                        <h4>TOP</h4>
-                    </div>
-                </a>
+                    <a href="#">
+                        <img src={`${process.env.PUBLIC_URL}/img/icon-top.png`} alt="Top" />
+                        <div className='rsm-info'>
+                            <h4>TOP</h4>
+                        </div>
+                    </a>
+                </div>
             </div>
-            </div>
+            {   
+                // 장바구니 모달창 공간
+                openCart && 
+                <div style={{position:'fixed', top:'0', right:'0', width:'600px', height:'100vh', backgroundColor:'rgb(255, 245, 198)', borderLeft:'1px solid black'}}>
+                    <button onClick={()=>setOpenCart(false)}
+                        style={{position: 'fixed', top:'0', right:'0', width:'150px', height:'150px', borderBottom:'none'}}
+                    >X</button>
+                    <MyCartBtn itemList={state.itemList} setItemList={action.setItemList}/>
+                </div>
+            }
         </Pc>
         <Mobile>
             <div className='mobile-nav'>
