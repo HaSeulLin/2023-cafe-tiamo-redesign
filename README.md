@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+프로젝트 상세 후기 및 스크린샷은 아래 링크에서 확인 가능. 
+https://velog.io/@kkong__ssal/React-FE-%EC%B2%AB-%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%B9%B4%ED%8E%98-%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%A6%AC%EB%94%94%EC%9E%90%EC%9D%B8
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+📄 주제 및 목표 선정
+맛있는 카페에 방문하기를 좋아해 첫 프로젝트인 만큼 내가 좋아하는 디저트 가게의 홈페이지를 리뉴얼 해보기로 했다. 마침 봄이어서 산뜻하고 부드러운 파스텔톤의 색감과 아기자기한 디자인으로 홈페이지를 꾸미면 어울리겠다는 생각을 했다.
+리디자인 하기로 한 홈페이지는 카페 띠아모(http://www.ti-amo.co.kr/main/main.asp?)로, 메인 이미지와 로고 컬러가 핑크와 민트색으로 내가 원하는 콘셉트에 맞으면서 페이지 구성이 사용자에게 다소 아쉽고 로딩이 길어 이를 개선해보고자 했다.
 
-In the project directory, you can run:
+프로젝트 공부 목적은 배우고 있는 React를 사용하여 여러 페이지를 구현하고, JSON 데이터를 불러와 객체와 배열 사용에 익숙해지는 것이었다.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+📄 개발 환경
+언어	라이브러리	툴
+HTML	React	VSCode
+CSS		
+JS		
+리덕스/리덕스 툴킷은 사용하지 않았다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+💻 페이지 구현 (프로젝트 기능 설명)
+📄 작업 과정
+1. 각 페이지를 react-router-dom의 Route, Link로 연결
+2. header, footer 레이아웃과 오른쪽 하단의 고정 바로가기 버튼 양식을 작성
+3. 상품 데이터 JSON 파일로 작성
+4. Context API로 전역 데이터 설정 (item, mycart 변수)
+5. Menu 페이지 카테고리 기능 구현
+(중첩 라우터와 outlet 사용으로 각 하위 카테고리를 페이지로 구현)
+6. Home + Menu 페이지 css
+7. 메뉴 아이템 json Data 불러와서 사용, 상세 페이지 Modal창으로 구현
+8. 장바구니 담기 기능 구현 (개수 조절, 삭제)
+9. 깃페이지로 배포
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+리디자인 프로젝트인만큼 해당 홈페이지에 있는 이미지와 무료 이미지 사이트의 소스를 가공하여 사용했다.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+💬 메인 Home 페이지
+- 헤더 하위 메뉴 드롭다운 구현마우스오버로 하위 메뉴들을 볼 수있으며, 클릭하면 해당 페이지로 이동한다.
+💬 Menu 페이지
+- Menu 카테고리 첫 페이지 (NEW&BEST)
+swiper 라이브러리를 이용해 신메뉴와 베스트메뉴를 소개하는 페이지를 구현했다.
+- Menu 카테고리 셀렉 페이지 (GELATO, COFFEE, TEA...)
+메뉴 페이지의 라우터 구조는 메뉴>메뉴카테고리>메뉴상세카테고리로, 클릭하면 해당하는 카테고리 페이지로 이동하며 url의 params 값을 받아와 아이템을 출력하는 형식이다.
+- 상품 상세 페이지 (모달창으로 구현)
+해당 상품의 상세 정보와 성분 표기 데이터를 불러와 출력했다. 제품 상세 페이지로 이동하는 대신 모달 기능을 공부할 겸 모달창으로 간단하게 구현했다.
+- 장바구니 기능 구현
+상세 모달창에서 장바구니에 담을 아이템 개수를 정해 추가 버튼을 누르면, 장바구니에 담기며 각 금액과 카트 물품 총액이 계산되어 보인다. X 버튼을 누르면 장바구니에서 아이템을 삭제할 수 있다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+📖 어려웠던 점 + 보완할 점
+1. position absolute와 px 단위의 남용
+: 다채로운 이미지가 중요한 카페 브랜드 홈페이지를 컨셉으로 잡은데다 첫 프로젝트인 만큼 비주얼에 신경 쓰다보니 곳곳에 사진 배치를 많이 했다. 그러다 보니 로딩 시간이 길어지는 문제도 다소 있었고, 나중에 반응형 페이지로 구현하려고 하니 배치해둔 형태가 망가져 건드리기 어려웠다. 결국 시간 관계상 반응형은 다음 프로젝트에 반영하기로 결정해 아쉬웠다. 다음부터는 기획 단계부터 반응형을 고려해 UX/UI 설계를 해야겠다고 마음 먹었다.
+2. 부모 자식 컴포넌트의 관계
+: 전역 데이터는 Context로 관리했지만, 자식에서 부모 컴포넌트로 데이터를 보내고 싶을 때 어떻게 해야 내가 원하는 형태가 되는지 모르겠어 헤맸다. 특히 중첩 라우터로 메뉴 페이지의 카테고리 구분을 구현했었는데, 하위 페이지로 카테고리를 이동했을 때 상위 페이지의 배너 사진을 바꿀 수 없었다. 방법을 찾아보다 아이템 카테고리를 하위 페이지로 구분하는 것보다 filter로 분류하는 게 더 간단한 방식 같았다. 다음부터는 배열 메소드를 적절하게 사용해야겠다.
+3. 시간 분배와 기획 단계의 아쉬움
+: 물론 마감일까지 구현하려던 주요 기능과 페이지는 완성했다. 캘린더에 프로젝트 일정을 정리해 완급 조절을 했다. 다만 내 예상과는 다르게 css에서 작업이 예상보다 오래 걸려 기능 구현에 많은 시간을 들이지 못했다. 또한 많은 아이템 데이터를 직접 작성하느라 시간이 걸렸는데, 다음에는 공공 데이터 API 등을 사용해 서버에서 원하는 데이터 목록을 불러오는 걸 해보기로 했다.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+📖 소감
+프론트엔드로 처음 웹 개발 공부를 시작한지 석달째가 되기 전에 무작정 시작한 프로젝트라 보완할 점이 많다. 그러나 첫 개인 프로젝트이고, 리액트를 배운지 얼마 되지 않을 때 나름대로 공부해 가며 완성했기에 의미 있는 시간이었다. 무엇보다 잘 모르는 상태에서 일단 부딪혀보고 고생해 보니 나중에 배우는 것들이 더 머리에 잘 들어왔다. 리덕스 없이 리액트로만 만들었는데, 프로젝트 직후에 툴킷을 배우고 나니 상태 관리에 있어서 그저 신세계!처럼 느껴지는 현상이 있었다. 직접 부딪혀 봐야 왜 이런 기능이 필요한지 체감하는 것 같다. 후에는 React-Redux와 Firebase 같은 NoSQL을 배워서 상태관리와 서버 데이터 활용을 프로젝트에 구현해볼 생각이다.
